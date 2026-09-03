@@ -1,0 +1,33 @@
+{
+ "schema": 1,
+ "index_version": "2026-09-03",
+ "note": "Манифест индекса корпуса курса «Право интеллектуальной собственности» (официальные договоры EN, статьи Wikipedia CC BY-SA, книги PD). Разместите архив на Google Диске (доступ по ссылке) и впишите URL в url или FALT_INDEX_URL.",
+ "archive": {
+  "filename": "course-index-ip-law-2026-09-03.zip",
+  "size_bytes": 3322465,
+  "sha256": "B9519826F2A5E68590EAD3ED4BA812D2D7428E3C8DD5E71956F95833EAE4300E",
+  "url": ""
+ },
+ "files": [
+  {
+   "path": "annoy.index",
+   "size_bytes": 1702800,
+   "sha256": "65236F15D906D2404973CD1DDE711CF393E3A744CF8964EA69D46935E9183BCC"
+  },
+  {
+   "path": "chunks.jsonl",
+   "size_bytes": 1622196,
+   "sha256": "FB9090C26369B62A425943A343738282D8325C2618F15B6F76B16BDD080C0D62"
+  },
+  {
+   "path": "config.json",
+   "size_bytes": 1065,
+   "sha256": "8D9B8F865EE7A4DA0567B43CB70B2C51ABB30ABBF8DB3D88A19965F7BA6D0E84"
+  },
+  {
+   "path": "embeddings.npy",
+   "size_bytes": 1490048,
+   "sha256": "8BC9B37DB44E5BC94633DA536AB4B9C54459B8541C441F018D38114E69D85069"
+  }
+ ]
+}
