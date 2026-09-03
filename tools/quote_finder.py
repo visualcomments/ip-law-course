@@ -5,7 +5,7 @@ quote_finder: locate a phrase/substring across the corpus txt/ files.
 Useful for gathering verbatim PD quotes. Prints file + line + context.
 
 Usage:  python tools/quote_finder.py "чистого разума"
-Dirs: FALT_TXT_DIR (default $FALT_CORPUS_ROOT/txt).
+Dirs: COURSE_TXT_DIR (default $COURSE_CORPUS_ROOT/txt).
 """
 import glob
 import os
@@ -13,8 +13,8 @@ import re
 import sys
 
 sys.stdout.reconfigure(encoding="utf-8")
-ROOT = os.environ.get("FALT_CORPUS_ROOT", "")
-TXT = os.environ.get("FALT_TXT_DIR") or os.path.join(ROOT, "txt")
+ROOT = os.environ.get("COURSE_CORPUS_ROOT", "")
+TXT = os.environ.get("COURSE_TXT_DIR") or os.path.join(ROOT, "txt")
 
 
 def main():

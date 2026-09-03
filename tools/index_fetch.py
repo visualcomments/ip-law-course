@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 """
 Fetch the course index/embeddings from Google Drive and install it into
-FALT_CORPUS_ROOT/index/ (atomic swap, SHA-256 verified).
+COURSE_CORPUS_ROOT/index/ (atomic swap, SHA-256 verified).
 
 Sources (priority):
-  1) --url <share-link|direct-link>  (or env FALT_INDEX_URL)
+  1) --url <share-link|direct-link>  (or env COURSE_INDEX_URL)
   2) index-manifest.json in repo root (created from the example once you
      publish the file on Drive and fill "url")
 
@@ -36,9 +36,9 @@ REPO = os.path.abspath(os.path.join(HERE, ".."))
 
 
 def resolve_root():
-    r = os.environ.get("FALT_CORPUS_ROOT")
+    r = os.environ.get("COURSE_CORPUS_ROOT")
     if not r:
-        sys.stderr.write("[index_fetch] установите FALT_CORPUS_ROOT (каталог корпуса, см. CORPUS.md)\n")
+        sys.stderr.write("[index_fetch] установите COURSE_CORPUS_ROOT (каталог корпуса, см. CORPUS.md)\n")
         sys.exit(2)
     return r
 
@@ -91,7 +91,7 @@ def drive_download(url, dest):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--url", default=os.environ.get("FALT_INDEX_URL", ""))
+    ap.add_argument("--url", default=os.environ.get("COURSE_INDEX_URL", ""))
     a = ap.parse_args()
 
     manifest = None
@@ -101,7 +101,7 @@ def main():
     url = a.url or (manifest or {}).get("archive", {}).get("url") or ""
     if not url:
         sys.stderr.write(
-            "[index_fetch] укажите --url (share-ссылка Google Drive) или FALT_INDEX_URL,\n"
+            "[index_fetch] укажите --url (share-ссылка Google Drive) или COURSE_INDEX_URL,\n"
             "либо заполните url в index-manifest.json (см. index-manifest.example.json и docs/GOOGLE-DRIVE.md)\n")
         return 2
 

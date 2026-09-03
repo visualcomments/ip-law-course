@@ -43,8 +43,8 @@
    `.cursor/`, `tools/` + `Makefile`.
 4. **Портативность.** В репозитории нет локальных путей, имён хостов,
    IP, серверных схем. Всё внешнее — через переменные окружения
-   (`FALT_CORPUS_ROOT`, `FALT_TXT_DIR`, `FALT_INDEX_DIR`, `FALT_INDEX_URL`,
-   `FALT_SERVER` — последняя только для сборки, на локальной машине).
+   (`COURSE_CORPUS_ROOT`, `COURSE_TXT_DIR`, `COURSE_INDEX_DIR`, `COURSE_INDEX_URL`,
+   `COURSE_SERVER` — последняя только для сборки, на локальной машине).
 5. **Самодостаточность индекса.** Индекс (Annoy + эмбеддинги + чанки +
    config) упаковывается в архив и распространяется через **Google Диск**:
    манифест с SHA-256 + `tools/index_fetch.py` (скачивание, проверка суммы,
@@ -58,7 +58,7 @@
 1. **Программа курса.** Если даны слайды (`*.pptx`) — извлечь темы
    через python-pptx (заголовки слайдов), сжать в нужное число занятий,
    записать `syllabus.md` + `syllabus.json` (поля: n, sem, title, module).
-2. **Корпус (`FALT_CORPUS_ROOT/txt/`).**
+2. **Корпус (`COURSE_CORPUS_ROOT/txt/`).**
    - PD-книги: Internet Archive `_djvu.txt` (метаданные: `metadata/<id>`,
      файл с суффиксом `_djvu.txt`), en.wikisource raw, вики-зеркала.
    - Официальные тексты: договоры — страницы WIPO/WTO (HTM→txt),
@@ -91,7 +91,7 @@
    `index-manifest.json` и `.example.json` (url — пустой, пока пользователь
    не зальёт архив). После получения share-ссылки: вписать url, **протестировать
    полный цикл** `index-fetch` во временный каталог
-   (`FALT_CORPUS_ROOT=<temp>`) — проверить «SHA-256 подтверждена» и
+   (`COURSE_CORPUS_ROOT=<temp>`) — проверить «SHA-256 подтверждена» и
    sanity (n_chunks, n_files) — затем коммит манифеста.
 6. **docs/лицензии.** `PROVENANCE.md` (лицензии всех файлов корпуса),
    `CORPUS.md` (состав/сборка/индекс), `citations.md` (карта
@@ -149,9 +149,9 @@ make search QUERY="..."         # поиск по корпусу
 make verify                     # проверка цитат (0 ошибок — норма)
 make session n=NN / make assignment n=NN
 # верификация с окружением (Windows):
-#   set "FALT_CORPUS_ROOT=C:\...\corpus" && python -u tools\verify_quotes.py
+#   set "COURSE_CORPUS_ROOT=C:\...\corpus" && python -u tools\verify_quotes.py
 # сборка индекса (кластер):
-#   set FALT_SERVER=user@10.0.0.2 && python -u scripts\<course>_build_index.py
+#   set COURSE_SERVER=user@10.0.0.2 && python -u scripts\<course>_build_index.py
 # история:  git bundle create B --all && git filter-repo --replace-text rules.txt --force
 #           git remote add origin <url> && git push --force origin main
 ```

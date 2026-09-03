@@ -5,7 +5,7 @@ Semantic search over the course RAG index (embeddings + Annoy).
 Requires the index installed (see docs/GOOGLE-DRIVE.md, make index-fetch)
 and a query-embedding backend: fastembed (recommended) — pure CPU.
 
-Dirs (env): FALT_INDEX_DIR (default $FALT_CORPUS_ROOT/index).
+Dirs (env): COURSE_INDEX_DIR (default $COURSE_CORPUS_ROOT/index).
 
 Usage:
   python tools/rag_search.py "Кант критика чистого разума" -k 5 [--topic ...] [--json]
@@ -17,8 +17,8 @@ import sys
 
 sys.stdout.reconfigure(encoding="utf-8")
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.environ.get("FALT_CORPUS_ROOT", "")
-IDX = os.environ.get("FALT_INDEX_DIR") or os.path.join(ROOT, "index")
+ROOT = os.environ.get("COURSE_CORPUS_ROOT", "")
+IDX = os.environ.get("COURSE_INDEX_DIR") or os.path.join(ROOT, "index")
 MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 
 

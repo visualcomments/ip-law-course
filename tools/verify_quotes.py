@@ -6,9 +6,9 @@ corpus (txt/) + chunk ids from the RAG index. OCR-tolerant via letter-only
 normalization; accepted when coverage >= QUOTE_MIN_COVERAGE (0.92).
 Writes verification/REPORT.md. Exit code 1 when any quote fails.
 
-Dirs (env): FALT_REPO_DIR (repo root; default: parent of tools),
-FALT_TXT_DIR (default $FALT_CORPUS_ROOT/txt), FALT_INDEX_DIR (default
-$FALT_CORPUS_ROOT/index).
+Dirs (env): COURSE_REPO_DIR (repo root; default: parent of tools),
+COURSE_TXT_DIR (default $COURSE_CORPUS_ROOT/txt), COURSE_INDEX_DIR (default
+$COURSE_CORPUS_ROOT/index).
 
 Convention:
 > **Цитата:** «...»
@@ -23,10 +23,10 @@ import sys
 
 sys.stdout.reconfigure(encoding="utf-8")
 HERE = os.path.dirname(os.path.abspath(__file__))
-REPO = os.environ.get("FALT_REPO_DIR") or os.path.abspath(os.path.join(HERE, ".."))
-ROOT = os.environ.get("FALT_CORPUS_ROOT", "")
-TXT = os.environ.get("FALT_TXT_DIR") or os.path.join(ROOT, "txt")
-IDX = os.environ.get("FALT_INDEX_DIR") or os.path.join(ROOT, "index")
+REPO = os.environ.get("COURSE_REPO_DIR") or os.path.abspath(os.path.join(HERE, ".."))
+ROOT = os.environ.get("COURSE_CORPUS_ROOT", "")
+TXT = os.environ.get("COURSE_TXT_DIR") or os.path.join(ROOT, "txt")
+IDX = os.environ.get("COURSE_INDEX_DIR") or os.path.join(ROOT, "index")
 CHUNKS = os.path.join(IDX, "chunks.jsonl")
 MIN_COVERAGE = float(os.environ.get("QUOTE_MIN_COVERAGE", "0.92"))
 

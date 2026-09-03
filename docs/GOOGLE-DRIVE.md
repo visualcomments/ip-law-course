@@ -4,7 +4,7 @@
 чанки) распространяется как **файлы на Google Диске**: репозиторий
 самодостаточен. Агент или пользователь скачивает архив по ссылке,
 инструмент проверяет SHA-256 и разворачивает индекс в локальный корпус
-(`FALT_CORPUS_ROOT/index/`), после чего работают `make search`,
+(`COURSE_CORPUS_ROOT/index/`), после чего работают `make search`,
 `make verify` и локальный RAG-API.
 
 ## Состав архива
@@ -23,7 +23,7 @@
 
 ## Как выложить и подключить
 
-1. Соберите архив из `FALT_CORPUS_ROOT/index/` (например,
+1. Соберите архив из `COURSE_CORPUS_ROOT/index/` (например,
    `Compress-Archive -Path index\annoy.index, index\chunks.jsonl, index\config.json, index\embeddings.npy -DestinationPath course-index-ip-law-<дата>.zip`),
    посчитайте SHA-256 каждого файла и архива.
 2. Загрузите архив на Google Диск; общий доступ: **«Все, у кого есть
@@ -32,12 +32,12 @@
    ```bash
    make index-fetch URL="https://drive.google.com/file/d/FILE_ID/view?usp=sharing"
    # или
-   export FALT_INDEX_URL="https://drive.google.com/file/d/FILE_ID/view?usp=sharing"
+   export COURSE_INDEX_URL="https://drive.google.com/file/d/FILE_ID/view?usp=sharing"
    make index-fetch
    ```
 4. Инструмент `tools/index_fetch.py` скачает архив, проверит SHA-256
    (по `index-manifest.json`, если заполнен), распакует и атомарно
-   заменит `FALT_CORPUS_ROOT/index/`.
+   заменит `COURSE_CORPUS_ROOT/index/`.
 
 После развёртывания: `make search QUERY="..."`, `make verify`,
 `make serve` — как с любым локальным корпусом.
@@ -52,7 +52,7 @@
 
 ## Переменные окружения
 
-- `FALT_CORPUS_ROOT` — корень корпуса (`txt/`, `index/`);
-- `FALT_INDEX_URL` — ссылка на архив (альтернатива `--url`/манифеста);
-- `FALT_TXT_DIR`, `FALT_INDEX_DIR`, `FALT_REPO_DIR` — переопределения
+- `COURSE_CORPUS_ROOT` — корень корпуса (`txt/`, `index/`);
+- `COURSE_INDEX_URL` — ссылка на архив (альтернатива `--url`/манифеста);
+- `COURSE_TXT_DIR`, `COURSE_INDEX_DIR`, `COURSE_REPO_DIR` — переопределения
   каталогов корпуса и репозитория.

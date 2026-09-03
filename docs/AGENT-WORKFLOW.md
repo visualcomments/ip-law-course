@@ -36,5 +36,5 @@
 | Навыки | `.agents/skills/using-course-corpus`, `.agents/skills/building-agent-ready-course-repo` (+ зеркала .claude/.cursor) |
 
 Все пути/каталоги корпуса — через переменные окружения
-(`FALT_CORPUS_ROOT`, `FALT_TXT_DIR`, `FALT_INDEX_DIR`, `FALT_REPO_DIR`);
+(`COURSE_CORPUS_ROOT`, `COURSE_TXT_DIR`, `COURSE_INDEX_DIR`, `COURSE_REPO_DIR`);
 в репозитории нет локальных путей и серверной инфраструктуры.

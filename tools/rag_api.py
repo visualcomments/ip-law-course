@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 Local RAG HTTP API for the course index (Annoy + embeddings + fastembed CPU).
-Standalone, portable: reads the index from FALT_INDEX_DIR (default
-$FALT_CORPUS_ROOT/index), port via RAG_PORT (default 8010).
+Standalone, portable: reads the index from COURSE_INDEX_DIR (default
+$COURSE_CORPUS_ROOT/index), port via RAG_PORT (default 8010).
 
 Endpoints:
   GET /health
@@ -20,8 +20,8 @@ sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.environ.get("FALT_CORPUS_ROOT", "")
-IDX = os.environ.get("FALT_INDEX_DIR") or os.path.join(ROOT, "index")
+ROOT = os.environ.get("COURSE_CORPUS_ROOT", "")
+IDX = os.environ.get("COURSE_INDEX_DIR") or os.path.join(ROOT, "index")
 MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 
 _t = None

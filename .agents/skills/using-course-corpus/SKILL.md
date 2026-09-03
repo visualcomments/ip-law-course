@@ -12,7 +12,7 @@
 ## Процедура
 
 1. **Локализуй корпус.** `python tools/status.py` покажет путь корпуса
-   (`FALT_CORPUS_ROOT`), число файлов, наличие RAG-индекса.
+   (`COURSE_CORPUS_ROOT`), число файлов, наличие RAG-индекса.
    Если корпуса нет — работай по `citations.md` и `verification/REPORT.md`,
    не выдумывая координаты цитат.
 2. **Поиск.** `make search QUERY="..."` или
