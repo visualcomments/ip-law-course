@@ -1,4 +1,4 @@
-# Agent workflow: курс + co-learner (botai)
+# Agent workflow: курс + соученик (botai)
 
 Как ИИ-агент (harness типа botai) эффективно работает с данным курсом.
 Короткая версия — `AGENTS.md`; состояние окружения — `make status`.

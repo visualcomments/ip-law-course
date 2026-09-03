@@ -23,7 +23,7 @@
   (`make index-fetch`).
 - **Автоматическая верификация цитат** `make verify` → `verification/REPORT.md`
   (0 ошибок после правок).
-- **Агент-готовность**: `AGENTS.md` (co-learner botai), `syllabus.json`,
+- **Агент-готовность**: `AGENTS.md` (соученик botai), `syllabus.json`,
   `Makefile`, инструменты (`rag_search`, `session_material`,
   `assignment_brief`, `rag_api`, `quote_finder`), навыки-зеркала
   `.agents/.claude/.cursor`.
