@@ -1,7 +1,7 @@
-# Course: falt-history-science
+# Course: history-science
 
 Пример файла прогресса по шаблону botai (`maintaining-course-progress`).
-Рабочий файл должен называться `progress/falt-history-science.md` в
+Рабочий файл должен называться `progress/history-science.md` в
 пространстве агента и обновляться по ходу занятий, а не в конце.
 
 ## Cohort
