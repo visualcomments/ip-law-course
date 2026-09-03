@@ -1,33 +1,33 @@
 {
  "schema": 1,
  "index_version": "2026-09-03",
- "note": "Манифест индекса корпуса курса «Право интеллектуальной собственности» (официальные договоры EN, статьи Wikipedia CC BY-SA, книги PD). Разместите архив на Google Диске (доступ по ссылке) и впишите URL в url или FALT_INDEX_URL.",
+ "note": "Манифест индекса корпуса курса «Право интеллектуальной собственности» (ГК РФ ч. IV, договоры EN, Wikipedia CC BY-SA, книги PD, судебная практика СИП и судов РФ). Разместите архив на Google Диске и впишите URL.",
  "archive": {
   "filename": "course-index-ip-law-2026-09-03.zip",
-  "size_bytes": 3322465,
-  "sha256": "B9519826F2A5E68590EAD3ED4BA812D2D7428E3C8DD5E71956F95833EAE4300E",
+  "size_bytes": 6509902,
+  "sha256": "877E6133DDB374369BD056955169F354D292F4341BE6E2F22A863C3F5B47B8F4",
   "url": ""
  },
  "files": [
   {
    "path": "annoy.index",
-   "size_bytes": 1702800,
-   "sha256": "65236F15D906D2404973CD1DDE711CF393E3A744CF8964EA69D46935E9183BCC"
+   "size_bytes": 3424176,
+   "sha256": "87007DC75AC928C40A12A47D453D8491B346C1DB8C3899B0DB378630BE01B9B9"
   },
   {
    "path": "chunks.jsonl",
-   "size_bytes": 1622196,
-   "sha256": "FB9090C26369B62A425943A343738282D8325C2618F15B6F76B16BDD080C0D62"
+   "size_bytes": 4118839,
+   "sha256": "13DD1B5C0E13656630359F651079F6A16383E5534D774C9CAF03F479E7D516CF"
   },
   {
    "path": "config.json",
-   "size_bytes": 1065,
-   "sha256": "8D9B8F865EE7A4DA0567B43CB70B2C51ABB30ABBF8DB3D88A19965F7BA6D0E84"
+   "size_bytes": 1495,
+   "sha256": "A17A1E90DC59A6C12F14ABA321DA6C5025FB23117F31B4FF1A3D2151DEE7C523"
   },
   {
    "path": "embeddings.npy",
-   "size_bytes": 1490048,
-   "sha256": "8BC9B37DB44E5BC94633DA536AB4B9C54459B8541C441F018D38114E69D85069"
+   "size_bytes": 2979968,
+   "sha256": "15694C7FA2F13EBF4F71DD33546ACCA227FC2FC3ABB3ED72350F1C019D6775D9"
   }
  ]
 }
