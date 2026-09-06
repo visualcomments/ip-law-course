@@ -3,4 +3,8 @@
 
 tools/__pycache__/
 __pycache__/
+law_graph/__pycache__/
+
+# генерируемые артефакты «закон-графа»
+runs/
 

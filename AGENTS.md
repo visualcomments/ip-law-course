@@ -16,11 +16,13 @@
 | `citations.md` | Правила цитирования и карта «занятие → источники» |
 | `PROVENANCE.md` | Лицензии текстов корпуса (официальные документы / CC BY-SA / PD) |
 | `verification/REPORT.md` | Автоматическая проверка каждой цитаты курса |
+| `law_graph/` | «Закон-граф»: датасет и модель предиктивного анализа норм права (адаптация top-papers-graph) |
+| `notebooks/` | Демо-блокнот «закон-графа» |
 | `agents/courses/ip-law-fall/track.md` | Трек курса (botai) |
 | `agents/progress/progress-example.md` | Пример файла прогресса |
 | `tools/` | Поиск, загрузка индекса (Google Диск), верификация, материалы и задания занятия, локальный RAG-API |
 | `Makefile` | Цели: `make help` |
-| `docs/` | `AGENT-WORKFLOW.md`, `GOOGLE-DRIVE.md`, `CORPUS.md` |
+| `docs/` | `AGENT-WORKFLOW.md`, `GOOGLE-DRIVE.md`, `CORPUS.md`, `LAW-GRAPH-PIPELINE.md` |
 
 ## Что агент должен уметь делать
 
@@ -32,6 +34,14 @@
 5. **Проверять цитаты**: `make verify` → `verification/REPORT.md` (0 ошибок).
 6. **Установить индекс с Google Диска**: `make index-fetch URL="<ссылка>"`.
 7. **Поднять локальный RAG-API**: `make serve` (порт 8010).
+8. **Предиктивный анализ норм права («закон-граф»)**: `make law-demo` (офлайн-
+   демо на синтетическом корпусе поправок) или `make law-run COURSE_CORPUS_ROOT=…`
+   (на реальном корпусе). Пакет `law_graph/` адаптирует top-papers-graph: строит
+   темпоральный граф норм права и поправок («поправка → изменение нормы») и
+   предсказывает, какие нормы вероятно будут изменены. Подробности —
+   `docs/LAW-GRAPH-PIPELINE.md` и `notebooks/law_graph_predictive_demo.ipynb`.
+   Нормы в датасете идентифицируются как `закон/ст.N[/п.M]`; признаки считаются
+   только по событиям до момента времени T (без утечки будущего).
 
 ## Контракт цитирования (обязателен)
 

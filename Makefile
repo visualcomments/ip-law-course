@@ -4,6 +4,7 @@ PY ?= python3
 VENV_PY ?= $(PY)
 
 .PHONY: help search index-fetch session assignment verify serve status quotes
+.PHONY: law-demo law-run
 
 help:
 	@echo "Цели:"
@@ -14,6 +15,8 @@ help:
 	@echo "  make verify                  проверка всех цитат курса по корпусу"
 	@echo "  make serve port=8765         запуск RAG-API (Ctrl+C — стоп)"
 	@echo "  make status                  состояние курса и корпуса"
+	@echo "  make law-demo OUT=...        офлайн-демо «закон-графа» (синтетический корпус поправок)"
+	@echo "  make law-run OUT=...         «закон-граф» на реальном корпусе (COURSE_CORPUS_ROOT)"
 
 search:
 	test -n "$(QUERY)" || (echo "Укажите QUERY=..."; exit 1)
@@ -42,3 +45,12 @@ status:
 
 quotes:
 	$(VENV_PY) tools/quote_finder.py "$(QUERY)"
+
+# --- «Закон-граф»: предиктивный анализ норм права (адаптация top-papers-graph) ---
+
+law-demo:
+	$(VENV_PY) -m law_graph.run_dataset --mode synthetic --out $(if $(OUT),$(OUT),runs/law_demo) --export
+
+law-run:
+	test -n "$(COURSE_CORPUS_ROOT)" || (echo "Укажите COURSE_CORPUS_ROOT=путь к корпусу (txt/*.txt)"; exit 1)
+	$(VENV_PY) -m law_graph.run_dataset --mode corpus --corpus-root "$(COURSE_CORPUS_ROOT)" --out $(if $(OUT),$(OUT),runs/law_corpus) --export

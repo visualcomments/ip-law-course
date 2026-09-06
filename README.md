@@ -23,6 +23,14 @@
   (`make index-fetch`).
 - **Автоматическая верификация цитат** `make verify` → `verification/REPORT.md`
   (0 ошибок после правок).
+- **«Закон-граф»** `law_graph/` — адаптированный конвейер подготовки датасета
+  и модели **предиктивного анализа норм права** (адаптация
+  [top-papers-graph](https://github.com/top-papers/top-papers-graph)): вместо
+  причинно-следственных связей между научными открытиями строятся связи вида
+  **«внесение поправки → изменение нормы права»**, а модель предсказывает,
+  **какие нормы вероятно будут изменены**
+  (см. `docs/LAW-GRAPH-PIPELINE.md`, демо
+  `notebooks/law_graph_predictive_demo.ipynb`).
 - **Агент-готовность**: `AGENTS.md` (соученик botai), `syllabus.json`,
   `Makefile`, инструменты (`rag_search`, `session_material`,
   `assignment_brief`, `rag_api`, `quote_finder`), навыки-зеркала
@@ -36,6 +44,8 @@
 | `citations.md` | Правила цитирования и карта «занятие → источники» |
 | `PROVENANCE.md` | Лицензии корпуса |
 | `verification/REPORT.md` | Верификация цитат |
+| `law_graph/` | «Закон-граф»: датасет и модель предиктивного анализа норм права |
+| `notebooks/` | Демо-блокнот «закон-графа» (`law_graph_predictive_demo.ipynb`) |
 | `tools/` | Поиск, index-fetch, верификация, материалы и задания занятия, RAG-API |
 | `Makefile` | Короткие цели (`make help`) |
 
@@ -48,6 +58,10 @@ make search QUERY="товарные знаки" -k 5                   # пои�
 make session n=10                                         # материал занятия
 make assignment n=10                                      # вопросы и задания
 make verify                                               # проверить цитаты
+
+# «закон-граф»: предиктивный анализ норм права (адаптация top-papers-graph)
+make law-demo                      # офлайн-демо на синтетическом корпусе поправок
+make law-run COURSE_CORPUS_ROOT=…  # на реальном корпусе курса
 ```
 
 Лицензия репозитория: GPL-3.0.
