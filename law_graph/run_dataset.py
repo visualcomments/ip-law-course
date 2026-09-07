@@ -63,9 +63,9 @@ def build_graph_from_corpus(root: str) -> LegalKnowledgeGraph:
     kg = LegalKnowledgeGraph()
     files = list_corpus_files(root)
     if not files:
-        print(f"[corpus] в {root} нет txt/*.txt файлов; используйте --mode synthetic")
+        print(f"в {root} нет файлов txt/*.txt корпуса; используйте режим synthetic")
         return kg
-    # Юридические файлы (законы, судебная практика) — best-effort правило-извлечение.
+    # Юридические файлы (законы, судебная практика) — добросовестное правило-извлечение.
     for path in files:
         base = os.path.basename(path)
         law = normalize_law(base)
@@ -111,13 +111,13 @@ def main() -> None:
     print("== Этап 1: источник норм и поправок ==")
     if args.mode == "synthetic":
         kg = build_graph_from_synthetic()
-        print(f"  режим: synthetic (офлайн-корпус поправок ГК РФ / УК РФ)")
+        print(f"  режим: synthetic (синтетический корпус поправок ГК РФ / УК РФ)")
     else:
         if not args.corpus_root:
-            print("  [ошибка] --corpus-root не задан (или COURSE_CORPUS_ROOT)")
+            print("  [ошибка] не задан путь к корпусу (--corpus-root либо COURSE_CORPUS_ROOT)")
             return 2
         kg = build_graph_from_corpus(args.corpus_root)
-        print(f"  режим: corpus ({args.corpus_root})")
+        print(f"  режим: corpus (корпус курса: {args.corpus_root})")
 
     print(f"  норм: {len(kg.norms)}, законов: {len(kg.laws)}, событий: {len(kg.events)}")
 
@@ -183,7 +183,7 @@ def main() -> None:
     print("== Этап 4: обучение модели ==")
     model = fit_model(train_instances, lr=0.1, epochs=400)
     print("  обученная модель (логистическая регрессия на признаках):")
-    print(f"    bias={model.bias:.3f}")
+    print(f"    свободный член (bias)={model.bias:.3f}")
     for name, w in model.weights.items():
         print(f"    {name:28s} w={w:+.3f}")
 
@@ -195,7 +195,7 @@ def main() -> None:
         scores.append(s)
     ranked = sorted(zip(train_instances, scores), key=lambda kv: kv[1], reverse=True)
 
-    # независимый interpretable-скоринг (без обучения)
+    # независимый объяснимый-скоринг (без обучения)
     heur = LegalChangeHeuristic(train, config=LegalLinkPredConfig(backend="heuristic"))
     heur_rank = heur.rank(args.top_k)
 
@@ -204,7 +204,7 @@ def main() -> None:
         mark = " [ИЗМЕНИТСЯ]" if inst.label == 1 else ""
         print(f"  {i:2d}. {_norm_display(kg, inst.norm_id):70s} p={sc:.3f}{mark}")
 
-    print(f"\n  ТОП-{min(args.top_k, len(heur_rank))} норм (interpretable-скоринг):")
+    print(f"\n  ТОП-{min(args.top_k, len(heur_rank))} норм (объяснимый скоринг):")
     for i, (nid, sc) in enumerate(heur_rank[:args.top_k], 1):
         print(f"  {i:2d}. {_norm_display(kg, nid):70s} s={sc:.3f}")
 

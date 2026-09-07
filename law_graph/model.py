@@ -4,8 +4,8 @@
 
 Над признаками LegalTaskInstance обучается лёгкий классификатор, который
 предсказывает вероятность изменения нормы (label=1) в будущем окне. Это
-«модель» в конвейере, параллельная TGNN-скорингу link_prediction:
-- link_prediction.LegalChangeHeuristic — interpretable-скоринг без обучения;
+«модель» в конвейере, параллельная скорингу на графе из link_prediction:
+- link_prediction.LegalChangeHeuristic — объяснимый скоринг без обучения;
 - model.fit_model — обучаемая логистическая/градиентная модель по признакам.
 
 Модель строится на numpy (без тяжёлых зависимостей), чтобы запускаться
@@ -51,7 +51,7 @@ def _sigmoid(z: float) -> float:
 
 @dataclass
 class TrainedModel:
-    """Возвращаемая обученная модель: веса + признаки + bias."""
+    """Возвращаемая обученная модель: веса, признаки и свободный член (bias)."""
 
     weights: Dict[str, float]
     bias: float
@@ -130,7 +130,7 @@ def evaluate_predictions(
     instances: Sequence,
     scores: Sequence[float],
 ) -> Dict[str, float]:
-    """Метрики: AUC-ROC, top-k precision, accuracy.
+    """Метрики: AUC-ROC, точность (precision) в top-k, доля верных ответов (accuracy).
 
     instances — с метками label; scores — вероятность изменения.
     """
