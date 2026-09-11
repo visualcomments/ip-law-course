@@ -1,0 +1,89 @@
+# SPDX-FileCopyrightText: 2026 ip-law-course contributors
+# SPDX-License-Identifier: GPL-3.0-or-later
+name: Курс
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'lectures/**'
+      - 'syllabus.md'
+      - 'syllabus.json'
+      - 'tools/**'
+      - 'tests/**'
+      - 'docs/**'
+      - 'verification/**'
+      - '*.md'
+      - '.github/workflows/course.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Целостность курса
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+
+      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b  # v5.3.0
+        with:
+          python-version: '3.12'
+
+      - name: Проверка структуры курса
+        run: python3 tools/validate_course.py
+
+      - name: Проверка, что программа разбирается
+        run: python3 -c "import json; json.load(open('syllabus.json'))"
+
+      - name: Тесты инструментов курса
+        run: |
+          python -m pip install --quiet pytest
+          python -m pytest tests/ -q
+
+      - name: Самопроверка валидатора на заведомо сломанной копии
+        # Валидатор обязан падать, когда курс рассогласован: проверка,
+        # которая не может упасть, ничего не проверяет. Копия берётся
+        # целиком, включая law_graph/ и notebooks/, на которые ссылается
+        # программа — иначе валидатор упал бы по посторонней причине, и
+        # шаг был бы зелёным, ничего не доказывая.
+        run: |
+          set -e
+          tmp="$(mktemp -d)"
+          mkdir -p "$tmp/repo"
+          cp -r . "$tmp/repo/"
+          cp lectures/07_*.md "$tmp/week07.md"
+          cd "$tmp/repo"
+
+          # Сначала целая копия обязана проходить.
+          if ! python3 tools/validate_course.py >/dev/null; then
+            echo "валидатор отвергает целую копию — он сломан"
+            exit 1
+          fi
+
+          assert_fails() {
+            if python3 tools/validate_course.py >/dev/null 2>&1; then
+              echo "валидатор прошёл при поломке: $1"
+              exit 1
+            fi
+          }
+
+          # Поломка 1: удалено занятие.
+          rm lectures/07_*.md
+          assert_fails "удалено занятие"
+
+          # Поломка 2: у занятия отсутствует обязательный раздел.
+          cp "$tmp/week07.md" lectures/07_smezhnye_prava.md
+          sed -i 's/^## Цели занятия/## Другое/' lectures/07_smezhnye_prava.md
+          assert_fails "нет раздела «Цели занятия»"
+
+          # Поломка 3: битая относительная ссылка.
+          cp "$tmp/week07.md" lectures/07_smezhnye_prava.md
+          printf '\n[битая](net-takogo-fajla.md)\n' >> lectures/07_smezhnye_prava.md
+          assert_fails "битая относительная ссылка"
+
+          # Поломка 4: занятие не связано с программой.
+          cp "$tmp/week07.md" lectures/07_smezhnye_prava.md
+          sed -i '/07_smezhnye_prava.md/d' syllabus.md
+          assert_fails "занятие не связано с программой"
+
+          echo "валидатор ловит все четыре типа поломок"
