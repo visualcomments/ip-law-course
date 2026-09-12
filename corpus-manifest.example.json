@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "corpus_version": "",
+  "note": "Манифест ТЕКСТОВ корпуса (txt/*.txt) — второй обязательный артефакт после индекса. Заполните archive.url и хэши после публикации архива текстов (см. CORPUS.md и docs/GOOGLE-DRIVE.md). Пока archive.url пуст, tools/corpus_fetch.py сообщает, что тексты не опубликованы, и занятие по цитатам невозможно: без текстов цитируемый фрагмент нечем подтвердить.",
+  "archive": {
+    "filename": "",
+    "size_bytes": 0,
+    "sha256": "",
+    "url": ""
+  },
+  "files": [],
+  "texts_total": 0,
+  "env": {
+    "root": "COURSE_CORPUS_ROOT",
+    "texts_url_override": "COURSE_CORPUS_URL"
+  }
+}
