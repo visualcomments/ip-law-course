@@ -1,45 +1,46 @@
 {
  "schema": 1,
- "index_version": "2026-09-13",
- "note": "Индекс корпуса курса «Право интеллектуальной собственности» (осенний семестр). Корпус расширен с 35 до 146 файлов: +50 статей под CC-лицензиями (DOAJ, лицензии подтверждены через запись журнала и Crossref), +37 статей Wikipedia (CC BY-SA 4.0), +16 текстов международных договоров и законов (официальные документы), +10 трактатов общественного достояния (Internet Archive, издания до 1925). Индекс: 1 940 -> 8 382 чанка. Лицензии по каждому источнику — в docs/corpus-new-sources.md.",
+ "index_version": "2026-09-13-v2",
+ "note": "Индекс корпуса курса «Право интеллектуальной собственности». Версия v2: под занятие 1 («ИС: понятие, границы, общественное достояние») добавлено 44 открытых источника — 17 первоисточников общественного достояния (Шейлер «О природе интеллектуальной собственности» 1878, спор о литературной собственности 1768/1770, Биррелл, Макгилливрей, Скруттон, Карпентер, Хопкинс, Дрю, Нимс и др.) и 27 статей Wikipedia (CC BY-SA 4.0). Корпус 146 -> 186 файлов, чанков 8 382 -> 18 219. Полный перечень — docs/lesson1-sources.md.",
  "archive": {
-  "filename": "ip-law-index-2026-09-13.zip",
-  "size_bytes": 27958844,
-  "sha256": "E410AB4CC3310312195BF13A94EC7BACCB215CEAABF5B7E2EC73EA3BC6BC5E6D",
-  "url": "https://drive.google.com/uc?export=download&id=12aQ2Ncn5ZXXWWA_GW-UwE0yGO06f0_xo",
-  "file_id": "12aQ2Ncn5ZXXWWA_GW-UwE0yGO06f0_xo",
-  "view_url": "https://drive.google.com/file/d/12aQ2Ncn5ZXXWWA_GW-UwE0yGO06f0_xo/view"
+  "filename": "ip-law-index-2026-09-13-v2.zip",
+  "size_bytes": 61140512,
+  "sha256": "8C1A1E02096B211372829F95035EB4EF68EE8B50355C5C23172568E2446FB7B7",
+  "url": "https://drive.google.com/uc?export=download&id=1y2bRH30i9GhJdXtRe7hjVS6eiY8YA5kU",
+  "file_id": "1y2bRH30i9GhJdXtRe7hjVS6eiY8YA5kU",
+  "view_url": "https://drive.google.com/file/d/1y2bRH30i9GhJdXtRe7hjVS6eiY8YA5kU/view"
  },
  "files": [
   {
    "path": "annoy.index",
-   "size_bytes": 14771016,
-   "sha256": "04D1D7BA5A8CF483F943EC90865FA2E3D19004C2ACE10D70906B159096917825"
+   "size_bytes": 32162796,
+   "sha256": "F91D8BFD68136322E542AEB55E4296B10D68D0E7A653057BE7985ECCC2414C4D"
   },
   {
    "path": "chunks.jsonl",
-   "size_bytes": 12569515,
-   "sha256": "8A23A3F4E4F1BD7732FBCC7671AEA04A5DE5CB3D42E74E5F5A52AD804A1AF987"
+   "size_bytes": 26056832,
+   "sha256": "89DCBA226A0F528300AF4FD829EA1FD15C8887729A246B9E7F2F5FBE9766342C"
   },
   {
    "path": "config.json",
-   "size_bytes": 7630,
-   "sha256": "7EB5DDD18775851A929A2C983C4DB3A8A7621682B7575865151C4D3542DFB961"
+   "size_bytes": 9502,
+   "sha256": "63F0934F274EFA4EBE1CBC6E1984845D864D9CC24A04633EEE5D98E731613CE8"
   },
   {
    "path": "embeddings.npy",
-   "size_bytes": 12874880,
-   "sha256": "55295AF179843203A6ADE70471FC73CEEEC23CA05F11496348CECE2F3939985F"
+   "size_bytes": 27984512,
+   "sha256": "F625A477DFDAAB638A4D25B5EC3580A191D115AD0C7A363DC5E8645E8EFF2883"
   }
  ],
  "corpus": {
-  "n_files": 146,
-  "n_chunks": 8382,
+  "n_files": 186,
+  "n_chunks": 18219,
   "composition": {
+   "lesson1_primary_sources_pd": 17,
    "oa_cc_licensed_articles": 50,
-   "wikipedia_cc_by_sa": 54,
+   "wikipedia_cc_by_sa": 78,
    "law_treaties_and_statutes": 16,
-   "public_domain_treatises": 12,
+   "public_domain_treatises": 11,
    "practice_materials": 14
   },
   "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
