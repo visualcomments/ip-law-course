@@ -1,33 +1,50 @@
 {
  "schema": 1,
- "index_version": "2026-09-03",
- "note": "Манифест индекса корпуса курса «Право интеллектуальной собственности» (ГК РФ ч. IV, договоры EN, Wikipedia CC BY-SA, книги PD, судебная практика СИП и судов РФ). Разместите архив на Google Диске и впишите URL.",
+ "index_version": "2026-09-13",
+ "note": "Индекс корпуса курса «Право интеллектуальной собственности» (осенний семестр). Корпус расширен с 35 до 146 файлов: +50 статей под CC-лицензиями (DOAJ, лицензии подтверждены через запись журнала и Crossref), +37 статей Wikipedia (CC BY-SA 4.0), +16 текстов международных договоров и законов (официальные документы), +10 трактатов общественного достояния (Internet Archive, издания до 1925). Индекс: 1 940 -> 8 382 чанка. Лицензии по каждому источнику — в docs/corpus-new-sources.md.",
  "archive": {
-  "filename": "course-index-ip-law-2026-09-03.zip",
-  "size_bytes": 6509902,
-  "sha256": "877E6133DDB374369BD056955169F354D292F4341BE6E2F22A863C3F5B47B8F4",
-  "url": "https://drive.google.com/file/d/1fA3TQaCpr1lG9rtMcgJ2V9C-8L-t00kb/view?usp=sharing"
+  "filename": "ip-law-index-2026-09-13.zip",
+  "size_bytes": 27958844,
+  "sha256": "E410AB4CC3310312195BF13A94EC7BACCB215CEAABF5B7E2EC73EA3BC6BC5E6D",
+  "url": "https://drive.google.com/uc?export=download&id=12aQ2Ncn5ZXXWWA_GW-UwE0yGO06f0_xo",
+  "file_id": "12aQ2Ncn5ZXXWWA_GW-UwE0yGO06f0_xo",
+  "view_url": "https://drive.google.com/file/d/12aQ2Ncn5ZXXWWA_GW-UwE0yGO06f0_xo/view"
  },
  "files": [
   {
    "path": "annoy.index",
-   "size_bytes": 3424176,
-   "sha256": "87007DC75AC928C40A12A47D453D8491B346C1DB8C3899B0DB378630BE01B9B9"
+   "size_bytes": 14771016,
+   "sha256": "04D1D7BA5A8CF483F943EC90865FA2E3D19004C2ACE10D70906B159096917825"
   },
   {
    "path": "chunks.jsonl",
-   "size_bytes": 4118839,
-   "sha256": "13DD1B5C0E13656630359F651079F6A16383E5534D774C9CAF03F479E7D516CF"
+   "size_bytes": 12569515,
+   "sha256": "8A23A3F4E4F1BD7732FBCC7671AEA04A5DE5CB3D42E74E5F5A52AD804A1AF987"
   },
   {
    "path": "config.json",
-   "size_bytes": 1495,
-   "sha256": "A17A1E90DC59A6C12F14ABA321DA6C5025FB23117F31B4FF1A3D2151DEE7C523"
+   "size_bytes": 7630,
+   "sha256": "7EB5DDD18775851A929A2C983C4DB3A8A7621682B7575865151C4D3542DFB961"
   },
   {
    "path": "embeddings.npy",
-   "size_bytes": 2979968,
-   "sha256": "15694C7FA2F13EBF4F71DD33546ACCA227FC2FC3ABB3ED72350F1C019D6775D9"
+   "size_bytes": 12874880,
+   "sha256": "55295AF179843203A6ADE70471FC73CEEEC23CA05F11496348CECE2F3939985F"
   }
- ]
+ ],
+ "corpus": {
+  "n_files": 146,
+  "n_chunks": 8382,
+  "composition": {
+   "oa_cc_licensed_articles": 50,
+   "wikipedia_cc_by_sa": 54,
+   "law_treaties_and_statutes": 16,
+   "public_domain_treatises": 12,
+   "practice_materials": 14
+  },
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "dim": 384,
+  "chunk_chars": 1400,
+  "overlap": 140
+ }
 }
