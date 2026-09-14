@@ -34,7 +34,7 @@
 
 > **Цитата:** «Whatever charm is possessed by the subject of copyright is largely due to the fact that it is a bundle of ideas and rights of modem origin. It is not like the majority of legal conceptions lost in an antiquity about which we can only guess, and about which each generation guesses differently. The Homeric Poems as poetry are beyond reproach, . but they were never copyright. You may search through the huge compilations of Justinian without lighting upon a word indi- cative of any right possessed by the author of a book to control the multiplication of copies ; and yet books abounded even before the invention of printing, and though the pirate e»
 >
-> **Источник:** `txt/pd__Birrell_Copyright.txt` · фрагмент #88
+> **Источник:** `txt/pd__Birrell_Copyright.txt` · фрагмент #602
 
 ## Авторский синтез: этапы истории
 
