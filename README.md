@@ -18,8 +18,8 @@
   - статьи **Wikipedia (CC BY-SA 4.0)** по праву ИС (RU + EN);
   - книги в **общественном достоянии** (Putnam, Birrell по истории
     авторского права).
-- **RAG-индекс** (Annoy + fastembed) на Google Диске; `tools/index_fetch.py`
-  скачивает архив, сверяет SHA-256 и разворачивает локально
+- **RAG-индекс** (эмбеддинги fastembed, точный косинусный поиск) на Google Диске.
+  `tools/index_fetch.py` скачивает архив, сверяет SHA-256 и разворачивает локально
   (`make index-fetch`).
 - **Автоматическая верификация цитат** `make verify` → `verification/REPORT.md`
   (0 ошибок после правок).
@@ -53,8 +53,9 @@
 
 ```bash
 make help                 # цели
+make tools-install        # зависимости поиска и RAG-API
 make index-fetch URL="<ссылка на архив на Google Диске>"  # установить индекс
-make search QUERY="товарные знаки" -k 5                   # поиск по корпусу
+make search QUERY="товарные знаки" K=5                    # поиск по корпусу
 make session n=10                                         # материал занятия
 make assignment n=10                                      # вопросы и задания
 make verify                                               # проверить цитаты
