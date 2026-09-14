@@ -7,7 +7,7 @@ Requires an installed index and the fastembed query encoder.
 Dirs (env): COURSE_INDEX_DIR (default $COURSE_CORPUS_ROOT/index).
 
 Usage:
-  python tools/rag_search.py "Кант критика чистого разума" -k 5 [--json]
+  python tools/rag_search.py "критерии патентоспособности" -k 5 [--json]
 """
 import argparse
 import json
