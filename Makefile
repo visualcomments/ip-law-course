@@ -2,8 +2,10 @@
 
 PY ?= python3
 VENV_PY ?= $(PY)
+K ?= 5
+port ?= 8010
 
-.PHONY: help search index-fetch session assignment verify serve status quotes corpus-fetch corpus-status
+.PHONY: help tools-install search index-fetch session assignment verify serve status quotes corpus-fetch corpus-status
 .PHONY: law-demo law-run
 .PHONY: legal-calibration-validate legal-calibration-export legal-calibration-pr
 
@@ -13,6 +15,7 @@ LEGAL_CALIB_REPO ?= lawful-good-project/legal-agent-calibrations
 
 help:
 	@echo "Цели:"
+	@echo "  make tools-install            установить зависимости инструментов"
 	@echo "  make search QUERY=\"...\"     семантический поиск по корпусу (k=5)"
 	@echo "  make corpus-fetch            скачать корпус (индекс + тексты), с проверкой хэшей"
 	@echo "  make corpus-status           показать, установлен ли корпус"
@@ -27,6 +30,9 @@ help:
 	@echo "  make legal-calibration-validate JOURNAL=... проверка калибровочной сессии юр-агента"
 	@echo "  make legal-calibration-export JOURNAL=... OUT=...  публичный экспорт сессии"
 	@echo "  make legal-calibration-pr JOURNAL=...  публикация экспорта на HuggingFace (HF_TOKEN)"
+
+tools-install:
+	$(VENV_PY) -m pip install -r tools/requirements.txt
 
 search:
 	test -n "$(QUERY)" || (echo "Укажите QUERY=..."; exit 1)

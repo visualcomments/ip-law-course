@@ -11,8 +11,7 @@ without the texts a retrieved fragment cannot be verified, and an unverified
 quotation is not evidence.
 
 Manifests (repository root):
-  index-manifest.json   - the index: annoy.index, embeddings.npy,
-                          chunks.jsonl, config.json
+  index-manifest.json   - the index: embeddings.npy, chunks.jsonl, config.json
   corpus-manifest.json  - the texts: txt/*.txt
 
 Usage:
@@ -202,7 +201,7 @@ def verify_members(unpack, manifest):
 def verify_structure(unpack, kind):
     """Structural fallback when no hashes are published. Says so explicitly."""
     if kind == "index":
-        need = ["annoy.index", "embeddings.npy", "chunks.jsonl", "config.json"]
+        need = ["embeddings.npy", "chunks.jsonl", "config.json"]
     else:
         need = []
     if not need:
