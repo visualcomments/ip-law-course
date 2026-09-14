@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Local RAG HTTP API for the course index (Annoy + embeddings + fastembed CPU).
-Standalone, portable: reads the index from COURSE_INDEX_DIR (default
-$COURSE_CORPUS_ROOT/index), port via RAG_PORT (default 8010).
+"""Local HTTP API for exact search over the dense course index.
+
+Reads the index from COURSE_INDEX_DIR and the port from --port or RAG_PORT.
 
 Endpoints:
   GET /health
   GET /search?q=...&k=...&topic=...&threshold=...
   POST /search   (JSON {"q": "...", "k": 5})
 """
+import argparse
 import json
 import os
 import sys
 import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+from rag_index import create_query_encoder, load_index, search_index
 
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
@@ -22,35 +24,28 @@ sys.stderr.reconfigure(encoding="utf-8")
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.environ.get("COURSE_CORPUS_ROOT", "")
 IDX = os.environ.get("COURSE_INDEX_DIR") or os.path.join(ROOT, "index")
-MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 
-_t = None
 _embn = None
 _chunks = None
 _model = None
+_model_name = None
 
 
 def load():
-    import annoy  # noqa: PLC0415
-    import numpy as np  # noqa: PLC0415
-    global _t, _embn, _chunks
-    cfg = json.load(open(os.path.join(IDX, "config.json"), encoding="utf-8"))
-    _t = annoy.AnnoyIndex(cfg["dim"], cfg["metric"])
-    _t.load(os.path.join(IDX, "annoy.index"))
-    emb = np.load(os.path.join(IDX, "embeddings.npy"))
-    _chunks = [json.loads(l) for l in open(os.path.join(IDX, "chunks.jsonl"), encoding="utf-8")]
-    norm = np.linalg.norm(emb, axis=1, keepdims=True)
-    norm[norm == 0] = 1e-9
-    _embn = emb / norm
-    print(f"[rag-api] index loaded: {len(_chunks)} chunks, dim {cfg['dim']}", flush=True)
+    global _embn, _chunks, _model_name
+    cfg, _embn, _chunks = load_index(IDX)
+    _model_name = cfg["model"]
+    print(
+        f"[rag-api] index loaded: {len(_chunks)} chunks, dim {cfg['dim']}",
+        flush=True,
+    )
 
 
 def embed(q):
     import numpy as np  # noqa: PLC0415
     global _model
     if _model is None:
-        from fastembed import TextEmbedding  # noqa: PLC0415
-        _model = TextEmbedding(MODEL, providers=["CPUExecutionProvider"])
+        _model = create_query_encoder(_model_name)
     v = np.array(list(_model.embed([q])), dtype=np.float32)[0]
     n = np.linalg.norm(v)
     return (v / n).tolist() if n else v.tolist()
@@ -58,24 +53,13 @@ def embed(q):
 
 def search(q, k=5, topic=None, threshold=0.0):
     import numpy as np  # noqa: PLC0415
-    qv = embed(q)
-    ids, dists = _t.get_nns_by_vector(qv, max(k * 4, 20), include_distances=True)
-    out = []
-    for i, d in zip(ids, dists):
-        ch = _chunks[i]
-        if topic and ch.get("topic") != topic:
-            continue
-        cos = float(np.dot(_embn[i], qv))
-        score = max(0.0, min(1.0, (cos + 1) / 2))
-        if score < threshold:
-            continue
-        out.append({"score": round(score, 4), "annoy_distance": round(float(d), 4),
-                    "file": ch["file"], "topic": ch.get("topic"), "chunk_id": ch["chunk_id"],
-                    "snippet": ch["text"][:300]})
-        if len(out) >= k:
-            break
-    out.sort(key=lambda r: -r["score"])
-    return out
+    qv = np.array(embed(q), dtype=np.float32)
+    return search_index(_embn, _chunks, qv, k, topic, threshold)
+
+
+def search_response(q, k=5, topic=None, threshold=0.0):
+    results = search(q, k, topic, threshold)
+    return {"query": q, "count": len(results), "results": results}
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -93,8 +77,14 @@ class Handler(BaseHTTPRequestHandler):
         qs = urllib.parse.parse_qs(p.query)
         try:
             if p.path == "/health":
-                self._send(200, {"status": "ok", "service": "rag-philosophy-science",
-                                 "chunks": len(_chunks) if _chunks else None})
+                self._send(
+                    200,
+                    {
+                        "status": "ok",
+                        "service": "rag-ip-law",
+                        "chunks": len(_chunks) if _chunks else None,
+                    },
+                )
                 return
             if p.path == "/search":
                 q = (qs.get("q") or [""])[0]
@@ -104,7 +94,7 @@ class Handler(BaseHTTPRequestHandler):
                 k = int((qs.get("k") or ["5"])[0])
                 topic = (qs.get("topic") or [None])[0]
                 threshold = float((qs.get("threshold") or ["0.0"])[0])
-                self._send(200, {"query": q, "count": 0, "results": search(q, k, topic, threshold)})
+                self._send(200, search_response(q, k, topic, threshold))
                 return
             self._send(404, {"error": "not found"})
         except Exception as e:  # noqa: BLE001
@@ -123,8 +113,10 @@ class Handler(BaseHTTPRequestHandler):
             if not q:
                 self._send(400, {"error": "missing q"})
                 return
-            k = int(data.get("k") or 5)
-            self._send(200, {"query": q, "count": 0, "results": search(q, k=k)})
+            k = int(data.get("k", 5))
+            topic = data.get("topic") or None
+            threshold = float(data.get("threshold") or 0.0)
+            self._send(200, search_response(q, k, topic, threshold))
         except Exception as e:  # noqa: BLE001
             self._send(500, {"error": str(e)[:300]})
 
@@ -132,14 +124,26 @@ class Handler(BaseHTTPRequestHandler):
         pass
 
 
-def main():
-    port = int(os.environ.get("RAG_PORT", "8010"))
+def parse_args(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--port", type=int, default=int(os.environ.get("RAG_PORT", "8010"))
+    )
+    return parser.parse_args(argv)
+
+
+def main(argv=None):
+    args = parse_args(argv)
     if not os.path.exists(os.path.join(IDX, "config.json")):
-        print(f"[rag-api] индекс не найден: {IDX}. Сначала: make index-fetch (см. docs/GOOGLE-DRIVE.md)", flush=True)
+        print(
+            f"[rag-api] индекс не найден: {IDX}. Сначала: make corpus-fetch "
+            "(см. docs/GOOGLE-DRIVE.md)",
+            flush=True,
+        )
         return 2
     load()
-    print(f"[rag-api] listening :{port}", flush=True)
-    ThreadingHTTPServer(("127.0.0.1", port), Handler).serve_forever()
+    print(f"[rag-api] listening :{args.port}", flush=True)
+    ThreadingHTTPServer(("127.0.0.1", args.port), Handler).serve_forever()
 
 
 if __name__ == "__main__":
