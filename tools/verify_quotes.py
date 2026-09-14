@@ -57,8 +57,41 @@ def load_chunks_by_file():
     return out
 
 
+def find_citations():
+    citations = []
+    for lecture_path in sorted(glob.glob(os.path.join(REPO, "lectures", "*.md"))):
+        with open(lecture_path, encoding="utf-8") as f:
+            text = f.read()
+        for block in re.findall(r"(?m)^(>.*(?:\n>.*)*)", text):
+            quote_match = re.search(
+                r"\*\*Цитата:\*\*\s*(.*?)(?=\n\s*>?\s*\*\*Источник)", block, re.S
+            )
+            source_match = re.search(
+                r"\*\*Источник:\*\*\s*`?([^`·]+)`?\.?\s*·?\s*"
+                r"(?:фрагмент\s*#(\d+))?",
+                block,
+            )
+            if not (quote_match and source_match):
+                continue
+            quote = quote_match.group(1).strip(" «»»«“”‘’\n\t")
+            source = source_match.group(1).strip()
+            chunk_id = int(source_match.group(2)) if source_match.group(2) else None
+            citations.append((lecture_path, quote, os.path.basename(source), chunk_id))
+    return citations
+
+
 def main():
     chunks = load_chunks_by_file()
+    citations = find_citations()
+    required_sources = {base for _lp, _quote, base, _cid in citations}
+    missing_index_sources = sorted(required_sources - chunks.keys())
+    if missing_index_sources:
+        print(
+            f"[verify_quotes] индекс неполон: нет {len(missing_index_sources)} файлов. "
+            "Отчёт не тронут (установка корпуса — CORPUS.md)"
+        )
+        return 2
+
     file_cache = {}
     for p in glob.glob(os.path.join(TXT, "*.txt").replace("\\", "/")):
         base = os.path.basename(p)
@@ -67,62 +100,65 @@ def main():
                 file_cache[base] = Matcher(f.read())
         except OSError:
             pass
+    missing_sources = sorted(required_sources - file_cache.keys())
+    if missing_sources:
+        print(
+            f"[verify_quotes] корпус неполон: нет {len(missing_sources)} файлов. "
+            "Отчёт не тронут (установка корпуса — CORPUS.md)"
+        )
+        return 2
     chunk_mats = {}
 
     rows = []
     total = fails = 0
-    for lp in sorted(glob.glob(os.path.join(REPO, "lectures", "*.md"))):
-        with open(lp, encoding="utf-8") as f:
-            text = f.read()
-        for block in re.findall(r"(?m)^(>.*(?:\n>.*)*)", text):
-            mq = re.search(r"\*\*Цитата:\*\*\s*(.*?)(?=\n\s*>?\s*\*\*Источник)", block, re.S)
-            ms = re.search(r"\*\*Источник:\*\*\s*`?([^`·]+)`?\.?\s*·?\s*(?:фрагмент\s*#(\d+))?", block)
-            if not (mq and ms):
-                continue
-            quote = mq.group(1).strip(" «»»«“”‘’\n\t")
-            fname = ms.group(1).strip()
-            cited = int(ms.group(2)) if ms.group(2) else None
-            base = os.path.basename(fname)
-            total += 1
-            ql = letters(quote)
-            mf = file_cache.get(base)
-            if not mf or len(ql) < 20:
-                rows.append((lp, quote, base, "FAIL: file/quote too short", None, 0.0))
-                fails += 1
-                continue
-            size, a, b = mf.best_span(ql)
-            cov = size / max(len(ql), 1)
-            ok = cov >= MIN_COVERAGE
-            found_chunk = None
-            best_cov_chunk = 0.0
-            if chunks.get(base):
-                qpre = ql[:24]
-                for c in chunks[base]:
-                    if c["file"] != base:
-                        continue
-                    cm = chunk_mats.get(c["chunk_id"])
-                    if cm is None:
-                        cm = Matcher(c["text"])
-                        chunk_mats[c["chunk_id"]] = cm
-                    if qpre and qpre not in cm.ltext:
-                        continue
-                    cs, _, _ = cm.best_span(ql)
-                    ccs = cs / max(len(ql), 1)
-                    if ccs > best_cov_chunk:
-                        best_cov_chunk, found_chunk = ccs, c["chunk_id"]
-            status = "OK" if ok else "FAIL(cover %.2f)" % cov
-            if ok and found_chunk is not None and found_chunk != cited:
-                status += f" (cited #{cited}, actual #{found_chunk})"
-            if not ok:
-                fails += 1
-            rows.append((lp, quote, base, status, found_chunk, cov))
+    for lp, quote, base, cited in citations:
+        total += 1
+        ql = letters(quote)
+        if len(ql) < 20:
+            rows.append((lp, quote, base, "FAIL: quote too short", None, 0.0))
+            fails += 1
+            continue
+
+        size, _start, _quote_start = file_cache[base].best_span(ql)
+        coverage = size / len(ql)
+        found_chunk = None
+        best_chunk_coverage = 0.0
+        cited_coverage = 0.0
+        for chunk in chunks.get(base, []):
+            key = (base, chunk["chunk_id"])
+            matcher = chunk_mats.get(key)
+            if matcher is None:
+                matcher = Matcher(chunk["text"])
+                chunk_mats[key] = matcher
+            chunk_size, _chunk_start, _chunk_quote_start = matcher.best_span(ql)
+            chunk_coverage = chunk_size / len(ql)
+            if chunk["chunk_id"] == cited:
+                cited_coverage = chunk_coverage
+            if chunk_coverage > best_chunk_coverage:
+                best_chunk_coverage = chunk_coverage
+                found_chunk = chunk["chunk_id"]
+
+        if coverage < MIN_COVERAGE:
+            status = f"FAIL: покрытие {coverage:.2f}"
+        elif cited is None:
+            status = f"FAIL: нет координаты, найден #{found_chunk}"
+        elif cited_coverage < MIN_COVERAGE:
+            status = f"FAIL: указан #{cited}, найден #{found_chunk}"
+        else:
+            status = "OK"
+
+        if status.startswith("FAIL"):
+            fails += 1
+        rows.append((lp, quote, base, status, found_chunk, coverage))
 
     lines = [
         "# Отчёт проверки цитат",
         "",
-        f"Проверено цитат: **{total}**; неудач: **{fails}**. Минимальное покрытие: {MIN_COVERAGE}.",
+        f"Проверено цитат: **{total}**; неудач: **{fails}**. "
+        f"Минимальное покрытие: {MIN_COVERAGE}.",
         "",
-        "| Лекция | Цитата (начало) | Источник | Статус | Chunk | Покрытие |",
+        "| Лекция | Цитата (начало) | Источник | Статус | "
+        "Фрагмент | Покрытие |",
         "|---|---|---|---|---|---|",
     ]
     for lp, quote, base, status, cid, cov in rows:
@@ -133,7 +169,7 @@ def main():
     os.makedirs(os.path.join(REPO, "verification"), exist_ok=True)
     with open(os.path.join(REPO, "verification", "REPORT.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
-    print(f"[verify_quotes] {total} quotes, {fails} fails -> verification/REPORT.md")
+    print(f"[verify_quotes] {total} цитат, {fails} ошибок -> verification/REPORT.md")
     for row in rows:
         if "FAIL" in row[3]:
             print(f"  FAIL: {row[3]} | {row[1][:70]}")
