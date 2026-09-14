@@ -81,7 +81,7 @@ class Handler(BaseHTTPRequestHandler):
                     200,
                     {
                         "status": "ok",
-                        "service": "rag-philosophy-science",
+                        "service": "rag-ip-law",
                         "chunks": len(_chunks) if _chunks else None,
                     },
                 )
