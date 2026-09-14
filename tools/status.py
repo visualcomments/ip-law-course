@@ -32,8 +32,9 @@ def main():
     sy = os.path.join(REPO, "syllabus.json")
     if os.path.exists(sy):
         d = json.load(open(sy, encoding="utf-8"))
-        print(f"syllabus.json: {d['meta']['sessions_total']} занятий, "
-              f"модулей: {len(d['modules'])}")
+        sessions = d.get("sessions") or []
+        print(f"syllabus.json: {len(sessions)} занятий, "
+              f"недель: {d.get('weeks', len(sessions))}")
     print()
     print("== Локальный корпус ==")
     ntxt = len(glob.glob(os.path.join(ROOT, "txt", "*.txt")))
@@ -42,11 +43,12 @@ def main():
     print(f"txt файлов: {ntxt}")
     if os.path.exists(idx):
         c = json.load(open(idx, encoding="utf-8"))
+        backend = c.get("backend") or "exact-cosine"
         print(f"RAG-индекс: {c.get('n_chunks')} чанков, {c.get('n_files')} файлов, "
-              f"backend: {c.get('backend')}")
+              f"backend: {backend}")
     else:
-        print("RAG-индекс: НЕ НАЙДЕН (нужен scripts/rag_build*.py и корпус)")
-    api = os.path.join(ROOT, "scripts", "rag_api.py")
+        print("RAG-индекс: НЕ НАЙДЕН (выполните make corpus-fetch)")
+    api = os.path.join(REPO, "tools", "rag_api.py")
     print(f"RAG-API скрипт: {'есть' if os.path.exists(api) else 'нет'}")
     return 0
 

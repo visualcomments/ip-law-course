@@ -2,12 +2,15 @@
 
 PY ?= python3
 VENV_PY ?= $(PY)
+K ?= 5
+port ?= 8010
 
-.PHONY: help search index-fetch session assignment verify serve status quotes corpus-fetch corpus-status
+.PHONY: help tools-install search index-fetch session assignment verify serve status quotes corpus-fetch corpus-status
 .PHONY: law-demo law-run
 
 help:
 	@echo "Цели:"
+	@echo "  make tools-install            установить зависимости инструментов"
 	@echo "  make search QUERY=\"...\"     семантический поиск по корпусу (k=5)"
 	@echo "  make corpus-fetch            скачать корпус (индекс + тексты), с проверкой хэшей"
 	@echo "  make corpus-status           показать, установлен ли корпус"
@@ -19,6 +22,9 @@ help:
 	@echo "  make status                  состояние курса и корпуса"
 	@echo "  make law-demo OUT=...        офлайн-демо «закон-графа» (синтетический корпус поправок)"
 	@echo "  make law-run OUT=...         «закон-граф» на реальном корпусе (COURSE_CORPUS_ROOT)"
+
+tools-install:
+	$(VENV_PY) -m pip install -r tools/requirements.txt
 
 search:
 	test -n "$(QUERY)" || (echo "Укажите QUERY=..."; exit 1)
