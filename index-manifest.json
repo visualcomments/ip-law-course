@@ -6,30 +6,33 @@
   "filename": "ip-law-index-2026-09-13-v2.zip",
   "size_bytes": 61140512,
   "sha256": "8C1A1E02096B211372829F95035EB4EF68EE8B50355C5C23172568E2446FB7B7",
-  "url": "https://drive.google.com/uc?export=download&id=1y2bRH30i9GhJdXtRe7hjVS6eiY8YA5kU",
+  "url": "https://huggingface.co/datasets/brics-edtech/ip-law-corpus",
   "file_id": "1y2bRH30i9GhJdXtRe7hjVS6eiY8YA5kU",
-  "view_url": "https://drive.google.com/file/d/1y2bRH30i9GhJdXtRe7hjVS6eiY8YA5kU/view"
+  "view_url": "https://drive.google.com/file/d/1y2bRH30i9GhJdXtRe7hjVS6eiY8YA5kU/view",
+  "kind": "huggingface",
+  "hf_total_bytes": 223485550,
+  "sha256_note": "per-file sha256 in files[]; aggregate not applicable to HF source"
  },
  "files": [
   {
    "path": "annoy.index",
-   "size_bytes": 32162796,
-   "sha256": "F91D8BFD68136322E542AEB55E4296B10D68D0E7A653057BE7985ECCC2414C4D"
+   "size_bytes": 78613632,
+   "sha256": "DF624550683D3AB6850BB08B940FC69F7156FFB731A6FB0FC20689FEE0060ABF"
   },
   {
    "path": "chunks.jsonl",
-   "size_bytes": 26056832,
-   "sha256": "89DCBA226A0F528300AF4FD829EA1FD15C8887729A246B9E7F2F5FBE9766342C"
+   "size_bytes": 72997030,
+   "sha256": "43CF359AAC1533AAA25355506464435DFFF916EA2A9F36ABD63C767DC69A6094"
   },
   {
    "path": "config.json",
-   "size_bytes": 9502,
-   "sha256": "63F0934F274EFA4EBE1CBC6E1984845D864D9CC24A04633EEE5D98E731613CE8"
+   "size_bytes": 14536,
+   "sha256": "2EABBD3E778B46F14AF4060F165134D4D86E79DB9FB3B493C6D3D336FD22FD4E"
   },
   {
    "path": "embeddings.npy",
-   "size_bytes": 27984512,
-   "sha256": "F625A477DFDAAB638A4D25B5EC3580A191D115AD0C7A363DC5E8645E8EFF2883"
+   "size_bytes": 71860352,
+   "sha256": "08EF1895737060D59EDCF820D81E400D2EA38EE2EA1D4D82E711D127EF29D654"
   }
  ],
  "corpus": {
@@ -47,5 +50,6 @@
   "dim": 384,
   "chunk_chars": 1400,
   "overlap": 140
- }
+ },
+ "index_hf_kind": "huggingface"
 }
