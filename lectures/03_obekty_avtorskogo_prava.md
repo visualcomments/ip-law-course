@@ -39,7 +39,7 @@
 > protection in all countries of the Union. This protection shall
 > operate for the benefit of the author and his successors in title.»
 >
-> **Источник:** `txt/law__Berne_Convention_EN.txt` · фрагмент #13
+> **Источник:** `txt/law__Berne_Convention_EN.txt` · фрагмент #68
 
 ## Авторский синтез: выражение и идея
 

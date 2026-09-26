@@ -34,14 +34,14 @@
 > его смерти, после чего произведение переходит в общественное
 > достояние.»
 >
-> **Источник:** `txt/wiki_ru__Авторское_право.txt` · фрагмент #826
+> **Источник:** `txt/wiki_ru__Авторское_право.txt` · фрагмент #49366
 
 Международный минимум (Бернская конвенция, ст. 7(1)):
 
 > **Цитата:** «The term of protection granted by this Convention shall
 > be the life of the author and fifty years after his death.»
 >
-> **Источник:** `txt/law__Berne_Convention_EN.txt` · фрагмент #21
+> **Источник:** `txt/law__Berne_Convention_EN.txt` · фрагмент #76
 
 ## Авторский синтез: баланс интересов
 

@@ -36,13 +36,13 @@
 > **Цитата:** «The term of protection granted by this Convention shall
 > be the life of the author and fifty years after his death.»
 >
-> **Источник:** `txt/law__Berne_Convention_EN.txt` · фрагмент #21
+> **Источник:** `txt/law__Berne_Convention_EN.txt` · фрагмент #76
 
 Национальный режим охраны (Бернская конвенция, ст. 5 — принцип):
 
 > **Цитата:** «Berne Convention for the Protection of Literary and Artistic Works of September 9, 1886, completed at PARIS on May 4, 1896, revised at BERLIN on November 13, 1908, completed at BERNE on March 20, 1914, revised at ROME on June 2, 1928, at BRUSSELS on June 26, 1948, at STOCKHOLM on July 14, 1967, and at PARIS on July 24, 1971, and amended on September 28, 1979 TABLE OF CONTENTS 1 Article 1 : Establishment of a Union Article 2 : Protected Works: 1. “Literary and artistic works”; 2. Possible requirement of fixation; 3. Derivative works; 4. Official texts; 5. Collections; 6. Obligation to protect; beneficiaries of protection; 7. Works of applied a»
 >
-> **Источник:** `txt/law__Berne_Convention_EN.txt` · фрагмент #3
+> **Источник:** `txt/law__Berne_Convention_EN.txt` · фрагмент #58
 
 ## Авторский синтез: практика Пленума ВС РФ
 
