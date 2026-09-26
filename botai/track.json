@@ -1,0 +1,630 @@
+{
+  "schema_version": 2,
+  "modules": [
+    {
+      "module_id": "avtorskoe-pravo",
+      "title": "Авторское право и смежные права",
+      "order": 0,
+      "objective_ids": [
+        "lec-01",
+        "lec-02",
+        "lec-03",
+        "lec-04",
+        "lec-05",
+        "lec-06",
+        "lec-07",
+        "lec-08"
+      ],
+      "source_refs": [
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 21,
+              "end": 21
+            }
+          }
+        },
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 22,
+              "end": 22
+            }
+          }
+        },
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 23,
+              "end": 23
+            }
+          }
+        },
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 24,
+              "end": 24
+            }
+          }
+        },
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 25,
+              "end": 25
+            }
+          }
+        },
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 26,
+              "end": 26
+            }
+          }
+        },
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 27,
+              "end": 27
+            }
+          }
+        },
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 28,
+              "end": 28
+            }
+          }
+        }
+      ]
+    },
+    {
+      "module_id": "patentnoe-pravo",
+      "title": "Патентное право",
+      "order": 1,
+      "objective_ids": [
+        "lec-09",
+        "lec-10",
+        "lec-11",
+        "lec-12",
+        "lec-13"
+      ],
+      "source_refs": [
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 29,
+              "end": 29
+            }
+          }
+        },
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 30,
+              "end": 30
+            }
+          }
+        },
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 31,
+              "end": 31
+            }
+          }
+        },
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 32,
+              "end": 32
+            }
+          }
+        },
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 33,
+              "end": 33
+            }
+          }
+        }
+      ]
+    },
+    {
+      "module_id": "sredstva-i-mezhdunarodnaya-sistema",
+      "title": "Средства индивидуализации и международная система ИС",
+      "order": 2,
+      "objective_ids": [
+        "lec-14",
+        "lec-15",
+        "lec-16"
+      ],
+      "source_refs": [
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 34,
+              "end": 34
+            }
+          }
+        },
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 35,
+              "end": 35
+            }
+          }
+        },
+        {
+          "path": "syllabus.md",
+          "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+          "locator": {
+            "lines": {
+              "start": 36,
+              "end": 36
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "objectives": [
+    {
+      "objective_id": "lec-01",
+      "module_id": "avtorskoe-pravo",
+      "title": "Интеллектуальная собственность: понятие, границы, общественное достояние",
+      "prerequisites": [],
+      "source_refs": [
+        {
+          "path": "lectures/01_intellektualnaya_sobstvennost.md",
+          "sha256": "44944db61140183cd0b3f42c356cca1a1b66bf76bc3ce56bd212946bab7e9d72",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "critique",
+        "apply"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-02",
+      "module_id": "avtorskoe-pravo",
+      "title": "История авторского права и философия ИС",
+      "prerequisites": [
+        "lec-01"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/02_istoriya_avtorskogo_prava.md",
+          "sha256": "b38c5a4d48dc762d5061e0f0ba93b7fd5c7c2331692bde970d2f85bf256ed852",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "critique"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-03",
+      "module_id": "avtorskoe-pravo",
+      "title": "Объекты авторского права: произведения",
+      "prerequisites": [
+        "lec-02"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/03_obekty_avtorskogo_prava.md",
+          "sha256": "a63c971f1f060eaf5183123bdc1d3b98b11e71bb094cfb3107951af80e94cf9c",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "apply"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-04",
+      "module_id": "avtorskoe-pravo",
+      "title": "Субъекты авторского права; личные неимущественные и имущественные права",
+      "prerequisites": [
+        "lec-03"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/04_subekty_avtorskogo_prava.md",
+          "sha256": "1c0626435a9413cada81eedd09e03c65cc3dac1b187da7b4f9013479c61ec739",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "apply"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-05",
+      "module_id": "avtorskoe-pravo",
+      "title": "Ограничения авторских прав и сроки охраны",
+      "prerequisites": [
+        "lec-04"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/05_ogranicheniya_i_sroki.md",
+          "sha256": "58feb58f3dca8750bc4f9bea1c4de265cfad109bb980eb6a47bd085abff883a8",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "apply"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-06",
+      "module_id": "avtorskoe-pravo",
+      "title": "Передача авторских прав: отчуждение и лицензионные договоры",
+      "prerequisites": [
+        "lec-05"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/06_peredacha_avtorskih_prav.md",
+          "sha256": "434ed0acb7b203db9f0f9746f36d97c3de3e76b708c3b79562efd4fcaa7dd82a",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "critique",
+        "apply"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-07",
+      "module_id": "avtorskoe-pravo",
+      "title": "Смежные права: исполнители, фонограммы, вещание",
+      "prerequisites": [
+        "lec-06"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/07_smezhnye_prava.md",
+          "sha256": "f60f7f9f9d335fe61c5ed928e119d6b2beeaa5e9cec1fb7e9c45f8d56d47f220",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "apply"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-08",
+      "module_id": "avtorskoe-pravo",
+      "title": "Защита авторских прав; авторское право в цифровую эпоху",
+      "prerequisites": [
+        "lec-07"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/08_zaschita_i_cifra.md",
+          "sha256": "4ae8b6689581e161088b2d7673815d0a78521a998f3d5204e6600e555aa8648e",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "critique"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-09",
+      "module_id": "patentnoe-pravo",
+      "title": "Патентное право: история, международные и региональные соглашения",
+      "prerequisites": [
+        "lec-08"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/09_patentnoe_pravo_istoriya.md",
+          "sha256": "eb6da1602f2c8d06c9eca0945986dbdff05483375b32fcc4a78293dc66f46dfa",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "critique"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-10",
+      "module_id": "patentnoe-pravo",
+      "title": "Объекты и субъекты патентования: критерии патентоспособности",
+      "prerequisites": [
+        "lec-09"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/10_obekty_patentovaniya.md",
+          "sha256": "731d9b0a2cd81bac58da1960b34858d2f5f47dcee78373075eb7ce5b6854343a",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "critique",
+        "apply"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-11",
+      "module_id": "patentnoe-pravo",
+      "title": "Патентная заявка и экспертиза",
+      "prerequisites": [
+        "lec-10"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/11_zayavka_i_ekspertiza.md",
+          "sha256": "04e35b782cf3b37399c52ea6fd776161975cef1f1591ed8fac650ddc5699c442",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "critique",
+        "apply"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-12",
+      "module_id": "patentnoe-pravo",
+      "title": "Патентные права: содержание и защита",
+      "prerequisites": [
+        "lec-11"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/12_patentnye_prava.md",
+          "sha256": "e9b67f6fa0ae3b42b4d0be49f6b9f7b4c43d679f419899b220aa6126938005c3",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "critique",
+        "apply"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-13",
+      "module_id": "patentnoe-pravo",
+      "title": "Патенты, технологии и общество: биотехнологии и пределы патентования",
+      "prerequisites": [
+        "lec-12"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/13_biopatenty.md",
+          "sha256": "7022f96b41e296b22ed3b3f928ac670f466acbbc5b5673ef6a995cbd34a1519a",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "critique"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-14",
+      "module_id": "sredstva-i-mezhdunarodnaya-sistema",
+      "title": "Средства индивидуализации: товарные знаки",
+      "prerequisites": [
+        "lec-13"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/14_tovarnye_znaki.md",
+          "sha256": "896aedf67e2b429a38c2e940363c286c42aa4ed8275bd1dd142cb72d4200ddeb",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "critique",
+        "apply"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-15",
+      "module_id": "sredstva-i-mezhdunarodnaya-sistema",
+      "title": "Международная система ИС и судебная практика",
+      "prerequisites": [
+        "lec-14"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/15_mezhdunarodnaya_sistema.md",
+          "sha256": "c27a002302ffa538c57a60fc02d2a47ca2c2b3bfdac2b505aaf78c6b1f25d0a7",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "apply"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    },
+    {
+      "objective_id": "lec-16",
+      "module_id": "sredstva-i-mezhdunarodnaya-sistema",
+      "title": "Итоговое: система ИС в России и мире; подготовка к экзамену (эссе)",
+      "prerequisites": [
+        "lec-15"
+      ],
+      "source_refs": [
+        {
+          "path": "lectures/16_itogovoe_zanyatie.md",
+          "sha256": "1edd3b73a1df59b860cef1c715f9166e0628f544138c776a38c7b1840ee764d6",
+          "locator": {
+            "lines": {
+              "start": 5,
+              "end": 9
+            }
+          }
+        }
+      ],
+      "check_kinds": [
+        "explain",
+        "apply"
+      ],
+      "estimated_minutes": 90,
+      "required": true
+    }
+  ]
+}

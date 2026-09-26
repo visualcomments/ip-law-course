@@ -1,0 +1,330 @@
+{
+  "schema_version": 2,
+  "course_id": "ip-law-course",
+  "title": "Право интеллектуальной собственности",
+  "language": "ru",
+  "syllabus_path": "syllabus.md",
+  "track_path": "botai/track.json",
+  "student_material_roots": [
+    "lectures",
+    "docs",
+    "agents",
+    "notebooks",
+    "syllabus.md",
+    "citations.md",
+    "CORPUS.md",
+    "PROVENANCE.md"
+  ],
+  "excluded_material_roots": [
+    "verification",
+    "tests",
+    ".github",
+    ".agents",
+    ".claude",
+    ".cursor",
+    "law_graph",
+    "tools"
+  ],
+  "licenses": {
+    "code": "GPL-3.0-or-later",
+    "materials": "CC-BY-SA-4.0"
+  },
+  "contribution": {
+    "enabled": false,
+    "guide_path": null,
+    "private_submission_allowed": true,
+    "ai_disclosure_required": true
+  },
+  "corpus_manifest_path": "botai/corpus-manifest.json",
+  "environment_path": null,
+  "assignments": [
+    {
+      "assignment_id": "lec-01",
+      "path": "lectures/01_intellektualnaya_sobstvennost.md",
+      "objective_ids": [
+        "lec-01"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/01_intellektualnaya_sobstvennost.md",
+        "sha256": "44944db61140183cd0b3f42c356cca1a1b66bf76bc3ce56bd212946bab7e9d72",
+        "locator": {
+          "lines": {
+            "start": 66,
+            "end": 70
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-02",
+      "path": "lectures/02_istoriya_avtorskogo_prava.md",
+      "objective_ids": [
+        "lec-02"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/02_istoriya_avtorskogo_prava.md",
+        "sha256": "b38c5a4d48dc762d5061e0f0ba93b7fd5c7c2331692bde970d2f85bf256ed852",
+        "locator": {
+          "lines": {
+            "start": 51,
+            "end": 55
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-03",
+      "path": "lectures/03_obekty_avtorskogo_prava.md",
+      "objective_ids": [
+        "lec-03"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/03_obekty_avtorskogo_prava.md",
+        "sha256": "a63c971f1f060eaf5183123bdc1d3b98b11e71bb094cfb3107951af80e94cf9c",
+        "locator": {
+          "lines": {
+            "start": 55,
+            "end": 59
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-04",
+      "path": "lectures/04_subekty_avtorskogo_prava.md",
+      "objective_ids": [
+        "lec-04"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/04_subekty_avtorskogo_prava.md",
+        "sha256": "1c0626435a9413cada81eedd09e03c65cc3dac1b187da7b4f9013479c61ec739",
+        "locator": {
+          "lines": {
+            "start": 58,
+            "end": 62
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-05",
+      "path": "lectures/05_ogranicheniya_i_sroki.md",
+      "objective_ids": [
+        "lec-05"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/05_ogranicheniya_i_sroki.md",
+        "sha256": "58feb58f3dca8750bc4f9bea1c4de265cfad109bb980eb6a47bd085abff883a8",
+        "locator": {
+          "lines": {
+            "start": 56,
+            "end": 60
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-06",
+      "path": "lectures/06_peredacha_avtorskih_prav.md",
+      "objective_ids": [
+        "lec-06"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/06_peredacha_avtorskih_prav.md",
+        "sha256": "434ed0acb7b203db9f0f9746f36d97c3de3e76b708c3b79562efd4fcaa7dd82a",
+        "locator": {
+          "lines": {
+            "start": 48,
+            "end": 53
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-07",
+      "path": "lectures/07_smezhnye_prava.md",
+      "objective_ids": [
+        "lec-07"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/07_smezhnye_prava.md",
+        "sha256": "f60f7f9f9d335fe61c5ed928e119d6b2beeaa5e9cec1fb7e9c45f8d56d47f220",
+        "locator": {
+          "lines": {
+            "start": 52,
+            "end": 56
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-08",
+      "path": "lectures/08_zaschita_i_cifra.md",
+      "objective_ids": [
+        "lec-08"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/08_zaschita_i_cifra.md",
+        "sha256": "4ae8b6689581e161088b2d7673815d0a78521a998f3d5204e6600e555aa8648e",
+        "locator": {
+          "lines": {
+            "start": 53,
+            "end": 57
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-09",
+      "path": "lectures/09_patentnoe_pravo_istoriya.md",
+      "objective_ids": [
+        "lec-09"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/09_patentnoe_pravo_istoriya.md",
+        "sha256": "eb6da1602f2c8d06c9eca0945986dbdff05483375b32fcc4a78293dc66f46dfa",
+        "locator": {
+          "lines": {
+            "start": 46,
+            "end": 51
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-10",
+      "path": "lectures/10_obekty_patentovaniya.md",
+      "objective_ids": [
+        "lec-10"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/10_obekty_patentovaniya.md",
+        "sha256": "731d9b0a2cd81bac58da1960b34858d2f5f47dcee78373075eb7ce5b6854343a",
+        "locator": {
+          "lines": {
+            "start": 61,
+            "end": 65
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-11",
+      "path": "lectures/11_zayavka_i_ekspertiza.md",
+      "objective_ids": [
+        "lec-11"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/11_zayavka_i_ekspertiza.md",
+        "sha256": "04e35b782cf3b37399c52ea6fd776161975cef1f1591ed8fac650ddc5699c442",
+        "locator": {
+          "lines": {
+            "start": 55,
+            "end": 59
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-12",
+      "path": "lectures/12_patentnye_prava.md",
+      "objective_ids": [
+        "lec-12"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/12_patentnye_prava.md",
+        "sha256": "e9b67f6fa0ae3b42b4d0be49f6b9f7b4c43d679f419899b220aa6126938005c3",
+        "locator": {
+          "lines": {
+            "start": 53,
+            "end": 57
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-13",
+      "path": "lectures/13_biopatenty.md",
+      "objective_ids": [
+        "lec-13"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/13_biopatenty.md",
+        "sha256": "7022f96b41e296b22ed3b3f928ac670f466acbbc5b5673ef6a995cbd34a1519a",
+        "locator": {
+          "lines": {
+            "start": 51,
+            "end": 56
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-14",
+      "path": "lectures/14_tovarnye_znaki.md",
+      "objective_ids": [
+        "lec-14"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/14_tovarnye_znaki.md",
+        "sha256": "896aedf67e2b429a38c2e940363c286c42aa4ed8275bd1dd142cb72d4200ddeb",
+        "locator": {
+          "lines": {
+            "start": 56,
+            "end": 60
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-15",
+      "path": "lectures/15_mezhdunarodnaya_sistema.md",
+      "objective_ids": [
+        "lec-15"
+      ],
+      "assessment": "practice",
+      "assessment_source": {
+        "path": "lectures/15_mezhdunarodnaya_sistema.md",
+        "sha256": "c27a002302ffa538c57a60fc02d2a47ca2c2b3bfdac2b505aaf78c6b1f25d0a7",
+        "locator": {
+          "lines": {
+            "start": 58,
+            "end": 62
+          }
+        }
+      }
+    },
+    {
+      "assignment_id": "lec-16",
+      "path": "lectures/16_itogovoe_zanyatie.md",
+      "objective_ids": [
+        "lec-16"
+      ],
+      "assessment": "graded",
+      "assessment_source": {
+        "path": "syllabus.md",
+        "sha256": "3eb7d7bc19bc3f7fc8069e5f24fba86664275c8e5f6f74ea5e26c926252cb3bc",
+        "locator": {
+          "lines": {
+            "start": 46,
+            "end": 47
+          }
+        }
+      }
+    }
+  ]
+}
