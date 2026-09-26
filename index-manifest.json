@@ -36,15 +36,16 @@
   }
  ],
  "corpus": {
-  "n_files": 186,
-  "n_chunks": 18219,
+  "n_files": 282,
+  "n_chunks": 50302,
   "composition": {
-   "lesson1_primary_sources_pd": 17,
-   "oa_cc_licensed_articles": 50,
-   "wikipedia_cc_by_sa": 78,
    "law_treaties_and_statutes": 16,
-   "public_domain_treatises": 11,
-   "practice_materials": 14
+   "lesson1_primary_sources_pd": 17,
+   "oa_cc_licensed_articles": 70,
+   "public_domain_treatises": 54,
+   "practice_materials": 14,
+   "ru_language_publications": 22,
+   "wikipedia_cc_by_sa": 89
   },
   "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
   "dim": 384,
