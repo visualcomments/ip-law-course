@@ -10,29 +10,29 @@
   "file_id": "1y2bRH30i9GhJdXtRe7hjVS6eiY8YA5kU",
   "view_url": "https://drive.google.com/file/d/1y2bRH30i9GhJdXtRe7hjVS6eiY8YA5kU/view",
   "kind": "huggingface",
-  "hf_total_bytes": 223485550,
+  "hf_total_bytes": 244083713,
   "sha256_note": "per-file sha256 in files[]; aggregate not applicable to HF source"
  },
  "files": [
   {
    "path": "annoy.index",
-   "size_bytes": 78613632,
-   "sha256": "DF624550683D3AB6850BB08B940FC69F7156FFB731A6FB0FC20689FEE0060ABF"
+   "size_bytes": 84514608,
+   "sha256": "E7B59BB517B4CE49410ECA23DE3548FC1A6A9C9FE08577D2B0DB1CF1DF15C643"
   },
   {
    "path": "chunks.jsonl",
-   "size_bytes": 72997030,
-   "sha256": "43CF359AAC1533AAA25355506464435DFFF916EA2A9F36ABD63C767DC69A6094"
+   "size_bytes": 82287670,
+   "sha256": "C5A7C9496FC58D19459B3B15812732B82B00580E50BB034399FAF32D9D3888CD"
   },
   {
    "path": "config.json",
-   "size_bytes": 14536,
-   "sha256": "2EABBD3E778B46F14AF4060F165134D4D86E79DB9FB3B493C6D3D336FD22FD4E"
+   "size_bytes": 17435,
+   "sha256": "4784751A1FD0F4FCBAFDC39596EA753AEC36C96A50AA2E4E9ECB7B6C14BE6F45"
   },
   {
    "path": "embeddings.npy",
-   "size_bytes": 71860352,
-   "sha256": "08EF1895737060D59EDCF820D81E400D2EA38EE2EA1D4D82E711D127EF29D654"
+   "size_bytes": 77264000,
+   "sha256": "9535A5500374226BA0ECB2DCAAA7BB540D3D1A14ECC7CC9D6D07C0EF56C9BB7F"
   }
  ],
  "corpus": {
