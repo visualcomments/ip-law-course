@@ -44,6 +44,26 @@ def validate_file(path: Path) -> tuple[bool, str]:
     return proc.returncode != 1, out
 
 
+def load_existing(repo_id: str, token: str) -> dict[str, dict]:
+    """Уже опубликованные записи из датасета (чтобы публикация была дополняющей)."""
+    try:
+        from huggingface_hub import hf_hub_download
+
+        p = hf_hub_download(
+            repo_id=repo_id, filename="records.jsonl", repo_type="dataset", token=token
+        )
+        out: dict[str, dict] = {}
+        for line in Path(p).read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if line:
+                r = json.loads(line)
+                out[r["record_id"]] = r
+        return out
+    except Exception as e:  # noqa: BLE001
+        print(f"(существующий records.jsonl не прочитан: {e})")
+        return {}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--submissions-dir", required=True)
@@ -77,6 +97,17 @@ def main() -> int:
     if failed:
         print(f"\nСТОП: {failed} файл(ов) не прошли проверку — публикация отменена.")
         return 1
+
+    # Дополняющая публикация: подмешиваем уже опубликованные записи (сдачи приоритетнее).
+    if args.repo_id and not args.dry_run:
+        token0 = os.environ.get("HF_TOKEN", "")
+        if token0:
+            existing = load_existing(args.repo_id, token0)
+            for rid, rec in existing.items():
+                records.setdefault(rid, rec)
+            print(
+                f"Существующих записей в датасете: {len(existing)}; всего после объединения: {len(records)}"
+            )
 
     published = [
         r
