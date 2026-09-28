@@ -30,8 +30,8 @@
     "materials": "CC-BY-SA-4.0"
   },
   "contribution": {
-    "enabled": false,
-    "guide_path": null,
+    "enabled": true,
+    "guide_path": "CONTRIBUTING.md",
     "private_submission_allowed": true,
     "ai_disclosure_required": true
   },

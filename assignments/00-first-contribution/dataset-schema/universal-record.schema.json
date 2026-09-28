@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://visualcomments.example/course-datasets/universal-record.schema.json",
+  "title": "Universal course dataset record (schema 1)",
+  "description": "Общий конверт для двух профилей: experiment (результаты экспериментов из научных статей/книг) и amendment (изменения в статьи НПА). Общее ядро — source/provenance/review/evidence_quote. Profile = дискриминатор.",
+  "type": "object",
+  "oneOf": [
+    { "$ref": "#/$defs/experimentRecord" },
+    { "$ref": "#/$defs/amendmentRecord" }
+  ],
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file", "doc_type", "license"],
+      "properties": {
+        "file": { "type": "string", "minLength": 1, "maxLength": 512, "description": "путь к источнику относительно корня корпуса" },
+        "coord": { "type": ["string", "null"], "maxLength": 128, "description": "координата «файл · фрагмент #N» или страница" },
+        "doc_type": { "enum": ["scientific_article", "pd_book", "npa", "official_document", "commentary", "other"] },
+        "license": { "enum": ["PD", "CC0", "CC-BY-4.0", "CC-BY-SA-4.0", "official-document", "cite-only", "unknown"] },
+        "url": { "type": ["string", "null"], "maxLength": 512 }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["extracted_by", "extracted_at", "method"],
+      "properties": {
+        "extracted_by": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "extracted_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "method": { "enum": ["manual", "assisted", "script"] },
+        "tool": { "type": ["string", "null"], "maxLength": 128 }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "enum": ["proposed", "verified", "rejected"] },
+        "reviewed_by": { "type": ["string", "null"], "maxLength": 128 },
+        "reviewed_at": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "note_ru": { "type": ["string", "null"], "maxLength": 500 }
+      }
+    },
+    "measurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["variable_ru", "value", "unit", "quality"],
+      "properties": {
+        "variable_ru": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "value": { "type": ["number", "string"] },
+        "unit": { "type": "string", "maxLength": 40 },
+        "condition_ru": { "type": ["string", "null"], "maxLength": 300 },
+        "quality": { "enum": ["exact", "ocr_uncertain", "estimate", "missing"] }
+      }
+    },
+    "norm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_law", "article"],
+      "properties": {
+        "source_law": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "article": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "clause": { "type": ["string", "null"], "maxLength": 40 },
+        "norm_id": { "type": ["string", "null"], "pattern": "^[a-z0-9а-я-]+/.+$" }
+      }
+    },
+    "experimentRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "record_id", "profile", "title_ru", "source", "provenance", "review", "experiment", "measurements", "outcome_ru"],
+      "properties": {
+        "schema": { "const": 1 },
+        "record_id": { "type": "string", "pattern": "^[a-z0-9._-]+$", "maxLength": 80 },
+        "profile": { "const": "experiment" },
+        "title_ru": { "type": "string", "minLength": 1, "maxLength": 300 },
+        "domain": { "enum": ["physics", "chemistry", "biology", "medicine", "earth_science", "engineering", "history_of_technology", "agriculture", "mathematics", "other"] },
+        "study": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "authors": { "type": ["string", "null"], "maxLength": 300 },
+            "year": { "type": ["integer", "null"] },
+            "journal": { "type": ["string", "null"], "maxLength": 200 },
+            "language": { "type": ["string", "null"], "maxLength": 20 }
+          }
+        },
+        "experiment": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["subject_ru", "method_ru"],
+          "properties": {
+            "subject_ru": { "type": "string", "minLength": 1, "maxLength": 300 },
+            "method_ru": { "type": "string", "minLength": 1, "maxLength": 1000 },
+            "conditions_ru": { "type": ["string", "null"], "maxLength": 500 },
+            "apparatus": { "type": ["string", "null"], "maxLength": 300 }
+          }
+        },
+        "measurements": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 50,
+          "items": { "$ref": "#/$defs/measurement" }
+        },
+        "outcome_ru": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "source": { "$ref": "#/$defs/source" },
+        "provenance": { "$ref": "#/$defs/provenance" },
+        "review": { "$ref": "#/$defs/review" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "evidence_quote": { "type": ["string", "null"], "maxLength": 1000 }
+      }
+    },
+    "amendmentRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "record_id", "profile", "title_ru", "source", "provenance", "review", "norm", "amending_doc", "predicate", "change_ru"],
+      "properties": {
+        "schema": { "const": 1 },
+        "record_id": { "type": "string", "pattern": "^[a-z0-9._-]+$", "maxLength": 80 },
+        "profile": { "const": "amendment" },
+        "title_ru": { "type": "string", "minLength": 1, "maxLength": 300 },
+        "norm": { "$ref": "#/$defs/norm" },
+        "amending_doc": { "type": "string", "minLength": 1, "maxLength": 300, "description": "документ, внёсший изменение (закон №/дата)" },
+        "predicate": { "enum": ["изменена", "дополнена", "введена", "изложена_в_новой_редакции", "признана_утратившей_силу", "исключена", "уточнена"] },
+        "ts": { "type": ["string", "null"], "pattern": "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$" },
+        "granularity": { "enum": ["year", "month", "day"] },
+        "change_ru": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "before_ru": { "type": ["string", "null"], "maxLength": 2000 },
+        "after_ru": { "type": ["string", "null"], "maxLength": 2000 },
+        "source": { "$ref": "#/$defs/source" },
+        "provenance": { "$ref": "#/$defs/provenance" },
+        "review": { "$ref": "#/$defs/review" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "evidence_quote": { "type": ["string", "null"], "maxLength": 1000 }
+      }
+    }
+  }
+}
