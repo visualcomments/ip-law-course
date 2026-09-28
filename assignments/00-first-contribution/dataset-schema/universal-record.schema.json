@@ -17,7 +17,10 @@
         "file": { "type": "string", "minLength": 1, "maxLength": 512, "description": "путь к источнику относительно корня корпуса" },
         "coord": { "type": ["string", "null"], "maxLength": 128, "description": "координата «файл · фрагмент #N» или страница" },
         "doc_type": { "enum": ["scientific_article", "pd_book", "npa", "official_document", "commentary", "other"] },
-        "license": { "enum": ["PD", "CC0", "CC-BY-4.0", "CC-BY-SA-4.0", "official-document", "cite-only", "unknown"] },
+        "license": {
+          "enum": ["PD", "CC0", "CC-BY-4.0", "CC-BY-SA-4.0", "official-document", "facts-derived", "cite-only", "unknown"],
+          "description": "facts-derived — данные переработаны и изложены как факты (публикуемо; дословная цитата охраняемого текста не приводится)"
+        },
         "url": { "type": ["string", "null"], "maxLength": 512 }
       }
     },
@@ -29,6 +32,10 @@
         "extracted_by": { "type": "string", "minLength": 1, "maxLength": 128 },
         "extracted_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
         "method": { "enum": ["manual", "assisted", "script"] },
+        "derivation": {
+          "enum": ["verbatim_quote", "facts_reworked"],
+          "description": "verbatim_quote — evidence_quote обязателен; facts_reworked — дословная цитата запрещена, факт изложен своими словами"
+        },
         "tool": { "type": ["string", "null"], "maxLength": 128 }
       }
     },
@@ -53,6 +60,23 @@
         "unit": { "type": "string", "maxLength": 40 },
         "condition_ru": { "type": ["string", "null"], "maxLength": 300 },
         "quality": { "enum": ["exact", "ocr_uncertain", "estimate", "missing"] }
+      }
+    },
+    "figure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "rights"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1, "maxLength": 512, "description": "путь к файлу изображения в датасете (например, assets/<record_id>.png)" },
+        "kind": { "enum": ["photo", "diagram", "chart", "table", "micrograph", "map", "other"] },
+        "caption_ru": { "type": ["string", "null"], "maxLength": 500 },
+        "rights": {
+          "enum": ["own", "PD", "CC0", "CC-BY-4.0", "CC-BY-SA-4.0", "official-document", "permission", "unknown"],
+          "description": "own — перерисовано/создано экспертом из фактов; сырое изображение из проприетарного источника публиковать нельзя"
+        },
+        "redrawn": { "type": "boolean", "description": "изображение пересоздано экспертом из числовых данных источника" },
+        "derived_from": { "type": ["string", "null"], "maxLength": 512, "description": "источник, из данных которого построено изображение" },
+        "coord": { "type": ["string", "null"], "maxLength": 128 }
       }
     },
     "norm": {
@@ -103,6 +127,12 @@
           "maxItems": 50,
           "items": { "$ref": "#/$defs/measurement" }
         },
+        "figures": {
+          "type": "array",
+          "maxItems": 20,
+          "description": "мультимодальная часть: изображения/графики/таблицы (только публикуемые права или перерисовка экспертом)",
+          "items": { "$ref": "#/$defs/figure" }
+        },
         "outcome_ru": { "type": "string", "minLength": 1, "maxLength": 2000 },
         "source": { "$ref": "#/$defs/source" },
         "provenance": { "$ref": "#/$defs/provenance" },
@@ -128,6 +158,12 @@
         "change_ru": { "type": "string", "minLength": 1, "maxLength": 2000 },
         "before_ru": { "type": ["string", "null"], "maxLength": 2000 },
         "after_ru": { "type": ["string", "null"], "maxLength": 2000 },
+        "figures": {
+          "type": "array",
+          "maxItems": 20,
+          "description": "мультимодальная часть (только публикуемые права или перерисовка экспертом)",
+          "items": { "$ref": "#/$defs/figure" }
+        },
         "source": { "$ref": "#/$defs/source" },
         "provenance": { "$ref": "#/$defs/provenance" },
         "review": { "$ref": "#/$defs/review" },

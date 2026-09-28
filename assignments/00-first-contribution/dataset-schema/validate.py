@@ -55,10 +55,23 @@ LICENSES = {
     "CC-BY-4.0",
     "CC-BY-SA-4.0",
     "official-document",
+    "facts-derived",
     "cite-only",
     "unknown",
 }
 METHODS = {"manual", "assisted", "script"}
+DERIVATIONS = {"verbatim_quote", "facts_reworked"}
+FIGURE_RIGHTS = {
+    "own",
+    "PD",
+    "CC0",
+    "CC-BY-4.0",
+    "CC-BY-SA-4.0",
+    "official-document",
+    "permission",
+    "unknown",
+}
+FIGURE_KINDS = {"photo", "diagram", "chart", "table", "micrograph", "map", "other"}
 STATUSES = {"proposed", "verified", "rejected"}
 QUALITIES = {"exact", "ocr_uncertain", "estimate", "missing"}
 GRANULARITIES = {"year", "month", "day"}
@@ -96,6 +109,35 @@ def _check_obj(obj, field: str, required: list[str], errors: list[str]) -> None:
             errors.append(f"{field}: missing required '{r}'")
 
 
+def facts_mode(rec: dict) -> bool:
+    """Запись построена на переработанных фактах (без дословной цитаты)."""
+    prov = rec.get("provenance") or {}
+    src = rec.get("source") or {}
+    return (
+        prov.get("derivation") == "facts_reworked"
+        or src.get("license") == "facts-derived"
+    )
+
+
+def validate_figures(rec: dict, errors: list[str]) -> None:
+    figs = rec.get("figures")
+    if figs is None:
+        return
+    if not isinstance(figs, list):
+        errors.append("figures must be an array")
+        return
+    for i, f in enumerate(figs):
+        _check_obj(f, f"figures[{i}]", ["path", "rights"], errors)
+        if isinstance(f, dict):
+            if f.get("rights") not in FIGURE_RIGHTS:
+                errors.append(
+                    f"figures[{i}].rights invalid: {f.get('rights')!r} "
+                    "(сырое изображение из проприетарного источника публиковать нельзя)"
+                )
+            if f.get("kind") is not None and f.get("kind") not in FIGURE_KINDS:
+                errors.append(f"figures[{i}].kind invalid: {f.get('kind')!r}")
+
+
 def validate_base(rec: dict, errors: list[str]) -> None:
     for r in BASE_REQUIRED:
         if r not in rec:
@@ -118,16 +160,34 @@ def validate_base(rec: dict, errors: list[str]) -> None:
     if isinstance(prov, dict):
         if prov.get("method") not in METHODS:
             errors.append(f"provenance.method invalid: {prov.get('method')!r}")
+        if (
+            prov.get("derivation") is not None
+            and prov.get("derivation") not in DERIVATIONS
+        ):
+            errors.append(f"provenance.derivation invalid: {prov.get('derivation')!r}")
         if not DATE_RE.match(str(prov.get("extracted_at", ""))):
             errors.append("provenance.extracted_at must be YYYY-MM-DD")
     rev = rec.get("review")
     _check_obj(rev, "review", ["status"], errors)
     if isinstance(rev, dict) and rev.get("status") not in STATUSES:
         errors.append(f"review.status invalid: {rev.get('status')!r}")
+    # facts-derived / facts_reworked: факт изложен своими словами —
+    # дословная цитата охраняемого текста запрещена, координата обязательна.
+    if facts_mode(rec):
+        if norm_ws(str(rec.get("evidence_quote") or "")):
+            errors.append(
+                "facts_reworked/facts-derived: evidence_quote must be empty "
+                "(нельзя приводить дословный фрагмент охраняемого текста)"
+            )
+        if not norm_ws(str((src or {}).get("coord") or "")):
+            errors.append("facts_reworked/facts-derived requires source.coord")
     # cross-field: verified requires evidence
     if isinstance(rev, dict) and rev.get("status") == "verified":
-        if not norm_ws(str(rec.get("evidence_quote") or "")):
-            errors.append("review.status=verified requires non-empty evidence_quote")
+        if not facts_mode(rec) and not norm_ws(str(rec.get("evidence_quote") or "")):
+            errors.append(
+                "review.status=verified requires non-empty evidence_quote "
+                "(или derivation=facts_reworked)"
+            )
         if not norm_ws(str((src or {}).get("coord") or "")):
             errors.append("review.status=verified requires source.coord")
     if "confidence" in rec and rec["confidence"] is not None:
@@ -158,6 +218,7 @@ def validate_experiment(rec: dict, errors: list[str]) -> None:
                     errors.append(f"measurements[{i}].value must be number or string")
     if not norm_ws(str(rec.get("outcome_ru") or "")):
         errors.append("outcome_ru required")
+    validate_figures(rec, errors)
 
 
 def validate_amendment(rec: dict, errors: list[str]) -> None:
@@ -193,7 +254,9 @@ def resolve_source(file_rel: str, roots: list[Path]) -> Path | None:
 def quote_check(
     rec: dict, roots: list[Path], min_coverage: float
 ) -> tuple[str, float | None]:
-    """Returns (status, coverage) where status in ok|mismatch|unavailable|no_quote."""
+    """Returns (status, coverage) where status in ok|mismatch|unavailable|no_quote|not_applicable."""
+    if facts_mode(rec):
+        return "not_applicable", None
     quote = norm_ws(str(rec.get("evidence_quote") or ""))
     src = rec.get("source") or {}
     file_rel = str(src.get("file") or "")

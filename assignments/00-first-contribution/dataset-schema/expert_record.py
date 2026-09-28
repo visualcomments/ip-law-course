@@ -170,6 +170,29 @@ def cmd_find(args) -> int:
     return 0
 
 
+def parse_figures(items) -> list[dict]:
+    """Формат элемента: 'path|kind|caption|rights' (kind/caption/rights опциональны)."""
+    out: list[dict] = []
+    for it in items or []:
+        parts = [p.strip() for p in str(it).split("|")]
+        path = parts[0] if parts else ""
+        if not path:
+            continue
+        kind = parts[1] if len(parts) > 1 and parts[1] else "chart"
+        caption = parts[2] if len(parts) > 2 and parts[2] else None
+        rights = parts[3] if len(parts) > 3 and parts[3] else "own"
+        out.append(
+            {
+                "path": path,
+                "kind": kind,
+                "caption_ru": caption,
+                "rights": rights,
+                "redrawn": rights == "own",
+            }
+        )
+    return out
+
+
 def build_amendment(args, quote: str) -> dict:
     return {
         "schema": 1,
@@ -197,6 +220,7 @@ def build_amendment(args, quote: str) -> dict:
             else "year"
         ),
         "change_ru": args.change,
+        "figures": parse_figures(args.figure),
         "before_ru": None,
         "after_ru": None,
         "source": {
@@ -210,11 +234,12 @@ def build_amendment(args, quote: str) -> dict:
             "extracted_by": args.nick,
             "extracted_at": CURRENT_DAY,
             "method": "assisted",
+            "derivation": args.derivation,
             "tool": "opencode expert-helper",
         },
         "review": {
             "status": "proposed",
-            "note_ru": "цитата извлечена дословно; требуется проверка эксперта",
+            "note_ru": "источник обработан; требуется проверка эксперта",
         },
         "confidence": 0.6,
         "evidence_quote": quote,
@@ -250,6 +275,7 @@ def build_experiment(args, quote: str) -> dict:
                 "quality": args.quality or "ocr_uncertain",
             }
         ],
+        "figures": parse_figures(args.figure),
         "outcome_ru": args.outcome,
         "source": {
             "file": args.file,
@@ -262,11 +288,12 @@ def build_experiment(args, quote: str) -> dict:
             "extracted_by": args.nick,
             "extracted_at": CURRENT_DAY,
             "method": "assisted",
+            "derivation": args.derivation,
             "tool": "opencode expert-helper",
         },
         "review": {
             "status": "proposed",
-            "note_ru": "цитата извлечена дословно; требуется проверка эксперта",
+            "note_ru": "источник обработан; требуется проверка эксперта",
         },
         "confidence": 0.6,
         "evidence_quote": quote,
@@ -275,20 +302,32 @@ def build_experiment(args, quote: str) -> dict:
 
 def cmd_add(args) -> int:
     roots = roots_from(args)
-    src = resolve(args.file, roots)
-    if src is None:
-        print(
-            f"НЕ НАЙДЕН файл: {args.file}. Подсказка: запустите `find` или проверьте --corpus-root."
-        )
-        return 2
-    text = norm(src.read_text(encoding="utf-8", errors="replace"))
-    wins = windows(text, args.phrase)
-    if not wins:
-        print(
-            f"Фраза-якорь не найдена: {args.phrase!r}. Возьмите фразу из файла дословно (`find`)."
-        )
-        return 1
-    quote = wins[args.pick - 1] if 1 <= args.pick <= len(wins) else wins[0]
+    facts = args.derivation == "facts_reworked"
+    quote = ""
+    if facts:
+        if not norm(args.coord or ""):
+            print(
+                "Для facts_reworked обязателен --coord (координата источника: страница/раздел)."
+            )
+            return 2
+    else:
+        src = resolve(args.file, roots)
+        if src is None:
+            print(
+                f"НЕ НАЙДЕН файл: {args.file}. Подсказка: запустите `find` или проверьте --corpus-root."
+            )
+            return 2
+        if not norm(args.phrase):
+            print("Укажите --phrase (фразу-якорь) или --derivation facts_reworked.")
+            return 2
+        text = norm(src.read_text(encoding="utf-8", errors="replace"))
+        wins = windows(text, args.phrase)
+        if not wins:
+            print(
+                f"Фраза-якорь не найдена: {args.phrase!r}. Возьмите фразу из файла дословно (`find`)."
+            )
+            return 1
+        quote = wins[args.pick - 1] if 1 <= args.pick <= len(wins) else wins[0]
 
     if args.kind == "amendment":
         missing = [
@@ -367,10 +406,10 @@ def main() -> int:
     def common(p):
         p.add_argument("--corpus-root", action="append", default=[])
         p.add_argument("--file", required=True)
-        p.add_argument("--phrase", required=True)
 
     f = sub.add_parser("find")
     common(f)
+    f.add_argument("--phrase", required=True)
     f.set_defaults(func=cmd_find)
 
     a = sub.add_parser("add")
@@ -384,6 +423,23 @@ def main() -> int:
     a.add_argument("--coord")
     a.add_argument("--doc-type", default="scientific_article")
     a.add_argument("--license", default="cite-only")
+    a.add_argument(
+        "--derivation",
+        default="verbatim_quote",
+        choices=["verbatim_quote", "facts_reworked"],
+        help="facts_reworked — факт изложен своими словами (без дословной цитаты); нужен --coord",
+    )
+    a.add_argument(
+        "--phrase",
+        default="",
+        help="фраза-якорь для дословной цитаты (не нужна при --derivation facts_reworked)",
+    )
+    a.add_argument(
+        "--figure",
+        action="append",
+        default=[],
+        help="изображение: 'path|kind|caption|rights' (права: own/PD/CC0/CC-BY-4.0/CC-BY-SA-4.0/official-document/permission)",
+    )
     # amendment
     a.add_argument("--source-law")
     a.add_argument("--article")

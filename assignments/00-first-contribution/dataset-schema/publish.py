@@ -29,7 +29,55 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 VALIDATE = HERE / "validate.py"
 
-PUBLISHABLE = {"PD", "CC0", "CC-BY-4.0", "CC-BY-SA-4.0", "official-document"}
+PUBLISHABLE = {
+    "PD",
+    "CC0",
+    "CC-BY-4.0",
+    "CC-BY-SA-4.0",
+    "official-document",
+    "facts-derived",
+}
+# Изображения: публикуем только «свои» (перерисованные), свободные или разрешённые.
+FIGURE_PUBLISHABLE = {
+    "own",
+    "PD",
+    "CC0",
+    "CC-BY-4.0",
+    "CC-BY-SA-4.0",
+    "official-document",
+    "permission",
+}
+
+
+def record_publishable(rec: dict, assets_root=None) -> bool:
+    """Публикуемо ли: лицензия источника, права на изображения и наличие их файлов."""
+    if (rec.get("source") or {}).get("license") not in PUBLISHABLE:
+        return False
+    for f in rec.get("figures") or []:
+        fi = f or {}
+        if fi.get("rights") not in FIGURE_PUBLISHABLE:
+            return False
+        if assets_root is not None:
+            p = Path(assets_root) / str(fi.get("path") or "")
+            if not p.is_file():
+                return False
+    return True
+
+
+def copy_assets(records: list[dict], assets_root: Path, out_dir: Path) -> int:
+    """Копирует файлы изображений опубликованных записей в out_dir (для загрузки на HF)."""
+    copied = 0
+    for rec in records:
+        for f in rec.get("figures") or []:
+            rel = str((f or {}).get("path") or "")
+            src = assets_root / rel
+            if not rel or not src.is_file():
+                continue
+            dst = out_dir / rel
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            dst.write_bytes(src.read_bytes())
+            copied += 1
+    return copied
 
 
 def validate_file(path: Path) -> tuple[bool, str]:
@@ -71,9 +119,18 @@ def main() -> int:
     ap.add_argument("--repo-id", default="")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--title", default="Expert records of the course")
+    ap.add_argument(
+        "--assets-root",
+        default="",
+        help="корень, относительно которого лежат пути изображений (по умолчанию — корень репозитория)",
+    )
     args = ap.parse_args()
 
-    subs = sorted(Path(args.submissions_dir).glob("*.jsonl"))
+    subs_dir = Path(args.submissions_dir).resolve()
+    assets_root = (
+        Path(args.assets_root).resolve() if args.assets_root else subs_dir.parents[2]
+    )
+    subs = sorted(subs_dir.glob("*.jsonl"))
     if not subs:
         print("Нет submissions (*.jsonl) — нечего публиковать.")
         return 0
@@ -109,16 +166,8 @@ def main() -> int:
                 f"Существующих записей в датасете: {len(existing)}; всего после объединения: {len(records)}"
             )
 
-    published = [
-        r
-        for r in records.values()
-        if (r.get("source") or {}).get("license") in PUBLISHABLE
-    ]
-    excluded = [
-        r
-        for r in records.values()
-        if (r.get("source") or {}).get("license") not in PUBLISHABLE
-    ]
+    published = [r for r in records.values() if record_publishable(r, assets_root)]
+    excluded = [r for r in records.values() if not record_publishable(r, assets_root)]
 
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -126,6 +175,9 @@ def main() -> int:
     (out_dir / "records.jsonl").write_text(
         rows + ("\n" if rows else ""), encoding="utf-8"
     )
+    copied = copy_assets(published, assets_root, out_dir)
+    if copied:
+        print(f"Скопировано изображений: {copied} (в {out_dir})")
 
     by_profile: dict[str, int] = {}
     for r in published:
@@ -162,6 +214,20 @@ pretty_name: {args.title}
 (изменения в статьи НПА) и `experiment` (количественные результаты).
 `evidence_quote` — дословный фрагмент источника; `review.status` — статус
 содержательной проверки.
+
+### Мультимодальность
+Записи могут содержать `figures[]` — изображения (фото/диаграммы/графики/
+таблицы) с полем `rights`. Публикуются только изображения с правами
+`own`/`PD`/`CC0`/`CC-BY-4.0`/`CC-BY-SA-4.0`/`official-document`/`permission`;
+`own` означает, что график **перерисован экспертом** из числовых данных
+источника.
+
+### Факты из источников (facts-derived)
+Записи вида `source.license="facts-derived"` (`provenance.derivation="facts_reworked"`)
+содержат **факты, переработанные и изложенные своими словами** (факты и сообщения
+о фактах не охраняются авторским правом — ст. 1259 п. 5 ГК РФ). Для таких записей
+`evidence_quote` пуст: дословный фрагмент охраняемого текста не приводится, но
+`source.coord` обязателен как якорь провенанса.
 
 ## Лицензия и происхождение
 Публикуются только записи из источников с публикуемой лицензией
