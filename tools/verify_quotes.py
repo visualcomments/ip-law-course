@@ -46,6 +46,14 @@ class Matcher:
         return m.size, m.a, m.b
 
 
+def join_adjacent(left, right, max_overlap=400):
+    """Склеить соседние фрагменты, не повторяя общий для них стык."""
+    for size in range(min(len(left), len(right), max_overlap), 0, -1):
+        if left.endswith(right[:size]):
+            return left + right[size:]
+    return left + right
+
+
 def load_chunks_by_file():
     out = {}
     if not os.path.exists(CHUNKS):
@@ -137,6 +145,17 @@ def main():
             if chunk_coverage > best_chunk_coverage:
                 best_chunk_coverage = chunk_coverage
                 found_chunk = chunk["chunk_id"]
+
+        # Чанки перекрываются только на стыке: цитата, начатая в конце одного
+        # фрагмента, целиком не помещается ни в один. Указанный фрагмент тогда
+        # подтверждается, если цитату покрывает он вместе с соседним.
+        if cited is not None and cited_coverage < MIN_COVERAGE:
+            by_id = {chunk["chunk_id"]: chunk["text"] for chunk in chunks.get(base, [])}
+            for left, right in ((cited - 1, cited), (cited, cited + 1)):
+                if left in by_id and right in by_id:
+                    joined = Matcher(join_adjacent(by_id[left], by_id[right]))
+                    joined_size, _, _ = joined.best_span(ql)
+                    cited_coverage = max(cited_coverage, joined_size / len(ql))
 
         if coverage < MIN_COVERAGE:
             status = f"FAIL: покрытие {coverage:.2f}"

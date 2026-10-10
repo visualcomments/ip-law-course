@@ -85,6 +85,35 @@ class VerifierTests(unittest.TestCase):
                 "FAIL: указан #7, найден #8", report.read_text(encoding="utf-8")
             )
 
+    def test_accepts_quote_spanning_adjacent_chunks(self):
+        # Чанки перекрываются лишь на стыке, поэтому цитата, начатая в конце
+        # одного фрагмента, целиком не помещается ни в один из них.
+        with tempfile.TemporaryDirectory() as directory:
+            repo, texts, index, report = write_verifier_fixture(
+                Path(directory), cited_chunk=8
+            )
+            quote = "Это достаточно длинная цитата для проверки координат"
+            source = "Начало документа. " + quote + " Конец документа."
+            split = source.index("цитата")
+            overlap = 6
+            (texts / "source.txt").write_text(source, encoding="utf-8")
+            (index / "chunks.jsonl").write_text(
+                "".join(
+                    json.dumps(chunk, ensure_ascii=False) + "\n"
+                    for chunk in (
+                        {"file": "source.txt", "chunk_id": 8, "text": source[:split]},
+                        {"file": "source.txt", "chunk_id": 9,
+                         "text": source[split - overlap:]},
+                    )
+                ),
+                encoding="utf-8",
+            )
+
+            result = run_verifier(repo, texts, index)
+
+            self.assertEqual(result.returncode, 0, result.stdout)
+            self.assertIn("неудач: **0**", report.read_text(encoding="utf-8"))
+
     def test_preserves_report_for_incomplete_corpus(self):
         with tempfile.TemporaryDirectory() as directory:
             repo, texts, index, report = write_verifier_fixture(
