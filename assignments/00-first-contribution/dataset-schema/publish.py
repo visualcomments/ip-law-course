@@ -13,7 +13,7 @@
 Примеры:
   python publish.py --submissions-dir ../submissions --out-dir ../../dataset --dry-run
   HF_TOKEN=... python publish.py --submissions-dir ../submissions \\
-      --out-dir ../../dataset --repo-id chaotic-good-project/ip-law-expert-records
+      --out-dir ../../dataset --repo-id lawful-good-project/legal-agent-calibrations
 """
 
 from __future__ import annotations
