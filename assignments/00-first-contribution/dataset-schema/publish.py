@@ -255,11 +255,31 @@ pretty_name: {args.title}
         except ImportError:
             print("huggingface_hub не установлен (pip install huggingface_hub).")
             return 1
-        api = HfApi()
-        api.create_repo(repo_id=args.repo_id, repo_type="dataset", exist_ok=True)
-        api.upload_folder(
-            repo_id=args.repo_id, repo_type="dataset", folder_path=str(out_dir)
-        )
+        api = HfApi(token=token)
+        try:
+            api.create_repo(
+                repo_id=args.repo_id, repo_type="dataset", exist_ok=True, token=token
+            )
+            api.upload_folder(
+                repo_id=args.repo_id,
+                repo_type="dataset",
+                folder_path=str(out_dir),
+                token=token,
+            )
+        except Exception as e:  # noqa: BLE001
+            msg = str(e)
+            if "403" in msg or "Forbidden" in msg:
+                print(
+                    f"ОШИБКА ДОСТУПА: токен HF_TOKEN не имеет прав на запись в "
+                    f"'{args.repo_id}'.\n"
+                    f"Целевой датасет должен принадлежать владельцу токена "
+                    f"(или токен должен быть приглашён в организацию-владельца "
+                    f"с ролью write). Проверьте --repo-id и секрет HF_TOKEN.\n"
+                    f"Детали: {msg}"
+                )
+            else:
+                print(f"ОШИБКА загрузки в '{args.repo_id}': {msg}")
+            return 1
         print(f"Загружено в https://huggingface.co/datasets/{args.repo_id}")
     elif args.dry_run:
         print("dry-run: загрузка пропущена.")

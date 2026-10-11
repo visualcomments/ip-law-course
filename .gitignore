@@ -27,3 +27,6 @@ reading_ru/
 sessions/
 legal-agent-calibration/**/_public/
 *.sessionid
+
+# сгенерированный датасет (публикуется на HuggingFace, в репозитории не хранится)
+dataset/

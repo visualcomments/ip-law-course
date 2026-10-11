@@ -46,4 +46,4 @@ jobs:
           python3 assignments/00-first-contribution/dataset-schema/publish.py \
             --submissions-dir assignments/00-first-contribution/submissions \
             --out-dir dataset \
-            --repo-id lawful-good-project/legal-agent-calibrations
+            --repo-id chaotic-good-project/ip-law-expert-records
