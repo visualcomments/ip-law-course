@@ -21,7 +21,9 @@
           "enum": ["PD", "CC0", "CC-BY-4.0", "CC-BY-SA-4.0", "official-document", "facts-derived", "cite-only", "unknown"],
           "description": "facts-derived — данные переработаны и изложены как факты (публикуемо; дословная цитата охраняемого текста не приводится)"
         },
-        "url": { "type": ["string", "null"], "maxLength": 512 }
+        "url": { "type": ["string", "null"], "maxLength": 512 },
+        "abstract": { "type": ["string", "null"], "maxLength": 5000, "description": "Оригинальная аннотация источника (если есть в источнике)" },
+        "abstract_ru": { "type": ["string", "null"], "maxLength": 5000, "description": "Перевод аннотации на русский язык (если аннотация есть в источнике)" }
       }
     },
     "provenance": {
@@ -107,7 +109,9 @@
             "authors": { "type": ["string", "null"], "maxLength": 300 },
             "year": { "type": ["integer", "null"] },
             "journal": { "type": ["string", "null"], "maxLength": 200 },
-            "language": { "type": ["string", "null"], "maxLength": 20 }
+            "language": { "type": ["string", "null"], "maxLength": 20 },
+            "abstract": { "type": ["string", "null"], "maxLength": 5000, "description": "Оригинальная аннотация источника (если есть в источнике)" },
+            "abstract_ru": { "type": ["string", "null"], "maxLength": 5000, "description": "Перевод аннотации на русский язык (если аннотация есть в источнике)" }
           }
         },
         "experiment": {
