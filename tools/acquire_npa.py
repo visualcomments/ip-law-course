@@ -164,7 +164,7 @@ def cmd_fetch(args: argparse.Namespace) -> int:
                     "User-Agent": "ip-law-acquire/1.0 (+https://github.com/visualcomments)"
                 },
             )
-            with urllib.request.urlopen(req, timeout=30.0) as resp:  # noqa: S310
+            with urllib.request.urlopen(req, timeout=args.timeout) as resp:  # noqa: S310
                 body = resp.read(DEFAULT_MAX_BYTES + 1)
         except Exception as exc:  # noqa: BLE001
             skipped += 1
@@ -174,6 +174,10 @@ def cmd_fetch(args: argparse.Namespace) -> int:
                     "status": "skipped",
                     "reason": str(exc),
                 }
+            )
+            print(
+                f"  skipped {row.get('service_id')}: {str(exc)[:80]}",
+                file=sys.stderr,
             )
             continue
         sha = hashlib.sha256(body).hexdigest()
@@ -230,6 +234,12 @@ def build_parser() -> argparse.ArgumentParser:
     pf = sub.add_parser("fetch", help="Загрузить тела актов ЛОКАЛЬНО (вне git).")
     pf.add_argument("--manifest", required=True)
     pf.add_argument("--out-dir", default=".local/legal-bronze")
+    pf.add_argument(
+        "--timeout",
+        type=float,
+        default=15.0,
+        help="Таймаут на один акт в секундах (официальные порталы бывают медленными).",
+    )
     pf.set_defaults(func=cmd_fetch)
     return ap
 
