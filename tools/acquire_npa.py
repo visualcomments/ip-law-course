@@ -35,7 +35,26 @@ REPO = HERE.parent
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 
-from law_graph.acquire import pravo  # noqa: E402
+
+def _load_stdlib_adapter(name: str):
+    """Загрузить stdlib-адаптер напрямую по файлу.
+
+    Пакет ``law_graph`` тянет pydantic через ``__init__``; адаптеры сбора
+    (pravo/sozd) обязаны работать на голой стандартной библиотеке, поэтому
+    грузим их по пути, минуя инициализацию пакета.
+    """
+    import importlib.util
+
+    path = REPO / "law_graph" / "acquire" / f"{name}.py"
+    spec = importlib.util.spec_from_file_location(f"law_acquire_{name}", path)
+    assert spec and spec.loader
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+pravo = _load_stdlib_adapter("pravo")
+sozd = _load_stdlib_adapter("sozd")
 
 # Встроенный каталог тем (правовые блоки ГК РФ ч. IV и специальные законы).
 TOPIC_CATALOG = {

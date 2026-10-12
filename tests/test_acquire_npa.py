@@ -24,7 +24,10 @@ assert _SPEC and _SPEC.loader
 acquire_npa = importlib.util.module_from_spec(_SPEC)
 _SPEC.loader.exec_module(acquire_npa)
 
-from law_graph.acquire import pravo, sozd  # noqa: E402
+# Адаптеры сбора — stdlib-only; грузим напрямую, минуя law_graph/__init__
+# (он тянет pydantic, которого нет в CI-окружении тестов инструментов).
+pravo = acquire_npa.pravo
+sozd = acquire_npa.sozd
 
 
 def test_topic_catalog_present() -> None:
