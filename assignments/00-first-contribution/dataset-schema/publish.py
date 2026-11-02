@@ -4,7 +4,7 @@
 
 Порядок:
   1) проверить каждый submission (`validate.py`); ошибки структуры/цитаты — стоп;
-  2) объединить записи, убрать дубликаты по `record_id`;
+  2) объединить записи; повтор `record_id` в submissions — ошибка;
   3) отфильтровать по лицензии: публикуем только PD / CC0 / CC-BY-4.0 /
      CC-BY-SA-4.0 / official-document (cite-only и unknown — не публикуем);
   4) записать `records.jsonl` и карточку датасета `README.md` в --out-dir;
@@ -136,7 +136,9 @@ def main() -> int:
         return 0
 
     records: dict[str, dict] = {}
+    record_locations: dict[str, tuple[Path, int]] = {}
     failed = 0
+    duplicates = 0
     for f in subs:
         ok, out = validate_file(f)
         status = "OK" if ok else "FAIL"
@@ -144,15 +146,29 @@ def main() -> int:
         if not ok:
             failed += 1
             continue
-        for line in f.read_text(encoding="utf-8").splitlines():
+        for lineno, line in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
             line = line.strip()
             if not line:
                 continue
             rec = json.loads(line)
-            records.setdefault(rec["record_id"], rec)
+            rid = rec["record_id"]
+            if rid in record_locations:
+                first_file, first_line = record_locations[rid]
+                print(
+                    f"ОШИБКА: повтор record_id={rid!r}: "
+                    f"{first_file}:{first_line} и {f}:{lineno}"
+                )
+                duplicates += 1
+                continue
+            records[rid] = rec
+            record_locations[rid] = (f, lineno)
 
     if failed:
         print(f"\nСТОП: {failed} файл(ов) не прошли проверку — публикация отменена.")
+        return 1
+
+    if duplicates:
+        print(f"\nСТОП: повторов record_id: {duplicates} — публикация отменена.")
         return 1
 
     # Дополняющая публикация: подмешиваем уже опубликованные записи (сдачи приоритетнее).
