@@ -1,56 +1,39 @@
 {
  "schema": 1,
- "index_version": "2026-09-13-v2",
- "note": "Индекс корпуса курса «Право интеллектуальной собственности». Версия v2: под занятие 1 («ИС: понятие, границы, общественное достояние») добавлено 44 открытых источника — 17 первоисточников общественного достояния (Шейлер «О природе интеллектуальной собственности» 1878, спор о литературной собственности 1768/1770, Биррелл, Макгилливрей, Скруттон, Карпентер, Хопкинс, Дрю, Нимс и др.) и 27 статей Wikipedia (CC BY-SA 4.0). Корпус 146 -> 186 файлов, чанков 8 382 -> 18 219. Полный перечень — docs/lesson1-sources.md.",
+ "index_version": "2026-11-07",
+ "note": "Индекс корпуса курса «Право интеллектуальной собственности», пересобран на GPU (sentence-transformers + torch/CUDA): 427 файлов -> 59 768 чанков (1400/140). Точный косинусный поиск (annoy недоступен на Windows; rag_search.py автоматически использует embeddings.npy).",
  "archive": {
-  "filename": "ip-law-index-2026-09-13-v2.zip",
-  "size_bytes": 61140512,
-  "sha256": "8C1A1E02096B211372829F95035EB4EF68EE8B50355C5C23172568E2446FB7B7",
-  "url": "https://huggingface.co/datasets/brics-edtech/ip-law-corpus",
-  "file_id": "1y2bRH30i9GhJdXtRe7hjVS6eiY8YA5kU",
-  "view_url": "https://drive.google.com/file/d/1y2bRH30i9GhJdXtRe7hjVS6eiY8YA5kU/view",
-  "kind": "huggingface",
-  "hf_total_bytes": 244083713,
-  "sha256_note": "per-file sha256 in files[]; aggregate not applicable to HF source"
+  "filename": "index.zip",
+  "size_bytes": 109963062,
+  "sha256": "76A9F6DAD9E3F6EF424FB52C81ACCD15D52B82913E5B1F1F5588CB1A5776BFE0",
+  "url": "https://huggingface.co/datasets/brics-edtech/ip-law-corpus/resolve/main/index.zip",
+  "kind": "huggingface"
  },
  "files": [
   {
-   "path": "annoy.index",
-   "size_bytes": 84514608,
-   "sha256": "E7B59BB517B4CE49410ECA23DE3548FC1A6A9C9FE08577D2B0DB1CF1DF15C643"
+   "path": "embeddings.npy",
+   "size_bytes": 91803776,
+   "sha256": "6715B618B61436DAF858A66702CD21CA5357FBA8192F63792E672EA81426F3F7"
   },
   {
    "path": "chunks.jsonl",
-   "size_bytes": 82287670,
-   "sha256": "C5A7C9496FC58D19459B3B15812732B82B00580E50BB034399FAF32D9D3888CD"
+   "size_bytes": 86552486,
+   "sha256": "2E84C7AE89255FB140109BE88850F9706C0F04592CF435066E8C0D5C95F0B245"
   },
   {
    "path": "config.json",
-   "size_bytes": 17435,
-   "sha256": "4784751A1FD0F4FCBAFDC39596EA753AEC36C96A50AA2E4E9ECB7B6C14BE6F45"
-  },
-  {
-   "path": "embeddings.npy",
-   "size_bytes": 77264000,
-   "sha256": "9535A5500374226BA0ECB2DCAAA7BB540D3D1A14ECC7CC9D6D07C0EF56C9BB7F"
+   "size_bytes": 24872,
+   "sha256": "6AA90F9EB8B437F14287A89C72884E02CBDD80AF88D80BC47D2A6B63B09E1A2F"
   }
  ],
  "corpus": {
-  "n_files": 282,
-  "n_chunks": 50302,
-  "composition": {
-   "law_treaties_and_statutes": 16,
-   "lesson1_primary_sources_pd": 17,
-   "oa_cc_licensed_articles": 70,
-   "public_domain_treatises": 54,
-   "practice_materials": 14,
-   "ru_language_publications": 22,
-   "wikipedia_cc_by_sa": 89
-  },
+  "n_files": 427,
+  "n_chunks": 59768,
   "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
   "dim": 384,
   "chunk_chars": 1400,
-  "overlap": 140
+  "overlap": 140,
+  "backend": "exact-cosine"
  },
  "index_hf_kind": "huggingface"
 }

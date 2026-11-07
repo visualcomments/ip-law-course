@@ -147,3 +147,98 @@ rights, Related rights, Sui generis, History of copyright, Copyright Act of
   включения**: DOAJ-статьи без подтверждённой лицензии отброшены (проверка
   через журнал и Crossref);
 - нежелательные файлы выявляются на этапе верификации и чистки индекса.
+
+## Расширение корпуса 2026-11-07 (индекс 2026-11-07)
+
+Корпус расширен со 186 до **427 файлов**; индекс пересобран на GPU
+(torch + sentence-transformers, GTX 1050 Ti). Цель — гарантированное
+покрытие каждого из 16 занятий (≥ 10 источников) и закрытие пробелов
+прежней версии.
+
+### 1. Международные договоры полным текстом (`law__*`) — +30 файлов
+
+Получены с en.wikisource.org методом **трансклюзии** `action=parse
+&prop=text` (HTML включает содержимое постраничных сканов United States
+Treaty Series / оригинальных изданий) с конвертацией в plain text:
+
+| Файл | Документ |
+|---|---|
+| `law__Paris_Convention_1883.txt` | **Парижская конвенция (1883) — полный текст** (закрыт главный пробел) |
+| `law__Paris_Convention_1911.txt` | Парижская конвенция, Вашингтонская редакция (1911) |
+| `law__European_Patent_Convention.txt` | Конвенция о выдаче европейских патентов (EPC, полный текст, 139K симв.) |
+| `law__Unified_Patent_Court_Agreement.txt` | Соглашение о едином патентном суде (94K симв.) |
+| `law__TRIPS_Wikisource_*.txt` (12) | Соглашение ТРИПС по всем частям (I–VII) |
+| `law__TRIPS_COVID_Waiver.txt` | Ваучер ТРИПС для вакцин COVID-19 (2022) |
+| `law__DMCA_Title_I.txt`, `law__DMCA_Title_II.txt` | DMCA: ст. 512 (safe harbor) и 1201 (anti-circumvention) |
+| `law__US_Copyright_Act_1976.txt` | Закон США об авторском праве 1976 г. (полный, 210K симв.) |
+| `law__Berne_Implementation_Act_1988.txt` | Акт о присоединении США к Бернской конвенции (1988) |
+| `law__Rome/Phonograms/Satellite/WCT/WPPT/UCC/Philippines/TPP_*_full.txt` | дубликаты прежних договоров в более полных редакциях |
+| `law__US_Reciprocity_Patents.txt` | Закон США о взаимности патентов |
+
+Договоры — официальные документы, не объекты авторского права
+(ст. 1259 ГК РФ; ст. 2(4) Бернской конвенции).
+
+### 2. PD-книги (Project Gutenberg, зеркало pglaf) — +12 файлов
+
+| Файл | Произведение |
+|---|---|
+| `pd__Copinger_Law_of_Copyright_UK.txt` | Copinger, «A Treatise Upon the Law of Copyright in the United Kingdom and the Dominions» (базовый трактат, 1,1 МБ) |
+| `pd__Wordsworth_Law_of_Copyright.txt` | W. Wordsworth, «The Law of Copyright» |
+| `pd__Putnam_International_Copyright.txt` | G. H. Putnam, «International Copyright» |
+| `pd__Warner_Literary_Copyright.txt` | C. D. Warner, «Literary Copyright» |
+| `pd__Abolition_of_Patents_Discussions.txt` | «Recent Discussions on the Abolition of Patents» (GB/FR/DE/NL) |
+| `pd__US_Patents_and_How_to_Get_One.txt` | «Patents and How to Get One» (US Dept. of Commerce) |
+| `pd__Thompson_Things_to_Know_About_Trade_Marks.txt` | «Things to Know About Trade-Marks» |
+| `pd__Arguments_Patents_Copyright_1904/1906.txt` | Парламентские слушания Комитета по патентам США |
+| `pd__US_Patent_Office_Classification.txt` | Классификация патентов USPTO |
+| `pd__Patent_Laws_Hawaii.txt` | Патентные законы Республики Гавайи |
+| `pd__US_Copyright_Law_Circular_92.txt` | Title 17 USC, Circular 92 (полный) |
+
+Все — общественное достояние (издания 1879–1976 до PG-подтверждения PD;
+заголовки Gutenberg удалены).
+
+### 3. Wikipedia (CC BY-SA 4.0) — +68 файлов
+
+RU (26): Лицензионный договор, Договор об отчуждении…, Исполнитель,
+Фонограмма, Мадридское соглашение, Гаагское соглашение, Страсбургское
+соглашение, Европейская и Евразийская патентные конвенции, Патентный
+тролль, Копилефт, Плагиат, Бернская конвенция, Всемирная конвенция, ВОИС,
+Договор о патентной кооперации, Коммерческая тайна, Ноу-хау,
+Географическое указание, Creative Commons, Открытый доступ, Патентное
+право, Промышленный образец, Полезная модель, Интеллектуальные права,
+Электронная библиотека, Свободное ПО, Формула изобретения, Роспатент,
+ФИПС, Евразийская патентная организация, Международная патентная
+классификация, Патентный поверенный.
+
+EN (42): Patent claim/application/prosecution/examiner/office action,
+Prior art, Provisional application, Patent family, Priority right, Unity
+of invention, Divisional/Continuation application, Search report,
+Copyright transfer agreement, Neighbouring rights, Anti-circumvention,
+Plagiarism, Copyright infringement, Moral rights, Droit de suite,
+Parallel importation, Exhaustion, Database right, Sony v. Universal,
+Feist, Campbell v. Acuff-Rose, Eldred v. Ashcroft, Trademark dilution,
+Well-known trademark, Certification/Collective mark, Domain name,
+Cybersquatting, Geographical indication, Traditional knowledge, Biopiracy,
+Gene patent, Oncomouse, Myriad, Compulsory licence, Crown copyright,
+Watermark, DRM, DMCA и др.
+
+Каждый файл начинается с заголовка атрибуции CC BY-SA 4.0
+(источник, лицензия, ссылка на legalcode).
+
+### 4. OA-статьи DOAJ (CC BY / CC BY-SA) — +13 файлов
+
+Новая выборка 2026-11-07 принимает **только CC BY / CC BY-SA** (NC/ND
+варианты отклонены, чтобы корпус оставался свободно распространяемым).
+Тематика: оригинальность и вдохновение, срок авторского права,
+вознаграждение исполнителей и фонограммных продюсеров, налогообложение
+прав исполнителей, общеизвестные товарные знаки, text and data mining,
+юридический анализ чат-ботов и ИИ. Манифесты —
+`catalog/doaj-manifest-2026-11-07.json` и
+`catalog/doaj-extra-2026-11-07.json` (152 записи: 83 с полным текстом,
+остальные — с абстрактом для контроля релевантности).
+
+### Проверка покрытия
+
+Карта `catalog/sources-map.json` (генератор — `build_sources_map.py`)
+фиксирует **≥ 10 источников на каждое из 16 занятий**: минимум — занятие
+06 (13), максимум — занятие 09 (88).

@@ -4,70 +4,94 @@
 в каталоге `COURSE_CORPUS_ROOT/txt/` (по умолчанию `ip_law_corpus/txt`),
 индекс — в `COURSE_CORPUS_ROOT/index/`.
 
-## Состав (146 файлов, расширение 2026-09-13)
+## Состав (427 файлов, расширение 2026-11-07)
 
 | Категория | Файлов | Лицензия |
 |---|---|---|
-| `oa__*` — научные статьи | 50 | CC BY / BY-SA / BY-NC / BY-ND / BY-NC-ND / BY-NC-SA |
-| `wiki_en__*`, `wiki_ru__*` | 54 | CC BY-SA 4.0 |
-| `law__*` — договоры и законы | 16 | официальные документы (не объекты АП) |
+| `law__*` — договоры и законы | 46 | официальные документы (не объекты АП) |
+| `lesson1__*` — PD-трактаты занятия 1 | 17 | общественное достояние |
+| `oa__*` — научные статьи | 83 | CC BY / CC BY-SA (NC/ND исключены из новой выборки) |
+| `pd__*` — трактаты | 66 | общественное достояние |
 | `practice__*` — судебная практика | 14 | решения судов (GPL-3.0 датасеты) |
-| `pd__*` — трактаты | 12 | общественное достояние |
+| `ru__*` — русскоязычные публикации | 22 | свободные лицензии |
+| `wiki_en__*` | 96 | CC BY-SA 4.0 |
+| `wiki_ru__*` | 45 | CC BY-SA 4.0 |
+| `wikipedia__*` (старые) | 23 | CC BY-SA 4.0 |
 
 - **Официальные тексты (не объекты авторского права)**: ГК РФ часть IV;
-  Бернская конвенция; **Соглашение ТРИПС** (полный текст); Римская
-  конвенция; Конвенция о фонограммах (1971); Конвенция о спутниковом
-  вещании (1974); Всемирная конвенция об авторском праве; Статут Анны
-  (1709); ACTA; ТПП гл. 18; Кодекс ИС Филиппин; Конвенция УПОВ; ДАП (WCT);
-  ДАИФ (WPPT).
-- **Wikipedia (CC BY-SA 4.0)**: 17 статей RU + 37 новых EN (DMCA, Fair
-  use, Copyright term, Patentability, Novelty, Inventive step, Software
-  patent, Biological/Pharmaceutical patent, Compulsory license, Trademark
-  infringement, Madrid system, Trade dress, Geographical indication, Utility
-  model, Moral rights, Related rights, Sui generis, History of copyright,
-  Patent troll, Open access, Creative Commons, Copyleft и др.).
-- **Статьи под CC-лицензиями (DOAJ)**: 50 работ по авторскому праву,
-  патентам, товарным знакам, ТРИПС, ИИ и праву. Лицензия каждой статьи
-  подтверждена через запись журнала и Crossref; манифест —
-  `catalog/doaj_law_admitted.json`.
-- **Трактаты общественного достояния (Internet Archive, до 1925)**:
-  Waite «Patent law» (1920), Thompson «Handbook of patent law of all
-  countries» (1920), Simonds «Manual of patent law» (1874), Webster «The
-  new patent law» (1853), «History of the International Union for the
-  Protection of Industrial Property» (1887, 2 тома), Schreiter «Protection
-  of industrial property» (1897), Toulmin (1915), Nims «The law of unfair
-  competition and trademarks» (1917), Coca-Cola (1923), Putnam, Birrell.
-- **Судебная практика**: 378 решений СИП РФ (датасет
-  lawful-good-project/ipc_decisions_4k, GPL-3.0) и 71 решение из
+  Бернская конвенция (2 изд. + Implementation Act 1988); **Соглашение ТРИПС**
+  (полный текст по частям + TRIPS_COVID_Waiver); Римская конвенция (2 изд.);
+  Конвенция о фонограммах (2 изд.); Конвенция о спутниковом вещании (2 изд.);
+  Всемирная конвенция об авторском праве (2 изд.); Статут Анны (1709); ACTA;
+  ТПП гл. 18 (2 изд.); Кодекс ИС Филиппин (2 изд.); Конвенция УПОВ; ДАП/WCT
+  (2 изд.); ДАИФ/WPPT (2 изд.); **НОВОЕ 2026-11-07**: Парижская конвенция
+  (1883 и 1911 — полный текст через трансклюзию Wikisource!); Европейская
+  патентная конвенция (EPC); Соглашение о едином патентном суде; DMCA
+  (Title I — 512/1201; Title II); Закон США об авторском праве 1976 г.
+  (полный, 210K симв.); Berne Implementation Act 1988; Copyright Law
+  Circular 92 (Title 17 USC).
+- **Wikipedia (CC BY-SA 4.0)**: 17 RU + 37 EN (база) + 26 RU и 42 EN
+  (новые: Лицензионный договор, Исполнитель, Фонограмма, Плагиат, Бернская
+  конвенция RU, ВОИС, Коммерческая тайна, Ноу-хау, Географическое указание,
+  Копилефт, Creative Commons RU, Открытый доступ RU, Патентный тролль RU;
+  EN: Patent claim/application/prosecution/examiner, Prior art, Novelty,
+  Inventive step, DMCA, Sony v. Universal, Feist, Campbell v. Acuff-Rose,
+  Eldred v. Ashcroft, Trademark dilution, Well-known trademark, Database
+  right, Parallel importation, Exhaustion, Biopiracy, Gene patent, Oncomouse,
+  Traditional knowledge и др.).
+- **Трактаты PD (Internet Archive + Gutenberg)**: прежние 54 + новые
+  (Gutenberg): Wordsworth «Law of Copyright», Copinger «Treatise on the Law
+  of Copyright» (1,1 МБ, базовый английский трактат), Putnam «International
+  Copyright», Warner «Literary Copyright», Thompson «Trade-Marks», «Recent
+  discussions on the abolition of patents», «Patents and How to Get One»,
+  «US Copyright Law Circular 92», Arguments перед Комитетом по патентам
+  (1904/1906), Patent Laws of Hawaii, Classification of Patents.
+- **Статьи под CC-лицензиями (DOAJ)**: 83 файла. Новая выборка 2026-11-07
+  допускает **только CC BY / CC BY-SA / CC0** (NC/ND исключены). Манифесты —
+  `catalog/doaj-manifest-2026-11-07.json`, `catalog/doaj-extra-2026-11-07.json`.
+- **Судебная практика**: 378 решений СИП РФ (GPL-3.0) + 71 решение из
   sud-resh-benchmark (GPL-3.0).
 
 Подробная таблица лицензий по каждому файлу — `docs/corpus-new-sources.md`.
 
-## Пробел, который закрыт не полностью
-
-Парижская конвенция, PCT, Мадридское, Гаагское, Ниццкое и Страсбургское
-соглашения **не найдены в полном тексте** в свободных источниках
-(Wikisource содержит страницы-дизамбигуации, WIPO Lex отдаёт текст внутри
-JS-оболочки). Их нормы излагаются в занятиях как авторский синтез
-(«вне корпуса») и иллюстрируются трактатами 1887–1915 гг., где эти
-соглашения разобраны постатейно. Пересказ вместо первоисточника в корпус
-не подставлялся.
-
 ## Сборка корпуса (порядок)
 
-Скрипты сбора (в рабочем пространстве корпуса):
-`probe_law_sources.py` (какие источники живы), `fetch_treaties_wikisource.py`
-(договоры из Wikisource), `fetch_treaty_parts.py` (многочастные тексты),
-`fetch_treaties_wipo.py` (WIPO Lex), `fetch_doaj_law.py` (CC-статьи с
-проверкой лицензии), `ia_download.py` (PD-трактаты). В репозитории корпус не
-хранится — только `index-manifest.json` с контрольными суммами.
+Скрипты сбора (в рабочем пространстве корпуса, каталог `build-iplaw/`):
+`fetch_treaties.py` (договоры из Wikisource через трансклюзию HTML),
+`fetch_wikipedia.py` (статьи Wikipedia с атрибуцией CC BY-SA),
+`fetch_gutenberg.py` (PD-книги через зеркало pglaf), `fetch_doaj.py`
+(CC-статьи DOAJ с проверкой лицензии журнала), `build_sources_map.py`
+(проверка покрытия занятий), `build_index.py` (GPU-индекс). В репозитории
+корпус не хранится — только `corpus-manifest.json` и `index-manifest.json`
+с контрольными суммами; файлы лежат в HuggingFace dataset
+`brics-edtech/ip-law-corpus`.
+
+## Закрытый пробел 2026-11-07
+
+**Парижская конвенция (1883, 1911) теперь в корпусе полным текстом** —
+получена через трансклюзию постраничных сканов United States Treaty Series
+на Wikisource (ранее страница-дизамбигуация считалась препятствием).
+Добавлены также EPC, Unified Patent Court, DMCA, US Copyright Act 1976.
+PCT, Мадридское, Гаагское, Ниццкое, Страсбургское соглашения по-прежнему
+представлены постатейными трактатами 1887–1915 гг. и статьями Wikipedia
+(RU+EN), т.к. их современные консолидированные тексты на WIPO Lex отдаются
+внутри JS-оболочки. Пересказ вместо первоисточника в корпус не
+подставлялся.
+
+## Автоматическая проверка покрытия занятий
+
+`build-iplaw/build_sources_map.py` (в рабочем каталоге сбора) строит карту
+«занятие → источники» и гарантирует **≥ 10 источников на каждое из 16
+занятий** (минимум: занятие 06 — 13). Карта — `catalog/sources-map.json`.
 
 ## Индекс
 
 Индекс (модель paraphrase-multilingual-MiniLM-L12-v2, точный косинусный
-поиск, чанки 1400/140) распространяется архивом на Google Диске:
-**`ip-law-index-2026-09-13.zip`** — **146 файлов, 8 382 чанка**
-(было 35 файлов / 1 940 чанков). Ссылка и SHA-256 — в
-`index-manifest.json`; размещение — `docs/GOOGLE-DRIVE.md`.
+поиск, чанки 1400/140) пересобран 2026-11-07 на GPU:
+**427 файлов, ~60 000 чанков** (было 282/50 302). Распространение —
+HuggingFace dataset **`brics-edtech/ip-law-corpus`**: texts.zip (тексты),
+embeddings.npy, chunks.jsonl, config.json; SHA-256 — в
+`corpus-manifest.json` / `index-manifest.json`. Скачивание: `make
+corpus-fetch` (автоматически подтягивает с HF по манифестам).
 
 Верификация цитат — `verification/REPORT.md`.

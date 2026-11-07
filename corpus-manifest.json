@@ -1,0 +1,2150 @@
+{
+ "schema": 1,
+ "version": "2026-11-07",
+ "note": "Корпус курса «Право интеллектуальной собственности»: расширение до 427 файлов. Тексты: договоры (официальные, не объекты АП), Wikipedia (CC BY-SA 4.0), PD-трактаты (Gutenberg/Internet Archive), OA-статьи (CC BY/BY-SA), судебная практика (GPL-3.0 датасеты). Провенанс — PROVENANCE.md.",
+ "archive": {
+  "filename": "texts.zip",
+  "size_bytes": 24420215,
+  "sha256": "7EB99D2AB5DB7AA851F6B65E66C5EEB8C9CAE605833A6B829436724792F045CD",
+  "url": "https://huggingface.co/datasets/brics-edtech/ip-law-corpus/resolve/main/texts.zip",
+  "kind": "huggingface"
+ },
+ "n_files": 427,
+ "files": [
+  {
+   "path": "texts/law__ACTA.txt",
+   "size_bytes": 49512,
+   "sha256": "BACBD27FA6C64B08D4E24CF6493B039E50B52FC0AF38E499E24A737433637140"
+  },
+  {
+   "path": "texts/law__Berne_Convention.txt",
+   "size_bytes": 19605,
+   "sha256": "7E26B29E67485CB7644A4AE5150CD209690C4CF8AD67C33B0138B1FD2FC9734E"
+  },
+  {
+   "path": "texts/law__Berne_Convention_EN.txt",
+   "size_bytes": 103436,
+   "sha256": "AB8177096E31E194B8F36E51C2C82E071FC5959E7065274995726BC8AE926A59"
+  },
+  {
+   "path": "texts/law__Berne_Implementation_Act_1988.txt",
+   "size_bytes": 25246,
+   "sha256": "8240D6E7912F4A5C8CC831CC2C547C62D4428C26DB4E41BA2C866C60F1434DD2"
+  },
+  {
+   "path": "texts/law__DMCA_Title_I.txt",
+   "size_bytes": 49227,
+   "sha256": "1F5B36D30D130E5A37BF9773B17C42F0B35B93C818AADB54386414D319F66637"
+  },
+  {
+   "path": "texts/law__DMCA_Title_II.txt",
+   "size_bytes": 27888,
+   "sha256": "A93016F2F9A16A8B195A2C0203BE12217BC3B84C69A606A03419507AD617F5CE"
+  },
+  {
+   "path": "texts/law__European_Patent_Convention.txt",
+   "size_bytes": 140976,
+   "sha256": "3E9FFC874D404FD03AF6F92CB5599D349F355E37458FAC8BC7859B0726C9CD07"
+  },
+  {
+   "path": "texts/law__Paris_Convention_1883.txt",
+   "size_bytes": 21450,
+   "sha256": "D5E2A33AA5BA3DF17B446A1C1FEFF3B1EC068CA0EA12D16E0253EEA0BAE8D844"
+  },
+  {
+   "path": "texts/law__Paris_Convention_1911.txt",
+   "size_bytes": 30560,
+   "sha256": "F2C461791760619C830304E2C7CC53C9B422F866839D411386C53C48778379C8"
+  },
+  {
+   "path": "texts/law__Philippines_IP_Code.txt",
+   "size_bytes": 181749,
+   "sha256": "52EC59CADCDDB7264AA63F1B91194EA8041E70A5B8BE4A8E86BEE7F33737910D"
+  },
+  {
+   "path": "texts/law__Philippines_IP_Code_full.txt",
+   "size_bytes": 213139,
+   "sha256": "8555DD267DA89675158018ED8514E913C712AEF32E4A84727D82105109824443"
+  },
+  {
+   "path": "texts/law__Phonograms_Convention.txt",
+   "size_bytes": 10719,
+   "sha256": "38966A7D9939C1D8A1EC5CD6355893B538206E83464CA2DB93ECB2525198D0BA"
+  },
+  {
+   "path": "texts/law__Phonograms_Convention_full.txt",
+   "size_bytes": 12053,
+   "sha256": "D814862C9194E16372D34DD22A2EBE9A4481938EA811A60BBBE34EB452ACD00A"
+  },
+  {
+   "path": "texts/law__Rome_Convention.txt",
+   "size_bytes": 24468,
+   "sha256": "B310DD2F2A54A77F39B4C20A8827EADBAEAD5733196ED53325C317134BCF40AB"
+  },
+  {
+   "path": "texts/law__Rome_Convention_full.txt",
+   "size_bytes": 26356,
+   "sha256": "4E2C3BCC608633152C178A104E073D2C873F09F9D62737A9944D7AD0E655E0D9"
+  },
+  {
+   "path": "texts/law__Satellite_Convention.txt",
+   "size_bytes": 9968,
+   "sha256": "06453DA7AF3C76E972B53437A635E70B2DD65CDB7352B43346E58D5034EE5C84"
+  },
+  {
+   "path": "texts/law__Satellite_Convention_full.txt",
+   "size_bytes": 11240,
+   "sha256": "913260AFB20D1C109F5DBDC786F435A38C9098E98F015B4FFD54D2DBD504488D"
+  },
+  {
+   "path": "texts/law__Statute_of_Anne.txt",
+   "size_bytes": 14730,
+   "sha256": "EADAAF9DF67D277409F5D957739B032BE230A51D3019CCD21374A40DEC7ACCA5"
+  },
+  {
+   "path": "texts/law__TPP_Chapter_18.txt",
+   "size_bytes": 123091,
+   "sha256": "5582DB072E82ED2C38657DAF17787CBA65D4B44D677C0D78F2D5882E28BC0A92"
+  },
+  {
+   "path": "texts/law__TPP_Chapter_18_full.txt",
+   "size_bytes": 168442,
+   "sha256": "B5996DF046741EA8A6FDF5389C30478C80C4CD4C5FBE5F4976FE54FC447E2ECF"
+  },
+  {
+   "path": "texts/law__TRIPS.txt",
+   "size_bytes": 86084,
+   "sha256": "52DD8D6DA7CF4FEB631272BA0FE1FA45C34DF92A266CE2E257D3FAC1BD78C14F"
+  },
+  {
+   "path": "texts/law__TRIPS_COVID_Waiver.txt",
+   "size_bytes": 6724,
+   "sha256": "E9A9639E2396E0F1E174E457CE6B7E8C8FD11524736DB8947535C938D33874B3"
+  },
+  {
+   "path": "texts/law__TRIPS_Part_I.txt",
+   "size_bytes": 9923,
+   "sha256": "5DB6BE28ACDFD8BB59D2F20B27EC2CF600DC983524D76CDCCBD592C31E70E484"
+  },
+  {
+   "path": "texts/law__TRIPS_Wikisource_Part_I.txt",
+   "size_bytes": 10753,
+   "sha256": "A684B3E7186B7032F27B113CDBBDF1FD6475D863C1F8A785BA228FD9B4261451"
+  },
+  {
+   "path": "texts/law__TRIPS_Wikisource_Part_III_Sections_1_to_3.txt",
+   "size_bytes": 12368,
+   "sha256": "67CB4D7290B7B735BDCF855948D0912F3C38BD9C015148267E8F190DE758DD49"
+  },
+  {
+   "path": "texts/law__TRIPS_Wikisource_Part_III_Sections_4_and_5.txt",
+   "size_bytes": 9971,
+   "sha256": "2681E6F87F478A8753B6E89403B49867F3283529C11F687F9C5D3DE45C61FC0F"
+  },
+  {
+   "path": "texts/law__TRIPS_Wikisource_Part_II_Section_1.txt",
+   "size_bytes": 5632,
+   "sha256": "AFA450F9D9414EBBE360183353903AE25D3CAF022E6A4763858BEEA564880A9F"
+  },
+  {
+   "path": "texts/law__TRIPS_Wikisource_Part_II_Section_2.txt",
+   "size_bytes": 5967,
+   "sha256": "E0E5C1195A0D761E7C9197B2BE09F66881E1F18D1272649379EF9AF9285A5C31"
+  },
+  {
+   "path": "texts/law__TRIPS_Wikisource_Part_II_Section_3.txt",
+   "size_bytes": 8468,
+   "sha256": "3D2C87B09AB25ED1D6ABFC6BECDAAACD8A7565F3782E21CE60D33E740CAF7501"
+  },
+  {
+   "path": "texts/law__TRIPS_Wikisource_Part_II_Section_4.txt",
+   "size_bytes": 2003,
+   "sha256": "AC646E78E545F52D9C8B46B961D65AE4B201485395501BC70B7AB0006B61E05E"
+  },
+  {
+   "path": "texts/law__TRIPS_Wikisource_Part_II_Section_5.txt",
+   "size_bytes": 10303,
+   "sha256": "92D99A2DA1186F8D48EF9AE403ADC34488116434CF37DFA6CDA5CE795EB3DA37"
+  },
+  {
+   "path": "texts/law__TRIPS_Wikisource_Part_II_Section_6.txt",
+   "size_bytes": 3771,
+   "sha256": "C706EA777866873BB11338183F3C69676399FB7D06AD5987FE89DB027014BA21"
+  },
+  {
+   "path": "texts/law__TRIPS_Wikisource_Part_II_Sections_7_and_8.txt",
+   "size_bytes": 4883,
+   "sha256": "6F129C9CB021FFC01950F581A152AB9001925410D57E1DF977194FED0541CB26"
+  },
+  {
+   "path": "texts/law__TRIPS_Wikisource_Parts_IV_and_V.txt",
+   "size_bytes": 5648,
+   "sha256": "94818BD91C46A2EBE0CFF193A40EEBBEE3F3E6127516A3BCAC32403C61D8DFC4"
+  },
+  {
+   "path": "texts/law__TRIPS_Wikisource_Parts_VI_and_VII.txt",
+   "size_bytes": 11631,
+   "sha256": "B06A9351AC2D641B71C40C0F5DA84479B3282DE0BC47E9B03920C3F20DF9A1F4"
+  },
+  {
+   "path": "texts/law__UCC_full.txt",
+   "size_bytes": 48439,
+   "sha256": "68598C7B81EFB167D2CFE91BFB944FA8466D2696DC21FC6D1257D8A4E15D3313"
+  },
+  {
+   "path": "texts/law__UPOV_Convention.txt",
+   "size_bytes": 110439,
+   "sha256": "7F1856B50749F4AFEB6A07B6493C14BC4FFF6B57A7F74BFA085FC327D127D566"
+  },
+  {
+   "path": "texts/law__US_Copyright_Act_1976.txt",
+   "size_bytes": 214081,
+   "sha256": "02132D115F45F6F6C42EE5BEBB3356F455444DD9AB9D2B265E97F23E31EE0579"
+  },
+  {
+   "path": "texts/law__US_Reciprocity_Patents.txt",
+   "size_bytes": 15742,
+   "sha256": "CD560E082845D75B66DF77571669974673F44DFC64A0209A18E4513F89DBA5CD"
+  },
+  {
+   "path": "texts/law__Unified_Patent_Court_Agreement.txt",
+   "size_bytes": 96471,
+   "sha256": "F3741A528DA28DB4655802F6AAA3199FA49CD4FD70581B347317E225D07119A3"
+  },
+  {
+   "path": "texts/law__Universal_Copyright_Convention.txt",
+   "size_bytes": 46445,
+   "sha256": "9D660768CD8D2CAE7CAA1B5A411BC83E659E4458F92B7A15356BE9CC9C7F003F"
+  },
+  {
+   "path": "texts/law__WCT.txt",
+   "size_bytes": 18202,
+   "sha256": "B87ABE28051512CD2810CBD67E6201D1F7DD2BB5DEA17831258F10C7C836ABA9"
+  },
+  {
+   "path": "texts/law__WCT_full.txt",
+   "size_bytes": 20703,
+   "sha256": "12233CB7F18AAB31F118A06A30CA4F848AA8AEA2C7F1939F5BC34E2F66661504"
+  },
+  {
+   "path": "texts/law__WPPT.txt",
+   "size_bytes": 28817,
+   "sha256": "DE6592C8C2981A202EBD764B82C08F423D438CD1B260D333FC179F680CFEBECB"
+  },
+  {
+   "path": "texts/law__WPPT_full.txt",
+   "size_bytes": 31010,
+   "sha256": "7388A4291BAE0A3B45D97B1927EFE52D91638DE8FAFA6662B80A9625D5DE15ED"
+  },
+  {
+   "path": "texts/law__ГК_РФ_часть_IV.txt",
+   "size_bytes": 1170374,
+   "sha256": "AD9640DCA1A4BD73648FD400BE1228D61AE7393E37257153FC3452724738152B"
+  },
+  {
+   "path": "texts/lesson1__Baekeland_Protection_of_Intellectual_Property.txt",
+   "size_bytes": 45449,
+   "sha256": "40BC912E11D1DB6E9EA08231783FCC14C060C23DD1C19136E1257EA5F67C294B"
+  },
+  {
+   "path": "texts/lesson1__Birrell_Seven_Lectures_Copyright.txt",
+   "size_bytes": 286580,
+   "sha256": "97489421EDB3CA8D6FDFD8D8BAAAA54BDBA9295FDB9405B0BEE2C695E174F7B3"
+  },
+  {
+   "path": "texts/lesson1__Carpenter_Law_of_Patents.txt",
+   "size_bytes": 342632,
+   "sha256": "33B3012BB520F62A7AD34B2E5C60070E9E0ABD3C0234AD8D89B20B22E84DA0C5"
+  },
+  {
+   "path": "texts/lesson1__Drew_Law_of_Trademarks.txt",
+   "size_bytes": 349969,
+   "sha256": "344EF8FCB3169FBF40A9E826118D4A75270A0E062D922CD231B47285C597DD46"
+  },
+  {
+   "path": "texts/lesson1__Fraser_Handybook_Patent_and_Copyright.txt",
+   "size_bytes": 387498,
+   "sha256": "63D256A397F9E0E2D089DA8DFB15A8D74A2B4250B1BA10E9ADEA3A8E25069DE5"
+  },
+  {
+   "path": "texts/lesson1__Hopkins_Law_of_Patents.txt",
+   "size_bytes": 1850653,
+   "sha256": "E9139D4B89C1E7382D3AD2561E67E49866278CC33098E79438C8A0F771F7E84D"
+  },
+  {
+   "path": "texts/lesson1__Hopkins_Law_of_Trademarks.txt",
+   "size_bytes": 1922743,
+   "sha256": "69EFD6E3A5C5AA7C1ADB1B59CE56E77229AD3DC17F31B360D5EC7D178BCCDB8A"
+  },
+  {
+   "path": "texts/lesson1__Law_Observations_Literary_Property.txt",
+   "size_bytes": 21403,
+   "sha256": "87F46DEB9DB007173ED2FDF4D6F69D627E44C7670DA76C9680D482DF0E899A84"
+  },
+  {
+   "path": "texts/lesson1__Macgillivray_Treatise_on_Copyright.txt",
+   "size_bytes": 1026764,
+   "sha256": "3A2BC2B95ABEC2F22F36F90821A86F6D3F08CB28765A19CBB86C8CD90E563D92"
+  },
+  {
+   "path": "texts/lesson1__Maclaurin_Considerations_Literary_Property.txt",
+   "size_bytes": 98663,
+   "sha256": "A4D0F0263C69114FA61F2E2A5AC18AA2130BD8363509A8DB021285BF923F14CD"
+  },
+  {
+   "path": "texts/lesson1__Nims_Unfair_Competition_and_Trademarks.txt",
+   "size_bytes": 2354476,
+   "sha256": "0C3FFD122F0C8D5D691A7D244A9057228B9C789EE3F351BBE900CDDA40BC74CE"
+  },
+  {
+   "path": "texts/lesson1__Philippine_Law_Patents_Trademarks_Copyright.txt",
+   "size_bytes": 643967,
+   "sha256": "58E9D1982641FD13D478A5581D87CC796E75273249E239CB56177AA6AD952EAE"
+  },
+  {
+   "path": "texts/lesson1__Scrutton_Law_of_Copyright.txt",
+   "size_bytes": 597717,
+   "sha256": "1974F170DF6FEC49F99D76EE3AF2CE49277753EB57A3F48AB49563B10D4BB719"
+  },
+  {
+   "path": "texts/lesson1__Shaler_Thoughts_on_the_Nature_of_Intellectual_Property.txt",
+   "size_bytes": 117796,
+   "sha256": "9727FC194D7F0AE881BE235086FCC69F95E255FCAD72EB314C1D4FB9EBF5DC48"
+  },
+  {
+   "path": "texts/lesson1__Shorter_Handybook_Law_of_Copyright.txt",
+   "size_bytes": 328397,
+   "sha256": "D503F56DB6AA5B64620D73C835C0848CD36DDB9988E749FE02BB3949CA64A9FA"
+  },
+  {
+   "path": "texts/lesson1__Thomson_Remarks_on_Law_of_Literary_Property.txt",
+   "size_bytes": 56307,
+   "sha256": "BE40E78D988CCE1B68DE640CEF657A53FA9A30BB1D99489A34C583D1B75D65B2"
+  },
+  {
+   "path": "texts/lesson1__White_Elementary_Notes_Law_of_Patents.txt",
+   "size_bytes": 52923,
+   "sha256": "78873F693B93CB420925BB115D979A95EBC2E27B225153E6557EBCD063F78257"
+  },
+  {
+   "path": "texts/oa__ARMONIZACI_N_DE_LOS_DERECHOS_DE_AUTOR_EN_LA_COMUNIDAD_ANDINA_HACIA_UN.txt",
+   "size_bytes": 4128,
+   "sha256": "A9E24F3EDBC5DA58586A076F9280434C9FB9C53A4411C36DD6088F40834286EC"
+  },
+  {
+   "path": "texts/oa__ARTISTIC_CREATIONS_ORIGINALITY_INSPIRATION_IMITATION_AND_ARTIFICIAL_INTELLIGENCE.txt",
+   "size_bytes": 109806,
+   "sha256": "3CB521E2B5A3A38D2891CFEDD7957147C85695B127957D3DD7E2913A31405854"
+  },
+  {
+   "path": "texts/oa__A_Comparative_Review_of_the_Registrability_of_Functional_Features_in_T.txt",
+   "size_bytes": 7643,
+   "sha256": "EB12C48D466DB40A0698FEFEF2AEF32084CAB73D30B02DDAF6E809C1AC9F93D5"
+  },
+  {
+   "path": "texts/oa__A_JURIDICAL_STUDY_OF_COPYRIGHT_TRANSFER_STATEMENTS_IN_JOURNAL_PUBLICATIONS.txt",
+   "size_bytes": 27531,
+   "sha256": "679DA5CB5B62FAC19029C83D95853D62ADBAE39D374B3275B4AAFED451A5B3CF"
+  },
+  {
+   "path": "texts/oa__A_Philosophy_of_Intellectual_Property_10.4324_9781315263786.txt",
+   "size_bytes": 749939,
+   "sha256": "1F54D24F277492605EE695CC530B4822161D6FF619EE2EACB4991953122ADB4B"
+  },
+  {
+   "path": "texts/oa__A_Systematic_Review_of_Research_on_the_Meaning_Ethics_and_Practices_of_10.1371_journal.pone.002.txt",
+   "size_bytes": 103891,
+   "sha256": "24C56B25A37216A265481565B205BA5E6A39A6DF70090822BA64384C0DC8402D"
+  },
+  {
+   "path": "texts/oa__Adequate_Interpretation_and.txt",
+   "size_bytes": 2915,
+   "sha256": "5117F146934E928755ECC479D3DEA2223946C051DA05EF4F98C568B6930C86E6"
+  },
+  {
+   "path": "texts/oa__Artificial_intelligence_is_breaking_patent_law_10.1038_d41586-022-01391.txt",
+   "size_bytes": 16547,
+   "sha256": "9164847BFD80320C5D6575D501ECABB49C51184CFFD156B01D74F61C191975FF"
+  },
+  {
+   "path": "texts/oa__Automated_anti_piracy_systems_as_copyright_enforcement_mechanism_a_nee_.txt",
+   "size_bytes": 77807,
+   "sha256": "2192EB96E43F57539395D12C75325E59730F258CAE101BD797F08DA9E8390A28"
+  },
+  {
+   "path": "texts/oa__Balancing_of_public_and_private_interests_when_applying_copyright_and.txt",
+   "size_bytes": 1709,
+   "sha256": "3495D339AFA584B09CC223A08E05996288018D9D9932A612384E00894B7BAD1A"
+  },
+  {
+   "path": "texts/oa__Biological_Diversity_in_the_Patent_System_10.1371_journal.pone.007.txt",
+   "size_bytes": 114829,
+   "sha256": "2DEE2A1FB89E32CF2A6955A49500581E6BF3FAB4E4CA183E8AEB17187035F614"
+  },
+  {
+   "path": "texts/oa__Building_Open_Education_Capacity_Introducing_the_Canadian_Code_of_Best.txt",
+   "size_bytes": 1690,
+   "sha256": "B88A426299EA23FCD488B594C796DCC69638E798005B0BD7951CF5286BCDD3E8"
+  },
+  {
+   "path": "texts/oa__CRIMINAL_LAW_PROTECTION_OF_DATABASE_AT_A_GLANCE.txt",
+   "size_bytes": 1484,
+   "sha256": "9520E752400E5261193E6721934DF1CDABF63002B3AA4CE084BB5F90D9861359"
+  },
+  {
+   "path": "texts/oa__Colonial_Copyright_Postcolonial_Publics_The_Berne_Convention_and_the_1_10.2966_scrip.070310.532.txt",
+   "size_bytes": 68052,
+   "sha256": "2D0E53E7915CD4AE44D70CA1C7A3F2F3E01883E29B880F72E4B8218058EF842D"
+  },
+  {
+   "path": "texts/oa__Commercial_Data_Governance_Developing_Typology-Based_Intellectual_Prop.txt",
+   "size_bytes": 2034,
+   "sha256": "B69A8CB942CE06677D8AA72996E7BBFB1D7F89CD52AE7EC9D695D32303352C5A"
+  },
+  {
+   "path": "texts/oa__Compulsory_patent_licensing_and_local_drug_manufacturing_capacity_in_A.txt",
+   "size_bytes": 1937,
+   "sha256": "06B4EE1EE248D7DCAEE52A711E2F46FD2709630E0E4966DC9591E26EE525CB81"
+  },
+  {
+   "path": "texts/oa__Concepts_and_criteria_of_patentability_of_invention_utility_model_and.txt",
+   "size_bytes": 2431,
+   "sha256": "2317C56463F4D4180C70A34262D851B68F53924989CFE094A1F8E227A2528E7D"
+  },
+  {
+   "path": "texts/oa__Confidential_patent_application_with_an_example_of_preparation.txt",
+   "size_bytes": 6431,
+   "sha256": "2C89AE5EB3A348A90FA6C0BF25CB88EEAF3B8ACCEEDCAC34873DD0264F4F7CD9"
+  },
+  {
+   "path": "texts/oa__Copyright_Legal_and_Practical_Reform_for_the_South_African_Film_Indust.txt",
+   "size_bytes": 1758,
+   "sha256": "139EF976A95A8B6BE1CBC1BE497D53945612014779D9DCDC03870E86B59CE3F5"
+  },
+  {
+   "path": "texts/oa__Copyright_exceptions_and_limitations_on_freedom_of_panorama_in_Ukraine.txt",
+   "size_bytes": 2796,
+   "sha256": "877AA43B4BA7AED1084BB141585B8B48A43604EC34E26ED0236E175A53B2057B"
+  },
+  {
+   "path": "texts/oa__Copyright_law_and_text_and_data_mining.txt",
+   "size_bytes": 85965,
+   "sha256": "3E64621BAE898A2D9B4EED49F19AFF18B998732DE64EBD23C52D52539580812D"
+  },
+  {
+   "path": "texts/oa__Design_and_psychometrics_of_common_value_creation_measurement_tools_in_technolog.txt",
+   "size_bytes": 111188,
+   "sha256": "3E3874DDD97223AC779E6F112FF6687F77CF9A294F6E227F0C960776E8C7370D"
+  },
+  {
+   "path": "texts/oa__Discrimination_against_Foreigners_The_Wuerttemberg_Patent_Law_in_Admin_10.1017_s002205072000047.txt",
+   "size_bytes": 81859,
+   "sha256": "B622B198EEA86665B9E9BC3E7548F6C049ED1CA23E39D4328BEFE617EBD85494"
+  },
+  {
+   "path": "texts/oa__Does_iQOS_harvest_personal_data_from_users_and_manipulate_their_tobacc.txt",
+   "size_bytes": 2346,
+   "sha256": "1F30113D668D8817A15F52A0F7EB449243AC09F0FC57ECEBB762F2EA6568EB23"
+  },
+  {
+   "path": "texts/oa__ECONOMIC_RIGHTS_OF_THE_NEIGHBORING_RIGHTS_OWNERS_PERFORMERS_RIGHTS_MANAGEMENT.txt",
+   "size_bytes": 94636,
+   "sha256": "55A24F3309FCA73504A6577496D12D833CA7F4A2E6211FE4EDD3123410B171DD"
+  },
+  {
+   "path": "texts/oa__European_copyright_adaptation_of_exceptions_and_limitations_to_the_dig.txt",
+   "size_bytes": 3011,
+   "sha256": "CC21DA6F1AC67F58E3A362E172697203BB57C2654670E6CBC30052128608B80F"
+  },
+  {
+   "path": "texts/oa__Fair_Use_and_Beyond_The_Status_of_Copyright_Limitations_and_Exceptions_10.5860_crl.65.6.468.txt",
+   "size_bytes": 124247,
+   "sha256": "C760EFC56080526C1E5220598C8241F8FB670914DD35C073ADF87D72BB9D2502"
+  },
+  {
+   "path": "texts/oa__Ghost_Authorship_in_Industry_Initiated_Randomised_Trials_10.1371_journal.pmed.004.txt",
+   "size_bytes": 34076,
+   "sha256": "925B9ECE30092E4AACB273D2D6713D168ABDC2F7216A90617442641F8917FF20"
+  },
+  {
+   "path": "texts/oa__Global_Legal_Issues_Concerning_Patentability_of_Phage-Based_Therapeuti.txt",
+   "size_bytes": 2169,
+   "sha256": "9A0EF8A65FB607A7B156A70E461E9029300D3BAAC3C468C0CEA33A9E62AEC352"
+  },
+  {
+   "path": "texts/oa__Globalization_of_Patent_Laws_through_Trade_Agreements_and_Pressures_on.txt",
+   "size_bytes": 1461,
+   "sha256": "5F2AA55CCA3D260F38F64AE125E1E21469378E5C4D354D63736BC2F722959FFF"
+  },
+  {
+   "path": "texts/oa__Human_embryonic_stem_cells_and_patent_protection.txt",
+   "size_bytes": 1234,
+   "sha256": "68EBB8EA3F164C7FB7AA51D0130AD660AA840F7EC54A4D417AB157FF3132E166"
+  },
+  {
+   "path": "texts/oa__INCORPORATING_ARTICLE_31bis_FLEXIBILITIES_ON_TRIPS_PUBLIC_HEALTH_INTO.txt",
+   "size_bytes": 2159,
+   "sha256": "212A02B29995284AF6B78DCA958524E337D3F4EC538A52584C4B3212F37806BE"
+  },
+  {
+   "path": "texts/oa__In_which_developing_countries_are_patents_on_essential_medicines_being.txt",
+   "size_bytes": 3385,
+   "sha256": "9E7246596DB499EC4694737BB389106B469F0A9582FBFFE9688B6858C0D93B75"
+  },
+  {
+   "path": "texts/oa__Indian_pharmaceutical_patent_prosecution_The_changing_role_of_Section__10.1371_journal.pone.019.txt",
+   "size_bytes": 66650,
+   "sha256": "61D95D01ABAD2808F734D53DCA5FFD777FAD9449DD2244A7EF7915F69663E6FF"
+  },
+  {
+   "path": "texts/oa__Intellectual_Property_and_Patent_Rights_Protection_for_Innovators_in_J.txt",
+   "size_bytes": 2358,
+   "sha256": "A7BC23254D7E05E9272B71CFD4A399EF8D49FD56414933D4A28078403BB1E5F9"
+  },
+  {
+   "path": "texts/oa__Inter-lingual_correspondence_between_the_conceptual_systems_of_patent.txt",
+   "size_bytes": 2305,
+   "sha256": "8B531DD075303E828E944C53236AAF846BD570533A6E29451ADB0654248D917E"
+  },
+  {
+   "path": "texts/oa__Interlibrary_loans_subscriptions_and_copyright_in_the_UK_academic_libr.txt",
+   "size_bytes": 984,
+   "sha256": "FC8C99D11AA36156B1B07CFC6BB750065807AB18B45AA39C174A835C530E8E25"
+  },
+  {
+   "path": "texts/oa__Inven_ii_brevetabile_n_rime_Patentable_Inventions_in_Rhymes.txt",
+   "size_bytes": 1272,
+   "sha256": "5277985DD9865C1AF380E62422EA9B54E5D8094099BF698734743D6ED480F801"
+  },
+  {
+   "path": "texts/oa__Investing_in_Ex_Ante_Regulation_Evidence_from_Pharmaceutical_Patent_Ex_10.3386_w27579.txt",
+   "size_bytes": 116607,
+   "sha256": "E9BD35E4FC2B486690A6C89E3D29B2DEB4D002108FBE4B31D7089941FC258FE8"
+  },
+  {
+   "path": "texts/oa__Landscape_of_Indian_Legal_Research.txt",
+   "size_bytes": 1850,
+   "sha256": "D95F9A6DA608BBC926A0AB98D35CED13667274A4AE7C4198E22FBB62E105E2A9"
+  },
+  {
+   "path": "texts/oa__Law_of_the_cloud_on_the_supremacy_of_the_user_interface_over_copyright.txt",
+   "size_bytes": 1263,
+   "sha256": "62828E78F00824470673520009C40BC19A059AA07A9B98B23D61EC839FEB6E9F"
+  },
+  {
+   "path": "texts/oa__Legal_Organizational_and_Methodological_Challenges_of_Providing_Forens.txt",
+   "size_bytes": 2872,
+   "sha256": "B83728A8F0CA87445519066950CC8FD90F01B9F4E8FAD48347D9307AFF5CEB44"
+  },
+  {
+   "path": "texts/oa__Les_faiblesses_du_système_de_protection_des_inventions_brevetées_cas_d_.txt",
+   "size_bytes": 42652,
+   "sha256": "DFAF9E532B4E7BC08EED10807A001F1B59E0962EA640DA63CCD02E082D9645DB"
+  },
+  {
+   "path": "texts/oa__Measuring_commercialization_success_of_innovations_in_the_EU.txt",
+   "size_bytes": 2980,
+   "sha256": "9A7BA453FC7BF65E777AF5C946727B6334D8A4273F944AEFE6E45AFE6E120FAB"
+  },
+  {
+   "path": "texts/oa__NEGOTIATION_OF_REMUNERATION_PAYABLE_TO_PERFORMERS_AND_PHONOGRAMS_PRODUCERS_FOR_P.txt",
+   "size_bytes": 59102,
+   "sha256": "701AAA7E61D629F48CFEA170217618BE32C98AEA12BDB83C344D86DB802A0453"
+  },
+  {
+   "path": "texts/oa__Nalar_Kritis_Pelanggaran_Hak_Cipta_dalam_Islam.txt",
+   "size_bytes": 1979,
+   "sha256": "98B3C7D91DBB6CF625C64830F81DC84B2398DA013018176B5D07E59C827E59AF"
+  },
+  {
+   "path": "texts/oa__Novelty_or_Surprise_10.3389_fpsyg.2013.00907.txt",
+   "size_bytes": 103124,
+   "sha256": "C227F1BE10563BC12BFD980DF3FD3951CDB78547CD6BDA2B3F3CC095844551EB"
+  },
+  {
+   "path": "texts/oa__O_NATURZE_PRAWNEJ_DOMENY_INTERNETOWEJ.txt",
+   "size_bytes": 1822,
+   "sha256": "00CFDF7C92E70FFD0F921D9036355C192AF8AE83C80778502A843A222EC99764"
+  },
+  {
+   "path": "texts/oa__Overseas_Copyright_Literacy_Research_Origins_Progress_and_Advances.txt",
+   "size_bytes": 1520,
+   "sha256": "95C92857E6311E1992F245B49B5DA8E344F33105E92262672BDDB6133BD97C94"
+  },
+  {
+   "path": "texts/oa__PERLINDUNGAN_HUKUM_HAK_CIPTA_TERHADAP_PENCIPTA_LAGU_YANG_DIUNDUH_MELAL.txt",
+   "size_bytes": 1970,
+   "sha256": "FBB61574C8F91AB2D4FCC9B898248EE5FB90FEA500F5D53171255122831C799B"
+  },
+  {
+   "path": "texts/oa__PUBLIC_POLICY_AND_MORALITY_IN_TRADEMARK_LAW.txt",
+   "size_bytes": 6710,
+   "sha256": "CBDA23A7BC3A7D758260BBE637C9507554C564A17AEBE71E618F124D14754677"
+  },
+  {
+   "path": "texts/oa__Protein_Kinase-Major_Sperm_Protein_PK-MSP_Genes_Mediate_Recognition_of.txt",
+   "size_bytes": 2615,
+   "sha256": "1AEC7C6CC6395DF826B816B1C47CE1B81AA0053FC68925DE476F224D13543BE7"
+  },
+  {
+   "path": "texts/oa__RELATED_RIGHTS_OF_THE_PRODUCERS_OF_PHONOGRAMS_GENERATED_BY_BROADCASTING_THEIR_PH.txt",
+   "size_bytes": 50206,
+   "sha256": "9EFE0FFBAC6DF02FFFABF61CAA1CF46A2F4B0354C43181DA7388BBF3F1021DF2"
+  },
+  {
+   "path": "texts/oa__Registration_and_its_Impact_on_the_Legal_Protection_of_the_Trademark_A.txt",
+   "size_bytes": 1795,
+   "sha256": "5956C6BD60F1EBD9BF0E4D0B8C3F158E84FB2E60D7720D02DDC39FE0168EE3A5"
+  },
+  {
+   "path": "texts/oa__Reproducing_or_data_mining_The_copyright_law_dilemma_of_AI_training.txt",
+   "size_bytes": 2843,
+   "sha256": "4590D11AEADE883F380344FA06F2251A23C6E07B317648DDFFB5EDE8EE9CEB64"
+  },
+  {
+   "path": "texts/oa__Secondary_Considerations_of_the_Inventive_Step_in_Patents_A_Study_in_t.txt",
+   "size_bytes": 5944,
+   "sha256": "2257A2FC2BDFE5A388D6CFAF5054AD5C024F277C0AD861B211FA87D4EA0A62A8"
+  },
+  {
+   "path": "texts/oa__Spatial_network_and_driving_factors_of_low_carbon_patent_applications__10.3389_fpubh.2023.11218.txt",
+   "size_bytes": 71734,
+   "sha256": "BB62A166390FC1208F4B15D80688FB95D987A4CF771641D30A6052184418F857"
+  },
+  {
+   "path": "texts/oa__Studying_the_Scientific_Economic_and_Social_Effects_of_Iranian_Environmental_Res.txt",
+   "size_bytes": 84599,
+   "sha256": "61908BF11046A1DDC82C35700255269CA1DBE11A9DAEE06018A811DA2DD9671A"
+  },
+  {
+   "path": "texts/oa__TAXATION_OF_PERFORMERS_RIGHTS_IN_ROMANIA.txt",
+   "size_bytes": 59184,
+   "sha256": "35964B9FD402BE8B0025EC16EB62CC47C61537F7B4DC11D4368144BF99A4B421"
+  },
+  {
+   "path": "texts/oa__THE_AGREEMENT_ON_TRADE-RELATED_ASPECTS_OF_INTELLECTUAL_PROPERTY_RIGHTS.txt",
+   "size_bytes": 1656,
+   "sha256": "090C76B1963B7989BCC85EA5D1C21CA393FE681F3810664CCB6DE396EEA99D9A"
+  },
+  {
+   "path": "texts/oa__THE_DURATION_OF_RIGHTS_CONFERRED_BY_COPYRIGHT.txt",
+   "size_bytes": 65259,
+   "sha256": "362D3B8A6A185A1EE64F31439C4B0B751D26D7F5E091D315287E67F1EC5D8ED1"
+  },
+  {
+   "path": "texts/oa__THE_INTEGRATION_OF_AI_IN_DOCTORAL_LEVEL_RESEARCH.txt",
+   "size_bytes": 51778,
+   "sha256": "0A7A3AA7C89ED62A8DD38F7443D9C6AFBEC7547B0C8489BDB3F5911AFA9095D6"
+  },
+  {
+   "path": "texts/oa__THE_NON-OBVIOUSNESS_REQUIREMENT_IN_THE_CHILEAN_PATENT_LAW_A_CRITICAL_A.txt",
+   "size_bytes": 2801,
+   "sha256": "D53BD02EB0570FDDC2F171C584BE12286F2BBDB3A2F530E9FC55C7545C567C1E"
+  },
+  {
+   "path": "texts/oa__TRADE_NAMES_IN_THE_TRADEMARK_REGIME_COMEBACK_OF_THE_FORGOTTEN_TWIN.txt",
+   "size_bytes": 1568,
+   "sha256": "234888769FC0513AA117F1F176CF384FC4A3B36E0B2D98E06E6B0E59EC78F63C"
+  },
+  {
+   "path": "texts/oa__Taxonomic_information_exchange_and_copyright_the_Plazi_approach.txt",
+   "size_bytes": 2057,
+   "sha256": "A2C0FA7716081223711A4AAF6884FEDCF8A73728A18A27F42855E9FC6BC852E3"
+  },
+  {
+   "path": "texts/oa__The_Analysis_of_Article_133_of_the_Iranian_Industrial_Property_Protect.txt",
+   "size_bytes": 3678,
+   "sha256": "9D3DC59A65129EE9413B24158E11BBD37263FF6587DA2AA5DB2B930B8E212B19"
+  },
+  {
+   "path": "texts/oa__The_Analysis_of_Article_133_of_the_Iranian_Industrial_Property_Protect_10.30497_law.2025.248342.txt",
+   "size_bytes": 158979,
+   "sha256": "31F928DDFEDABC55CCF60A6DBC0C6921AB049B978DCEBB5B036ED2B63740F2C9"
+  },
+  {
+   "path": "texts/oa__The_Assignment_of_Property_Rights_on_the_Western_Frontier_Lessons_for__10.3386_w12598.txt",
+   "size_bytes": 94739,
+   "sha256": "6FDBCD71E739FA83A57CD8D3F11ACFB630C4DAE1990077DC32BF8EA6018D685E"
+  },
+  {
+   "path": "texts/oa__The_Intersection_of_Comparative_Advertising_and_Trademark_Laws_in_the.txt",
+   "size_bytes": 2600,
+   "sha256": "2F39E47EA4DCF0B4EEE623CC8D534DA10F117372784570EDC5114682D4540ACB"
+  },
+  {
+   "path": "texts/oa__The_Review_of_Regulations_Concerning_the_Exceptions_of_Anti-piracy_Me.txt",
+   "size_bytes": 2205,
+   "sha256": "BD34CE0C80B7C845678F006578ACB4AD42337982838B2DEA301F36A6DCCA3BA0"
+  },
+  {
+   "path": "texts/oa__The_Role_and_Responsibility_of_Internet_Intermediaries_in_the_Field_of_10.34667_tind.28966.txt",
+   "size_bytes": 281975,
+   "sha256": "046F7D44D6487AFB0545A57FADC12B75504B328FB85E72AB2E1FE4CA7D7F47F6"
+  },
+  {
+   "path": "texts/oa__The_Role_of_Gender_in_Scholarly_Authorship_10.1371_journal.pone.006.txt",
+   "size_bytes": 27587,
+   "sha256": "4D688B34355AE73C5E001111B8CAA9B60AC3270B90F55C9910D33D063F3FBB0F"
+  },
+  {
+   "path": "texts/oa__The_legal_framework_of_the_protection_of_inventors_in_Serbia.txt",
+   "size_bytes": 2428,
+   "sha256": "B26EB66F45B50FBDBB7785ACCB10FAE47345FDBB0CFE0C048B842C2677E178D6"
+  },
+  {
+   "path": "texts/oa__The_relevance_of_introducing_opposition_proceedings_into_the_Serbian_t.txt",
+   "size_bytes": 1859,
+   "sha256": "3596ED5E8CEAF609666D56068E8A044E8CA582AFEB4AA3A9641EE68F1F752F98"
+  },
+  {
+   "path": "texts/oa__The_relevance_of_introducing_opposition_proceedings_into_the_Serbian_trademark_l.txt",
+   "size_bytes": 46282,
+   "sha256": "9934E3B8E9F8DA814CBE0CEB5A64EE4AA785BD50334030D7E6A431B28E2143D2"
+  },
+  {
+   "path": "texts/oa__The_status_of_technology_in_the_Algerian_and_French_patent_law_between.txt",
+   "size_bytes": 1469,
+   "sha256": "5378B4B633350780778DAC275CD8DDE3E53B8CB92BAB7DC5D71FDB6C14CC4D3D"
+  },
+  {
+   "path": "texts/oa__The_veronica_bucket_and_the_inventive_step_requirement_under_the_paten_10.47963_ucclj.v1i2.425.txt",
+   "size_bytes": 61639,
+   "sha256": "453B6F42A0B790335BCC7B97FAE95CC66A6486D421756E82476FBEFBAEF6E366"
+  },
+  {
+   "path": "texts/oa__Therapeutic_substitutability_under_scrutiny_defining_relevant_markets.txt",
+   "size_bytes": 2437,
+   "sha256": "5C710A7D7A2BF2E2791F21F9C9DD60262AFBF0190470695771108A0AF1E9634B"
+  },
+  {
+   "path": "texts/oa__Trademark_Infringement_and_Methods_of_Protection_A_Comparative_Study.txt",
+   "size_bytes": 3436,
+   "sha256": "7467E7CD633F1E8CE1C159B22918EA3BAC2C3F5B22C3BAAE2D3BC2D33BE63FF3"
+  },
+  {
+   "path": "texts/oa__Transformation_of_copyright_limitations_in_the_digital_age_10.21638_spbu25.2019.105.txt",
+   "size_bytes": 89598,
+   "sha256": "272F728AEAFA9C3F3E17515F0399286A62BA84430418868E9AE9C894EA03387A"
+  },
+  {
+   "path": "texts/oa__WELL_KNOWN_AND_REPUTED_TRADEMARK_OR_FAMOUS_TRADEMARKS.txt",
+   "size_bytes": 60957,
+   "sha256": "8514D3FC030D19149DB11B037FEAE9A43C8CB8343FF92CB616B2589D66F3432F"
+  },
+  {
+   "path": "texts/oa__Znaki_towarowe_w_sporcie_Trademarks_in_sports.txt",
+   "size_bytes": 6893,
+   "sha256": "4C1622A48196E5A055EBA088661F607019DD3B72C9A1EC5EFB9F3B9B5B3288BB"
+  },
+  {
+   "path": "texts/oa__eBay_The_Preliminary_Showing_on_the_Factors_of_Preliminary_Injunction.txt",
+   "size_bytes": 4936,
+   "sha256": "1A5963522B9B9B570BF8852AB1E8BFE6DA364C41126D8CA1D3EAA9D4BA0CC2A0"
+  },
+  {
+   "path": "texts/pd__Abolition_of_Patents_Discussions.txt",
+   "size_bytes": 678269,
+   "sha256": "DF5EA97A6BC7EC817441D7C765924CA22A46A79A1D2833DBD1C6472B80DA8361"
+  },
+  {
+   "path": "texts/pd__Arguments_Patents_Copyright_1904.txt",
+   "size_bytes": 75183,
+   "sha256": "ABDDDE68518042BFA6F208E6489152101A71665B8DBB927E036720AF4782936A"
+  },
+  {
+   "path": "texts/pd__Arguments_Patents_Copyright_1906.txt",
+   "size_bytes": 764877,
+   "sha256": "374B047708AFBAB28351EAC408BD9BD78AAEC0B5670217D2FEA442A0E7FAF6FF"
+  },
+  {
+   "path": "texts/pd__Birrell_Copyright.txt",
+   "size_bytes": 286580,
+   "sha256": "97489421EDB3CA8D6FDFD8D8BAAAA54BDBA9295FDB9405B0BEE2C695E174F7B3"
+  },
+  {
+   "path": "texts/pd__Copinger_Law_of_Copyright_UK.txt",
+   "size_bytes": 1151550,
+   "sha256": "CE9255BC8D962C0D9092C362436EFB14AF28393E4E5BD4706BD849647167D2BA"
+  },
+  {
+   "path": "texts/pd__History_of_Copyright.txt",
+   "size_bytes": 266334,
+   "sha256": "761EB4BA2D8AA3E89564E7D71C3DD08EC647129D37E5360EE640DCE76BDD6032"
+  },
+  {
+   "path": "texts/pd__IA_allclassesprodu00graygoog.txt",
+   "size_bytes": 597966,
+   "sha256": "445DA56FC915163AF58E79DEB9F249FDE61A6E4E0C16E0FE5983BAF8A62BCF00"
+  },
+  {
+   "path": "texts/pd__IA_amanualforusege00stowgoog.txt",
+   "size_bytes": 937041,
+   "sha256": "6F90948EF661F3E4140861AF54B39AE0651276C10825D7AE458FB1BBCC2C6041"
+  },
+  {
+   "path": "texts/pd__IA_amanualjurispru00powgoog.txt",
+   "size_bytes": 1406018,
+   "sha256": "FB42509871604E85E72D78469C1280DBCD11DD92B67D5F7050844030021263EF"
+  },
+  {
+   "path": "texts/pd__IA_americanlawandp03andrgoog.txt",
+   "size_bytes": 702341,
+   "sha256": "07AD306F1995E4FA973596B65026613E078A15C5334B15EE97622802D9604B84"
+  },
+  {
+   "path": "texts/pd__IA_aneasyintroduct00butlgoog.txt",
+   "size_bytes": 1111937,
+   "sha256": "0C927CABC83752877A48BCC3A17E1421F2B990EF3158E557205277FD77B35FEE"
+  },
+  {
+   "path": "texts/pd__IA_anelementarycou01elligoog.txt",
+   "size_bytes": 407663,
+   "sha256": "8F21D476339BB21817F3D03E9CBADEE467E5816AE04269D78EA5A6F437D2F6A8"
+  },
+  {
+   "path": "texts/pd__IA_anelementarytre00uffogoog.txt",
+   "size_bytes": 390750,
+   "sha256": "64E021AE9008DB828F770B5AD4F81B1E4AC951AD7AF48111CFDAB6B80113A2B6"
+  },
+  {
+   "path": "texts/pd__IA_anessayconcerni10lockgoog.txt",
+   "size_bytes": 768168,
+   "sha256": "C07E7B431CA25140CAC8B26780697A898E7AFE1725832A10D7449E2A2744BA61"
+  },
+  {
+   "path": "texts/pd__IA_anhistoricaland00nicgoog.txt",
+   "size_bytes": 894135,
+   "sha256": "E9CA8D8E9E907CB12049094A79D3754104861AD8CDCD73509A5B6DA7293A5162"
+  },
+  {
+   "path": "texts/pd__IA_anhistoricaland01burngoog.txt",
+   "size_bytes": 815695,
+   "sha256": "8B4F616B3F623F6770570321F82EF89570944F724A8C0EFD86FFC0F3AD339793"
+  },
+  {
+   "path": "texts/pd__IA_anintroductiont03digbgoog.txt",
+   "size_bytes": 1113062,
+   "sha256": "1F26F26F5F22DB37A20B27289BA30ADFC245137B03751E1DDBCD773D6AA933E9"
+  },
+  {
+   "path": "texts/pd__IA_anintroductoryl02creigoog.txt",
+   "size_bytes": 1116361,
+   "sha256": "5EE3B8A17A9CFEEAD92B4FD1F9B7D9B0DC00DA3884F2D87D43FD4549ABD6D67C"
+  },
+  {
+   "path": "texts/pd__IA_annualreportatt01justgoog.txt",
+   "size_bytes": 650263,
+   "sha256": "07644F3A1163E8B5F407F8E078D0EBE0A2907B25D631E950535FEBC2419429F3"
+  },
+  {
+   "path": "texts/pd__IA_aphrasebookinen00erthgoog.txt",
+   "size_bytes": 279538,
+   "sha256": "6323FBCAFF5A4C36AAF1B379A243DDE0737E93BC86389A6EAFB20CFDA3D7776C"
+  },
+  {
+   "path": "texts/pd__IA_appliedsocialis02spargoog.txt",
+   "size_bytes": 494154,
+   "sha256": "A80DF699F86FDE34575DA2140C461BDB9FED720F12389AF547EB0721F6339142"
+  },
+  {
+   "path": "texts/pd__IA_appliedsocialis03spargoog.txt",
+   "size_bytes": 500317,
+   "sha256": "39DF985436CBA9CE01A538E9FB265DBAD1ADE13757272EE6C0672EC9AA0C83D3"
+  },
+  {
+   "path": "texts/pd__IA_b29000579_0001.txt",
+   "size_bytes": 1225779,
+   "sha256": "2F8850696919785482CC608CBF3BFB5DE8D8AC76AEE439515FB7EB4E59F46DE6"
+  },
+  {
+   "path": "texts/pd__IA_britishofficesl00goog.txt",
+   "size_bytes": 522249,
+   "sha256": "9D3FD2759E82709689D2CCC09A8E15E9F6494B271A7BB1F27409F43BE66D6975"
+  },
+  {
+   "path": "texts/pd__IA_civilcodestatec01hartgoog.txt",
+   "size_bytes": 1322386,
+   "sha256": "3080ECBE91455968AADBDE09877040B32247BCD0796D538538531D333228CF44"
+  },
+  {
+   "path": "texts/pd__IA_completeworksoff00norr.txt",
+   "size_bytes": 1003991,
+   "sha256": "0D7A8EC81F12231C3DBA39B3CF344DC2ADEBFB152A11BFA53964A4DD8D3024D1"
+  },
+  {
+   "path": "texts/pd__IA_cu31924092213135.txt",
+   "size_bytes": 2414225,
+   "sha256": "33B3888BF9D5F819819A6B5FFD696C94E6674F2438E8F007D9F4EE690D8D54EC"
+  },
+  {
+   "path": "texts/pd__IA_cu31924092213267.txt",
+   "size_bytes": 2776612,
+   "sha256": "BEE8BD366410152242F9E151F6B3599E2600E69803B6F696185A67F9CB14B003"
+  },
+  {
+   "path": "texts/pd__IA_cu31924092215346.txt",
+   "size_bytes": 2285471,
+   "sha256": "741F029D725AA1C1181E419A846729F49AFB80A905ECFAE2F13E37C5CD049B00"
+  },
+  {
+   "path": "texts/pd__IA_deslimitationsl00cholgoog.txt",
+   "size_bytes": 461201,
+   "sha256": "50C68BC5D27524C25D603B4A40FFBA6B0FAD2C85369EB5FF5EFC010C3B45704C"
+  },
+  {
+   "path": "texts/pd__IA_diemitprpositio00holmgoog.txt",
+   "size_bytes": 101772,
+   "sha256": "9575B6317E194335EDCA803AFCB1E5234226C37BFFC2859B2405D32EAC04527D"
+  },
+  {
+   "path": "texts/pd__IA_durationniagara00unkngoog.txt",
+   "size_bytes": 113378,
+   "sha256": "7B77CCCDE5901CC41AC88973BC824003B4FD6FFAE706061DDA25F4B4565C003D"
+  },
+  {
+   "path": "texts/pd__IA_earlyessaysandl00sheegoog.txt",
+   "size_bytes": 712022,
+   "sha256": "C0831C5C0B69689A3F8B2A65155317EA6A39405CE0F59794F044A7FBA8CED911"
+  },
+  {
+   "path": "texts/pd__IA_easyprimer00richgoog.txt",
+   "size_bytes": 50927,
+   "sha256": "8EC8E2BD0179548B33526CBB68BE32F2F46E8CB14DC3507A763F90821E718F0C"
+  },
+  {
+   "path": "texts/pd__IA_effectcivilwaru00bailgoog.txt",
+   "size_bytes": 60694,
+   "sha256": "602DA46F12A911908D34618888E052A75BAC4920332EF7EF263CCBD36F0DA222"
+  },
+  {
+   "path": "texts/pd__IA_elementarynaval00ramsgoog.txt",
+   "size_bytes": 755830,
+   "sha256": "15E5E4472BF6D2D2369D9956662ED75B789A65A2EC211E6FA1DA912A0BB75255"
+  },
+  {
+   "path": "texts/pd__IA_essaysoneducati01quicgoog.txt",
+   "size_bytes": 1365134,
+   "sha256": "A2C6AA899B93CD2B70A2D02B963A9E1BA8AEDF709264584F37114B08896D1444"
+  },
+  {
+   "path": "texts/pd__IA_essaysonhumanrig00hurl.txt",
+   "size_bytes": 812744,
+   "sha256": "34109568D65EF76581604BB25E348836D188B834C491D96072DC4B02B302A26E"
+  },
+  {
+   "path": "texts/pd__IA_evolutionlawsel03wigmgoog.txt",
+   "size_bytes": 1984209,
+   "sha256": "FB1C751A78B0BD6F7026474A4A09268BE22F8BCC61E5E9923FEB097015B65AF1"
+  },
+  {
+   "path": "texts/pd__IA_experimentsonra00compgoog.txt",
+   "size_bytes": 114690,
+   "sha256": "AC440CFC2F0C7F76951659F552DCFB2ED0A5704F1C3AD3D45D9DFD657B2CEDBF"
+  },
+  {
+   "path": "texts/pd__IA_frenchinheartam00finlgoog.txt",
+   "size_bytes": 614380,
+   "sha256": "DB14A0740763561F9F91FB123E824A7155DCC2C4A17AF1F9D31981F1C4AF24A8"
+  },
+  {
+   "path": "texts/pd__IA_indiandemandssym00gana.txt",
+   "size_bytes": 601830,
+   "sha256": "18D69CEF744C9E8AF48888C20AF86F1CDAA7AA4D2CBA05A24FCAA0AF59F6A3BB"
+  },
+  {
+   "path": "texts/pd__IA_internationalli07tickgoog.txt",
+   "size_bytes": 1345849,
+   "sha256": "83A4E1AEC4CA0ED9AC8B67FBB827F07B09DF31CBE8DB85C8C67E4A09ABAB678C"
+  },
+  {
+   "path": "texts/pd__IA_intuitionsandsu03bovegoog.txt",
+   "size_bytes": 255257,
+   "sha256": "F927F133A25761536D02461DC7D1BFF1F73EDABEAAF8700D99823BBF7D9B5BF8"
+  },
+  {
+   "path": "texts/pd__IA_jstor-787649.txt",
+   "size_bytes": 9246,
+   "sha256": "8163D3131697F0E7DB44A66D46820759587C3B5B6A027DBE6878A155CFC3B226"
+  },
+  {
+   "path": "texts/pd__IA_lifeofhernandoco02help.txt",
+   "size_bytes": 377184,
+   "sha256": "7C824887E5DC6F2F19092A290E004DAFCEA8458973495B8217B4F456806CF91E"
+  },
+  {
+   "path": "texts/pd__IA_shakespearemana00inglgoog.txt",
+   "size_bytes": 283025,
+   "sha256": "7B7D86949788BFF02B8DD0215E46F3C2C53A454A078C69861A0D0B5104DD3BDE"
+  },
+  {
+   "path": "texts/pd__IA_worksofhuberthow07banc.txt",
+   "size_bytes": 2090764,
+   "sha256": "482243426286D2380F842BAAEEB1E76A3B92146F2EC8A73CF8D2709C0ABB71DF"
+  },
+  {
+   "path": "texts/pd__Patent_Laws_Hawaii.txt",
+   "size_bytes": 55804,
+   "sha256": "049BE6DB4FEF6FFE494C834E0D37AF1B50CF067B2902C198D12650AC108CA585"
+  },
+  {
+   "path": "texts/pd__Putnam_International_Copyright.txt",
+   "size_bytes": 83893,
+   "sha256": "F0DCE1722D41F7EDDA13E4619489D32247369643287937CAF6F93C21F268C656"
+  },
+  {
+   "path": "texts/pd__Thompson_Things_to_Know_About_Trade_Marks.txt",
+   "size_bytes": 194550,
+   "sha256": "671B8DA8B3FD8585C6704CBD75D711FDEFD648943040D823EB664608C0467664"
+  },
+  {
+   "path": "texts/pd__US_Copyright_Law_Circular_92.txt",
+   "size_bytes": 719962,
+   "sha256": "C01B88D1D633CB8AAA2BA9E2DA5214DAE41B943F1DFE2FEC4EFAC15F8B721F0D"
+  },
+  {
+   "path": "texts/pd__US_Patent_Office_Classification.txt",
+   "size_bytes": 135708,
+   "sha256": "8706319AEE134DAF28C20DCCAFCEAE0B181E83050D99B90575A31AB6EEF3F76E"
+  },
+  {
+   "path": "texts/pd__US_Patents_and_How_to_Get_One.txt",
+   "size_bytes": 166368,
+   "sha256": "B4366EC65AA8E23916FAFD77CDCA44C9C1B8A54406918B83D8C2A12F26475F80"
+  },
+  {
+   "path": "texts/pd__Warner_Literary_Copyright.txt",
+   "size_bytes": 25295,
+   "sha256": "93FC5D9395DDA9FE85908B7B2028BAF72C44A0AF6F5491BD1B90BDC5CAAB1C9D"
+  },
+  {
+   "path": "texts/pd__Wordsworth_Law_of_Copyright.txt",
+   "size_bytes": 8624,
+   "sha256": "E7814AFE682748B434AB068A11D69F34F32BF585C4286224C3300E78BB1533DA"
+  },
+  {
+   "path": "texts/pd__cocacolaopinions00cocauoft.txt",
+   "size_bytes": 894631,
+   "sha256": "A2C86E62E6FAB4F89B2EC3973992A4E90D34785346C4267A80BF87C87010E2FC"
+  },
+  {
+   "path": "texts/pd__cu31924019270507.txt",
+   "size_bytes": 2353261,
+   "sha256": "527CA720DC35F971815C0ED98378A77108F8B6DE23BB35986994DCC4C5561CE9"
+  },
+  {
+   "path": "texts/pd__cu31924021862440.txt",
+   "size_bytes": 236892,
+   "sha256": "C8E41A02BC453F65813D91F0F51F09C69082DF289053F04804CF73DD8E28EC83"
+  },
+  {
+   "path": "texts/pd__handbookofpatent00thomiala.txt",
+   "size_bytes": 405728,
+   "sha256": "80DFBE091FBDA0E49324897B7839A1422052E7616E9A91C02FACBC01ABDFC9FC"
+  },
+  {
+   "path": "texts/pd__historyofinterna00unit.txt",
+   "size_bytes": 64733,
+   "sha256": "2638D7973555E415C82279111E1A1BE42318001F894284F9F501E092D0CC2C1F"
+  },
+  {
+   "path": "texts/pd__historyofinterna01unit.txt",
+   "size_bytes": 64390,
+   "sha256": "7278C38E8958F4EF2691042DD198FE6464935E38E31B782FBA3BE719AD28D41B"
+  },
+  {
+   "path": "texts/pd__manualofpatentla00simorich.txt",
+   "size_bytes": 434417,
+   "sha256": "9C2F10F9F341A0C86DE26129E9A96159B7708EB4B8AD0FF9763CF3F61D0B80A3"
+  },
+  {
+   "path": "texts/pd__patentlaw00waitrich.txt",
+   "size_bytes": 741996,
+   "sha256": "1E831B39F0B790132875445757F99F9B5F2D4A0EE3C6CB88A97706E516C536A0"
+  },
+  {
+   "path": "texts/pd__protectionofindu00schr.txt",
+   "size_bytes": 97972,
+   "sha256": "7ED477351517259C90C676FCBD50FC70C145740FCF4447D7F9E8AA3C74D800F9"
+  },
+  {
+   "path": "texts/pd__protectionofindu00toul.txt",
+   "size_bytes": 37907,
+   "sha256": "6B64C42A3FDD0A2D4100B1715EA81F69662DB90FEAD7B229722F0878CC10CADD"
+  },
+  {
+   "path": "texts/practice__bench_01.txt",
+   "size_bytes": 62590,
+   "sha256": "6B9261BD22D0A85AD79A1A2BAC1E5BD7C2C3AA42C8D50625CACB23B1BC19992D"
+  },
+  {
+   "path": "texts/practice__bench_02.txt",
+   "size_bytes": 54314,
+   "sha256": "206138DE0548D1BC648DF53ED12E474E0F69CA8A8173A6146FD3EB1913B2040D"
+  },
+  {
+   "path": "texts/practice__bench_03.txt",
+   "size_bytes": 56757,
+   "sha256": "B1AFC113D01A4E0CFA4DE0F0049E3D33A0AEA792064976A18CB58162BB76330C"
+  },
+  {
+   "path": "texts/practice__bench_04.txt",
+   "size_bytes": 30219,
+   "sha256": "28E2E6574549F02117F5A4AF0920BD44F57AD77912FCFA12C77C1BDC0AD4808C"
+  },
+  {
+   "path": "texts/practice__bench_05.txt",
+   "size_bytes": 36802,
+   "sha256": "31ABC8947697671552B0C84ABD9FBAF64CEF9DA8B7DB144E9E8F843E9836CC59"
+  },
+  {
+   "path": "texts/practice__bench_06.txt",
+   "size_bytes": 33299,
+   "sha256": "DA5D8A88B39227BEFFBD1C5EFFF1EBECCFF38A9DE04FBE1DF19FF2FCAB71F567"
+  },
+  {
+   "path": "texts/practice__sip_01.txt",
+   "size_bytes": 147935,
+   "sha256": "0F8D7BAF05B37135E85FC931D715571C82C700BDE0D9BAFBFCE3AE63C349F95A"
+  },
+  {
+   "path": "texts/practice__sip_02.txt",
+   "size_bytes": 126258,
+   "sha256": "F5D7743D411AEBFA2DE4EBA4E1F1C2FE2A0E10C6CCA89B7A353E1EFBA0A07148"
+  },
+  {
+   "path": "texts/practice__sip_03.txt",
+   "size_bytes": 76727,
+   "sha256": "719B977EC1ACA51CF4A51AAB6A0F5C68DEDDAB4FB84CBF1A1F0CEF112542395C"
+  },
+  {
+   "path": "texts/practice__sip_04.txt",
+   "size_bytes": 74231,
+   "sha256": "3088D1C0C6A73C53BE3D0FEF65CEAA8933E1982AA81097FF19FABD15618CB9EF"
+  },
+  {
+   "path": "texts/practice__sip_05.txt",
+   "size_bytes": 68022,
+   "sha256": "CF4AB63F151BEB75250A2D7ECE966E713A9291499A664AC57DF83075E3CB24CF"
+  },
+  {
+   "path": "texts/practice__sip_06.txt",
+   "size_bytes": 68766,
+   "sha256": "FBB8436D5A56A0E27536CEE1C3E7C68F67A660BED85BF6A249BA6F35748D83F7"
+  },
+  {
+   "path": "texts/practice__sip_07.txt",
+   "size_bytes": 78485,
+   "sha256": "E44F97C21E949E34098A3A911D69ED44D34665916CCAAF02CC3CB7A9EC9781D8"
+  },
+  {
+   "path": "texts/practice__sip_08.txt",
+   "size_bytes": 69209,
+   "sha256": "FFA00215DC0F7DAB48A42EA497C336FAC73E9647111B349EDDD1E264B36265C8"
+  },
+  {
+   "path": "texts/ru__DEFENSE_OF_COPYRIGHT_IN_RUSSIA_IN_MASS_MEDIA_WORKS_IN_THE_CONTEXT_OF_T.txt",
+   "size_bytes": 98599,
+   "sha256": "2E43667F88B422E976E92C11B46E8B2FBD72630429615FA31B8E7825F202702D"
+  },
+  {
+   "path": "texts/ru__Авторское_право_России_и_Франции_сравнительно_правовые_аспекты_1017323.txt",
+   "size_bytes": 10058,
+   "sha256": "A35E3D8E14BFCCDDF276DA8F3849B95891687618D8F3D2998C49640474E61738"
+  },
+  {
+   "path": "texts/ru__Генеративный_искусственный_интеллект_и_авторское_право_105874123134852.txt",
+   "size_bytes": 1220667,
+   "sha256": "3A9873767197CB70CAC8F042EE12C7BA3FF24FF32DC3069DC3519187ECE0CF0A"
+  },
+  {
+   "path": "texts/ru__ДУАЛИЗМ_ПРАВОВОЙ_ПРИРОДЫ_МУЗЕЙНЫХ_ПРАВ_1017323tis2022.txt",
+   "size_bytes": 43243,
+   "sha256": "7F98DE6ABD04ED4A57BB51D12F83DFB3DAC14A9C2235AAB184A722D69F76D959"
+  },
+  {
+   "path": "texts/ru__Использование_объектов_авторских_прав_для_обучения_искусственного_инте.txt",
+   "size_bytes": 1426777,
+   "sha256": "EF12A6BD933FEAB685CA6DCA03CB56C8F4E11F012FB40811DFCACD79890A8673"
+  },
+  {
+   "path": "texts/ru__КУЛЬТУРНЫЙ_КАПИТАЛ_ИНТЕЛЛЕКТУАЛЬНАЯ_СОБСТВЕННОСТЬ_КАК_ОСНОВА_КРЕАТИВНО.txt",
+   "size_bytes": 49960,
+   "sha256": "14A26239576FCA71E375E0622BB3E002B320CE88EAA37CC8ED8C69F44FABC3BC"
+  },
+  {
+   "path": "texts/ru__Коллизионное_регулирование_авторских_отношений_в_условиях_развития_Инт.txt",
+   "size_bytes": 147476,
+   "sha256": "3035B8012EFC4F225A5BF583099FF4324EE427C548F47ACA27329F552D2F7602"
+  },
+  {
+   "path": "texts/ru__ЛВ_Терентьева_Авторское_право_Японии_в_цифровую_эпоху_1072561811_9018.txt",
+   "size_bytes": 95347,
+   "sha256": "EACB8CDE57AF66CACE4233948DEA32FC7CB8FDEFDB1E7E53534B2C2BADF839AB"
+  },
+  {
+   "path": "texts/ru__Международно_правовая_защита_авторских_прав_в_сфере_медицины_в_странах.txt",
+   "size_bytes": 79567,
+   "sha256": "867F7186EA6DA506DE4209F1613BDAC594CE3C1B3CDFF8A807FAFEC739DD0AD7"
+  },
+  {
+   "path": "texts/ru__Наука_и_образование_современные_тренды_1021661a_117.txt",
+   "size_bytes": 10514,
+   "sha256": "0B5ACCF1B07BC9F3D8D3A8F63AC7ACEC9F48FDE3BCBB2391D397B86A6C90655E"
+  },
+  {
+   "path": "texts/ru__Нужна_ли_редакции_электронная_редакция_1031171vlastv26.txt",
+   "size_bytes": 21670,
+   "sha256": "7B9A30FC663E8BAD8CDBDA987F6C63961DFC95B8DB1509349F6AA5151A4AD664"
+  },
+  {
+   "path": "texts/ru__О_различиях_между_лицензионным_договором_и_пользовательским_соглашение.txt",
+   "size_bytes": 1426777,
+   "sha256": "EF12A6BD933FEAB685CA6DCA03CB56C8F4E11F012FB40811DFCACD79890A8673"
+  },
+  {
+   "path": "texts/ru__Объекты_созданные_с_использованием_искусственного_интеллекта_как_объек.txt",
+   "size_bytes": 1220667,
+   "sha256": "3A9873767197CB70CAC8F042EE12C7BA3FF24FF32DC3069DC3519187ECE0CF0A"
+  },
+  {
+   "path": "texts/ru__Определение_субъекта_прав_на_результаты_интеллектуальной_деятельности_.txt",
+   "size_bytes": 121483,
+   "sha256": "834662C3578F6639A4F6E2D3D2FCDA8BAA38CE26A4771576DB4E386132F28236"
+  },
+  {
+   "path": "texts/ru__Основные_взгляды_и_теории_критикующие_авторское_право_.txt",
+   "size_bytes": 54177,
+   "sha256": "8C979D3EBB13FF8CB3879B5373AEFE6A429F280A514D0AE4243228A14F231F34"
+  },
+  {
+   "path": "texts/ru__Правовая_охрана_товарных_знаков_и_авторское_право_проблемы_разграничен.txt",
+   "size_bytes": 66027,
+   "sha256": "E359AB6716A0AF3A2FCB93468A48619CD678D67926536CDDA88CBF3404061522"
+  },
+  {
+   "path": "texts/ru__Принципы_права_проблемы_применения_10173232072_8166.txt",
+   "size_bytes": 131831,
+   "sha256": "6785F9F9074256538679EC6F7A1BDE9A05838DFF1ED60A0DA37DAA05C24A4563"
+  },
+  {
+   "path": "texts/ru__РАССМОТРЕНИЕ_ЭКОНОМИЧЕСКИХ_СПОРОВ_ХОЗЯЙСТВУЮЩИХ_СУБЪЕКТОВ_В_ОБЛАСТИ_ИН.txt",
+   "size_bytes": 91571,
+   "sha256": "6F5B43D26FFDF4F4ECD4B6ADB10333D8628CE8F13295A3C88FD1661C67B1BD96"
+  },
+  {
+   "path": "texts/ru__Рощевская_ЛП_Генетик_ПФ_Рокицкий_в_истории_Коми_филиала_АН_СССР_1949_1.txt",
+   "size_bytes": 109443,
+   "sha256": "AFE573C422A8C0F7A86896CD3F60C3347666EBC5D0C7302FCA9330E133A6EAAE"
+  },
+  {
+   "path": "texts/ru__Роялти_как_один_из_источников_финансирования_селекции_1018699lettersvj.txt",
+   "size_bytes": 58131,
+   "sha256": "4A4F9727E40FF24A10C11FD20B3F05E38F8FDD918E9A6B967C88C45CB87EA282"
+  },
+  {
+   "path": "texts/ru__Синеокий_ОВ_Рок_группа_как_товарный_знак_обладатели_прав_на_название_а.txt",
+   "size_bytes": 49853,
+   "sha256": "21442B28327F7F1BA0728136C18699B0681480663ED24FDE2B5EDF41E7DF5F2F"
+  },
+  {
+   "path": "texts/ru__Случайность_или_опережение_времени_судьба_отдельных_изменений_законода.txt",
+   "size_bytes": 1220667,
+   "sha256": "3A9873767197CB70CAC8F042EE12C7BA3FF24FF32DC3069DC3519187ECE0CF0A"
+  },
+  {
+   "path": "texts/wiki_en__AI_and_copyright.txt",
+   "size_bytes": 31214,
+   "sha256": "E040743AB9249B2233C88FC61015D2EB0B06F07FA7C225F6E1E9A53CB8969473"
+  },
+  {
+   "path": "texts/wiki_en__Agreement_on_Trade-Related_Aspects_of_Intellectual_Property_Rights.txt",
+   "size_bytes": 19719,
+   "sha256": "F7F04C0C32B3136168444DE7FD323D5B3E50EF356BA3282CCD381A14D0936BF9"
+  },
+  {
+   "path": "texts/wiki_en__Anti-circumvention.txt",
+   "size_bytes": 15979,
+   "sha256": "9B14DCA456AD0F2EAA78A2081A0E5A8C8DB6652A7AF6E5B90E0EF209EBC6A33B"
+  },
+  {
+   "path": "texts/wiki_en__Appellation_of_origin.txt",
+   "size_bytes": 29644,
+   "sha256": "AE2D050A5B55ABAE544215B78232A673315BAC8910A695E72E7BCB84A29C84D8"
+  },
+  {
+   "path": "texts/wiki_en__Berne_Convention.txt",
+   "size_bytes": 27326,
+   "sha256": "CD9DA69D085C7B29F6E7F26D278435EBE80A1C4E45D6A9BEBB0699A5A47CBC25"
+  },
+  {
+   "path": "texts/wiki_en__Biological_patent.txt",
+   "size_bytes": 14537,
+   "sha256": "31D5C98A70289034EE2009C197DEB3EF34F4AF880D295C296FC6112F7C3FE4F5"
+  },
+  {
+   "path": "texts/wiki_en__Biopiracy.txt",
+   "size_bytes": 17680,
+   "sha256": "91C5FB856A0D3D643BBCD3478E987921CF163476E103E0647BFB76BED905E654"
+  },
+  {
+   "path": "texts/wiki_en__Biotechnology_patent.txt",
+   "size_bytes": 15084,
+   "sha256": "E5F393594BB59590F2576821C5B5CC48F05651542227D8853BD336126C174459"
+  },
+  {
+   "path": "texts/wiki_en__Broadcasting_rights.txt",
+   "size_bytes": 2453,
+   "sha256": "81E5E80D1C1FB8F4A63CC01FEEA39C7AA48C2B31A8562D81981C515AE40DD034"
+  },
+  {
+   "path": "texts/wiki_en__Business_method_patent.txt",
+   "size_bytes": 17949,
+   "sha256": "1688D409CD9562A9EE59BBE66CC0ABB054E25DF416D0B6F8008FEC1CF05B5FF1"
+  },
+  {
+   "path": "texts/wiki_en__Campbell_v_Acuff-Rose_Music.txt",
+   "size_bytes": 9080,
+   "sha256": "7989D7A0D33CEEEBFE6E7054FAA25B1E8EF47B995D5E17583E8630D4B0316BD9"
+  },
+  {
+   "path": "texts/wiki_en__Certification_mark.txt",
+   "size_bytes": 7064,
+   "sha256": "0CEBE377C34375FD6D018C594D3E530497D5F7BFB7E1DE6F2650B376A1B4C09E"
+  },
+  {
+   "path": "texts/wiki_en__Collective_trademark.txt",
+   "size_bytes": 3780,
+   "sha256": "ACF07C83E08A56AD76A79CDAC7350F6713C7F7710C4FBD108EB6529AF30F3529"
+  },
+  {
+   "path": "texts/wiki_en__Community_design.txt",
+   "size_bytes": 4056,
+   "sha256": "D5C323EC252BEB22D844D1375B71BB3F8A3CD2B7FA7D5F091B703A895C6602F7"
+  },
+  {
+   "path": "texts/wiki_en__Compulsory_licence.txt",
+   "size_bytes": 22660,
+   "sha256": "8BEC9CBF4C2B63A04556BA16E6DC0EAE9C649141D6AD6603DF27F5342D0ECD4A"
+  },
+  {
+   "path": "texts/wiki_en__Compulsory_license.txt",
+   "size_bytes": 22081,
+   "sha256": "ABE8A3058EF491A0707A9E775788E59D1DF68D55FDB2B087E15817A046613413"
+  },
+  {
+   "path": "texts/wiki_en__Continuation_application.txt",
+   "size_bytes": 11636,
+   "sha256": "7D72437BF7A7BBBB792112A7B534837C83F46E0440DD6773A69E5FFB21D8B24E"
+  },
+  {
+   "path": "texts/wiki_en__Copyleft.txt",
+   "size_bytes": 23730,
+   "sha256": "ADAEE2EDB0731B907028340C856D531D847BF84A21159B512A901E588344BD31"
+  },
+  {
+   "path": "texts/wiki_en__Copyright.txt",
+   "size_bytes": 50455,
+   "sha256": "96DA5032EE8902587D664EE7CE1D96024F7E7D7C8E5CA9E5107782BEC01918D6"
+  },
+  {
+   "path": "texts/wiki_en__Copyright_Act_of_1976.txt",
+   "size_bytes": 21790,
+   "sha256": "3A5B91350A39281E8A7F56B40F7CCCEFF696C7E378F784362CCC5B52C53D28DF"
+  },
+  {
+   "path": "texts/wiki_en__Copyright_Clause.txt",
+   "size_bytes": 5021,
+   "sha256": "C93927C808C7D4DCF526ECCFB62188FFDE947C0BD6C981FCF09B7531DF55029A"
+  },
+  {
+   "path": "texts/wiki_en__Copyright_collective.txt",
+   "size_bytes": 14510,
+   "sha256": "01FD04BA71B6B8D0B1DEFDBD28342A02339FF36A0645217E73489A1A1FE4D544"
+  },
+  {
+   "path": "texts/wiki_en__Copyright_infringement.txt",
+   "size_bytes": 47592,
+   "sha256": "69E15CA0A7B9F567F4072BC03FF3FC713A649E1A5BE0403A296E02349F723E4E"
+  },
+  {
+   "path": "texts/wiki_en__Copyright_law_of_the_United_States.txt",
+   "size_bytes": 48635,
+   "sha256": "6846627D21A018E2088413FA46325280D8D8419C90BE479145AA921CF2668576"
+  },
+  {
+   "path": "texts/wiki_en__Copyright_term.txt",
+   "size_bytes": 7200,
+   "sha256": "CEF080CA115B03E92A7D3E96984021C80A890FB0C569D5478CE62C3B16BDB41C"
+  },
+  {
+   "path": "texts/wiki_en__Copyright_transfer_agreement.txt",
+   "size_bytes": 13299,
+   "sha256": "05F242FD42D2AB2D51D775F0BA69C8D548A0CC21C17102F7E637A170EF086E47"
+  },
+  {
+   "path": "texts/wiki_en__Creative_Commons.txt",
+   "size_bytes": 15243,
+   "sha256": "873D572893C3858196E2EA50327F59A195A18B4AA13CCA246FBDFE191B942951"
+  },
+  {
+   "path": "texts/wiki_en__Crown_copyright.txt",
+   "size_bytes": 15815,
+   "sha256": "DEA5FF402D7EF84070B1DCD99B31525BCD45C862B8FC3580E9DE287072A4BFF3"
+  },
+  {
+   "path": "texts/wiki_en__Cybersquatting.txt",
+   "size_bytes": 12794,
+   "sha256": "DA97BF292BF35AEF3AA5520D2D24684E6A0913613A33830C30C7BEFC5F2E71E4"
+  },
+  {
+   "path": "texts/wiki_en__Database_right.txt",
+   "size_bytes": 8710,
+   "sha256": "246C7D46BD82471E9F27F6948A7884021738C2CD7D9ACAACE01E7D9D517C4D00"
+  },
+  {
+   "path": "texts/wiki_en__Digital_Millennium_Copyright_Act.txt",
+   "size_bytes": 63717,
+   "sha256": "E8164FD7D76C12168B89884221F5EDBD9173278B598E166BECF4714249D152AE"
+  },
+  {
+   "path": "texts/wiki_en__Digital_rights_management.txt",
+   "size_bytes": 43129,
+   "sha256": "D278EF555F2F7363FE3839A914382D3E90472960A9A09C6449CF85532D2A50DF"
+  },
+  {
+   "path": "texts/wiki_en__Divisional_application.txt",
+   "size_bytes": 4560,
+   "sha256": "E52EBF125AC6D08587E3B23A086322F18D2209E9F30595EC7A98C7B01EB2C85B"
+  },
+  {
+   "path": "texts/wiki_en__Domain_name.txt",
+   "size_bytes": 32710,
+   "sha256": "BE07006C4A43EE1AAF7861E00ACEFBC86DDA60C50AD52F6A7013A660B8A2AF8A"
+  },
+  {
+   "path": "texts/wiki_en__Droit_de_suite.txt",
+   "size_bytes": 9022,
+   "sha256": "8C6ECD08C803D7BBF5A9AE8D5DE818D7B2F125E93EAED57C7BA830CD29E85E25"
+  },
+  {
+   "path": "texts/wiki_en__Eldred_v_Ashcroft.txt",
+   "size_bytes": 15516,
+   "sha256": "269EC90CA1638DAFC928BA7C22511FE5A34ED17E5372F870B16CE960EAE4E4F8"
+  },
+  {
+   "path": "texts/wiki_en__European_Patent_Convention.txt",
+   "size_bytes": 22247,
+   "sha256": "2AE2438933E37040B163A60315C6CBC60DE44A6B63FFCA1B820D5BFFC412DB42"
+  },
+  {
+   "path": "texts/wiki_en__Exhaustion_of_intellectual_property_rights.txt",
+   "size_bytes": 3276,
+   "sha256": "8B1A6FE52C982DAABEF4E4674F3F626E740FF10F51600E4FD65A484CE7E4D5E3"
+  },
+  {
+   "path": "texts/wiki_en__Exhaustion_of_rights.txt",
+   "size_bytes": 3276,
+   "sha256": "8B1A6FE52C982DAABEF4E4674F3F626E740FF10F51600E4FD65A484CE7E4D5E3"
+  },
+  {
+   "path": "texts/wiki_en__Fair_use.txt",
+   "size_bytes": 50186,
+   "sha256": "210BD70FBD7C87AB4403DC4FF0811281EE4891BA3CF1C44AE6F05F2F07EAA990"
+  },
+  {
+   "path": "texts/wiki_en__Feist_Publications_v_Rural_Telephone_Service.txt",
+   "size_bytes": 15743,
+   "sha256": "B6E1231330DF003EDE3F954C367E4ADE25353EC7907A88028E3794C1833E7438"
+  },
+  {
+   "path": "texts/wiki_en__Free_license.txt",
+   "size_bytes": 8329,
+   "sha256": "08E92C635842B0FCD234F63BC8BD87D3D53F6B790989DEC2C9D48620EF874BFC"
+  },
+  {
+   "path": "texts/wiki_en__Gene_patent.txt",
+   "size_bytes": 15084,
+   "sha256": "E5F393594BB59590F2576821C5B5CC48F05651542227D8853BD336126C174459"
+  },
+  {
+   "path": "texts/wiki_en__Geographical_indication.txt",
+   "size_bytes": 28938,
+   "sha256": "688EA6984F959EDF7804A8A76DCFB3FCB4569BBB188161CD91A106C9792A3C81"
+  },
+  {
+   "path": "texts/wiki_en__History_of_copyright.txt",
+   "size_bytes": 33038,
+   "sha256": "10BBC9E97B0621EDC497F2C5069CA737327D3B302793832AC1945DEB45AD5431"
+  },
+  {
+   "path": "texts/wiki_en__Industrial_applicability.txt",
+   "size_bytes": 2780,
+   "sha256": "DDB52EB8F014CD03A16774DECB703122C63186702731FBDF66A925E6FD4F86CE"
+  },
+  {
+   "path": "texts/wiki_en__Industrial_design.txt",
+   "size_bytes": 18718,
+   "sha256": "BBF6496BB2353596C5F79D936F6859234FF055ED3F44FBF319B0E4F6C4330B2A"
+  },
+  {
+   "path": "texts/wiki_en__Industrial_design_right.txt",
+   "size_bytes": 12883,
+   "sha256": "7BC233ECC41C9FA5C3181B930329D0C99AFD16A8787F5BC440AD2B1F325470C4"
+  },
+  {
+   "path": "texts/wiki_en__Intellectual_property.txt",
+   "size_bytes": 47233,
+   "sha256": "1FE988C7585C0FC170594D5F071463646B1605F1B3EE5C0A18A28939C286DD19"
+  },
+  {
+   "path": "texts/wiki_en__Inventive_step.txt",
+   "size_bytes": 15533,
+   "sha256": "43E2354F48E2FE3DEBDCE0B0B362424BBE50ACD305585F757A195236A86DD3F8"
+  },
+  {
+   "path": "texts/wiki_en__Inventive_step_and_non-obviousness.txt",
+   "size_bytes": 14909,
+   "sha256": "6E2E7588C03B949D25F2BE297591CFA3D93D49068C4557879B66CCC2EA4AFBCD"
+  },
+  {
+   "path": "texts/wiki_en__License.txt",
+   "size_bytes": 17483,
+   "sha256": "650FD5825D1F5F2191FFDD5D0A086EE6F194BAD63BBE627CE20F40705006598E"
+  },
+  {
+   "path": "texts/wiki_en__Madrid_system.txt",
+   "size_bytes": 10210,
+   "sha256": "D53442FA0D824AB645D2ECFEAC01790AADDDC5F219FFD08DEC07AD1E303C7777"
+  },
+  {
+   "path": "texts/wiki_en__Moral_rights.txt",
+   "size_bytes": 14511,
+   "sha256": "16071070BE57B0D1B8B275E4FA004FB1C960EB1D8179B4AB1692DFC6461416C5"
+  },
+  {
+   "path": "texts/wiki_en__Myriad_Genetics.txt",
+   "size_bytes": 7205,
+   "sha256": "3C41B992550A653571C75E2AEA9F29F2D4478F19ED798692C5C5E9DBE8EB98DC"
+  },
+  {
+   "path": "texts/wiki_en__Neighbouring_rights.txt",
+   "size_bytes": 30008,
+   "sha256": "D6F1356B194E7B5CF375084380AFC1CB3C0BC9E0EA64C882E31E3C60457B442A"
+  },
+  {
+   "path": "texts/wiki_en__Novelty.txt",
+   "size_bytes": 1870,
+   "sha256": "2D9B23E13395C94D2D10A96C301B902DF346C84042E1F1D7D27654146DF4A38C"
+  },
+  {
+   "path": "texts/wiki_en__Novelty__patent_.txt",
+   "size_bytes": 13327,
+   "sha256": "3105F131932565EE7627C5CE13FA0EF2E78970D955A3686BD877ACF95F67ED3C"
+  },
+  {
+   "path": "texts/wiki_en__Office_action.txt",
+   "size_bytes": 5237,
+   "sha256": "2B54C3F75CDBBD97A04F3B319C3413D96F7C8E96E958FD5B9711215D5BF55B56"
+  },
+  {
+   "path": "texts/wiki_en__Oncomouse.txt",
+   "size_bytes": 6372,
+   "sha256": "495635C6DC6F435FA1B8A56D73165A6635FBA5D6CE48F252F39DB017CC95C4A7"
+  },
+  {
+   "path": "texts/wiki_en__Open_access.txt",
+   "size_bytes": 57296,
+   "sha256": "2DA3EAF3607AAADC6963A76541F707DB38D76D7896367C50E8E684295505E2B7"
+  },
+  {
+   "path": "texts/wiki_en__Parallel_import.txt",
+   "size_bytes": 16114,
+   "sha256": "3B5E00FDF200D113F865ED3DF8BCAC8E738E99295D869CC0ABE856E81E0277A0"
+  },
+  {
+   "path": "texts/wiki_en__Parallel_importation.txt",
+   "size_bytes": 16114,
+   "sha256": "3B5E00FDF200D113F865ED3DF8BCAC8E738E99295D869CC0ABE856E81E0277A0"
+  },
+  {
+   "path": "texts/wiki_en__Paris_Convention.txt",
+   "size_bytes": 17345,
+   "sha256": "A252BE611D01856BB1AD81E4411556028286F6DD35D29D003445C56816FF85FA"
+  },
+  {
+   "path": "texts/wiki_en__Paris_Convention_for_the_Protection_of_Industrial_Property.txt",
+   "size_bytes": 6448,
+   "sha256": "BE0644573BF6EC242986369048BE66CAE5414763DB6A1058CC9EFF3BD975B708"
+  },
+  {
+   "path": "texts/wiki_en__Parliamentary_copyright.txt",
+   "size_bytes": 7707,
+   "sha256": "16D9467F87396751F28D0D8389438D50345258440826916D75863ED9B4D12AB2"
+  },
+  {
+   "path": "texts/wiki_en__Patent.txt",
+   "size_bytes": 40094,
+   "sha256": "87C17F24B7C68D93CC6C07935218A2516BB78E33D14C1772EF18A8653A566319"
+  },
+  {
+   "path": "texts/wiki_en__Patent_Cooperation_Treaty.txt",
+   "size_bytes": 17773,
+   "sha256": "B42605B191F24AF4DCC6A26FA63642AFC5881543355C02802A0E60F8195E3F24"
+  },
+  {
+   "path": "texts/wiki_en__Patent_application.txt",
+   "size_bytes": 27451,
+   "sha256": "B8C5D8AB4AABB036E2308183DC9E139CCA89FD2A2BB46E5DF4D1929A5DD258E8"
+  },
+  {
+   "path": "texts/wiki_en__Patent_claim.txt",
+   "size_bytes": 20201,
+   "sha256": "F20F42B4C4BDC72AC300A6A8FEEA85DEC7D457BE596681A21B598815B255A9FA"
+  },
+  {
+   "path": "texts/wiki_en__Patent_examiner.txt",
+   "size_bytes": 5898,
+   "sha256": "5A4198BDD33753143C7844BB47A25FBFF10F4E279ED71B6002746BE357BE7F11"
+  },
+  {
+   "path": "texts/wiki_en__Patent_family.txt",
+   "size_bytes": 2545,
+   "sha256": "EC5708916AAC9AD0F26A667BE3BD27F78BF9A46CBC4CE86588EF62DAFDD7162E"
+  },
+  {
+   "path": "texts/wiki_en__Patent_infringement.txt",
+   "size_bytes": 20395,
+   "sha256": "115CB42334966BA21C293B857F27B8F6A3958F104A2E31051968A67520F82EEA"
+  },
+  {
+   "path": "texts/wiki_en__Patent_office.txt",
+   "size_bytes": 3386,
+   "sha256": "CD5BD3D7A2B42B341111E7EBD221B944C811EE62BA75F5B849DCC67531C55B42"
+  },
+  {
+   "path": "texts/wiki_en__Patent_prosecution.txt",
+   "size_bytes": 28314,
+   "sha256": "AD98AC735A317646B513510CC548C0F3D663757DD525040C8D0553D16A360E20"
+  },
+  {
+   "path": "texts/wiki_en__Patent_troll.txt",
+   "size_bytes": 30424,
+   "sha256": "A611EEE8A1A6A3B5A49A1795EEB4A636E6318356A91898C572D677C8F9DAE6BA"
+  },
+  {
+   "path": "texts/wiki_en__Patentability.txt",
+   "size_bytes": 8952,
+   "sha256": "FA456EE7B279C7A296DC1B27218D67276437296654272B96D5A04C766EB6A5AA"
+  },
+  {
+   "path": "texts/wiki_en__Performers_rights.txt",
+   "size_bytes": 30008,
+   "sha256": "D6F1356B194E7B5CF375084380AFC1CB3C0BC9E0EA64C882E31E3C60457B442A"
+  },
+  {
+   "path": "texts/wiki_en__Pharmaceutical_patent.txt",
+   "size_bytes": 4714,
+   "sha256": "2CFDD51134A5779F4EBFD0CC788F112E8AB6FA756B26C1E1883E36218E644912"
+  },
+  {
+   "path": "texts/wiki_en__Piracy.txt",
+   "size_bytes": 102984,
+   "sha256": "41A7AB5C5EDCE8A1A84565E0F624CD1CCC57ABE9349BA9D1095A50D964BDCCDB"
+  },
+  {
+   "path": "texts/wiki_en__Plagiarism.txt",
+   "size_bytes": 37688,
+   "sha256": "DE3B9309AA1131706B3829855FEB5C59649C82055690FB804985F04088AF30B8"
+  },
+  {
+   "path": "texts/wiki_en__Prior_art.txt",
+   "size_bytes": 14698,
+   "sha256": "AB1D6AC4FAB05411FEDBE484AFAEEEE58FFEDD22F9543DD2DDA0E93B730298EE"
+  },
+  {
+   "path": "texts/wiki_en__Priority_right.txt",
+   "size_bytes": 11081,
+   "sha256": "277C8732C06E7AF83490DA15D57D4B8AB773F18AC4E751D74A0138A22D9FE0C8"
+  },
+  {
+   "path": "texts/wiki_en__Provisional_application.txt",
+   "size_bytes": 4938,
+   "sha256": "274D2131E8B6C45E0B74CF797DF9269B3E002A4D4ED2CD06B7A2E0F77706DA25"
+  },
+  {
+   "path": "texts/wiki_en__Public_domain.txt",
+   "size_bytes": 24144,
+   "sha256": "9C023E2898809FBDD3E99A1FD94DB9D13AF19E4E2496B3EFFE13C56C71CFA410"
+  },
+  {
+   "path": "texts/wiki_en__Related_rights.txt",
+   "size_bytes": 29295,
+   "sha256": "BDABEDE68F9260878C8BAC3653FBFC1CB8D2EEBACA911E0245E887496ED8C412"
+  },
+  {
+   "path": "texts/wiki_en__Search_report.txt",
+   "size_bytes": 1858,
+   "sha256": "E2B2FBFCFD531BE5FE94F34CA4E2BDA18D9F84C7A7837BA909DA96DEC2B63CE2"
+  },
+  {
+   "path": "texts/wiki_en__Software_patent.txt",
+   "size_bytes": 41276,
+   "sha256": "21FEC7E688DBF0150E8D5079EF4E0D246FE3CDC7E2C7722B1EA2A445651359D6"
+  },
+  {
+   "path": "texts/wiki_en__Sony_Corp_v_Universal_City_Studios.txt",
+   "size_bytes": 10243,
+   "sha256": "12AE76AF4346E3C88CCA7ECFD826E71D28B18FFEA7A3DE5457E4E7982CA5F9FD"
+  },
+  {
+   "path": "texts/wiki_en__Statute_of_Anne.txt",
+   "size_bytes": 37543,
+   "sha256": "0688A1F65A29B38D669FB2AEBE17CDB694F6C4FEE99F3CD783BCCAA3C0840609"
+  },
+  {
+   "path": "texts/wiki_en__Steganography.txt",
+   "size_bytes": 32199,
+   "sha256": "CDFCC2401C3D18C4371326F378F156F74736D9E474E09FF25361A9265541EFC7"
+  },
+  {
+   "path": "texts/wiki_en__Sui_generis.txt",
+   "size_bytes": 13021,
+   "sha256": "708D6FD2A5342EE47DEAF5116AF4CA2C869FB9E705A86CF24ABD5A66BFBEB2C3"
+  },
+  {
+   "path": "texts/wiki_en__TRIPS_Agreement.txt",
+   "size_bytes": 20337,
+   "sha256": "47B0E0AB9A87F2E97EA6F6B089D8A839776CA319056AD045179171FFBB31BF7F"
+  },
+  {
+   "path": "texts/wiki_en__Trade_dress.txt",
+   "size_bytes": 9427,
+   "sha256": "DAF1BD81C18906CC4F87FA931AFEAC82011EF10AD7C8D85DA72E6144E023A966"
+  },
+  {
+   "path": "texts/wiki_en__Trade_secret.txt",
+   "size_bytes": 19903,
+   "sha256": "8094D12A56A3B4C23A4D43B012A9D3EE8E83D06A02AF7DD6F96E40A451745971"
+  },
+  {
+   "path": "texts/wiki_en__Trademark.txt",
+   "size_bytes": 36329,
+   "sha256": "2D160E2A7494D6228F415915F0CD030E777E13ECF9FFBC636C4B9BA941C27262"
+  },
+  {
+   "path": "texts/wiki_en__Trademark_dilution.txt",
+   "size_bytes": 12753,
+   "sha256": "812CBEF2EC693D766A90C19F379FD3042F32763C69F077AADBAFF8B0B309D86F"
+  },
+  {
+   "path": "texts/wiki_en__Trademark_infringement.txt",
+   "size_bytes": 18993,
+   "sha256": "B18E7EA1F804671E08F903023F5121E6469BB2DDDEC3D5AAB9306DFDF85AA903"
+  },
+  {
+   "path": "texts/wiki_en__Traditional_knowledge.txt",
+   "size_bytes": 25513,
+   "sha256": "417E7BF7B263E163F9468A88D41305F7B2DC05777E8DC927684C35F627F03A71"
+  },
+  {
+   "path": "texts/wiki_en__Unity_of_invention.txt",
+   "size_bytes": 19955,
+   "sha256": "4DC2F51490574B0EC51380BECA09DCC8A063C8A56E286A05CE6A942A64F92232"
+  },
+  {
+   "path": "texts/wiki_en__Utility_model.txt",
+   "size_bytes": 11085,
+   "sha256": "DB7594593C31D5619D51EE651769B7C5496A08142D76A02814C508B22779B4C8"
+  },
+  {
+   "path": "texts/wiki_en__WIPO.txt",
+   "size_bytes": 41743,
+   "sha256": "BEA9F01A8A21043DB0F688AD8D4B16D989AE2B3436F506AB72F46864EC15C57E"
+  },
+  {
+   "path": "texts/wiki_en__Watermark.txt",
+   "size_bytes": 7839,
+   "sha256": "41D9A4D200B54989FDA7CF758B2DB4D02ABA0360E019A494E7BB5C53B33F09DF"
+  },
+  {
+   "path": "texts/wiki_en__Well-known_trade_mark.txt",
+   "size_bytes": 45066,
+   "sha256": "1992A01A2EEAFC516B91E7D8257616E72993845093EAF751A0D9EDBE905214C3"
+  },
+  {
+   "path": "texts/wiki_en__World_Intellectual_Property_Organization.txt",
+   "size_bytes": 33579,
+   "sha256": "3CEB0DA69E3B152985F9EE589C6788E4DA57C7D93BAE3EEF988514DB1E9294BC"
+  },
+  {
+   "path": "texts/wiki_ru__Creative_Commons.txt",
+   "size_bytes": 144304,
+   "sha256": "534AC23FE59E2107474D306BB5E90B6735FBDF71FDA502F9B8CC0D65BDD1748D"
+  },
+  {
+   "path": "texts/wiki_ru__Авторское_право.txt",
+   "size_bytes": 52298,
+   "sha256": "27BE2D545D2DD9AC5B6ABFF8809F7621769ED0D1205B1295E8F6FB38B7A1C8F0"
+  },
+  {
+   "path": "texts/wiki_ru__Авторское_право_и_авторская_обязанность_или_долг_Фдоров.txt",
+   "size_bytes": 22174,
+   "sha256": "76CBD922E2473E74DB5055DDDDBA62BF7F51B863FF4A88AC51F5C79673041BA3"
+  },
+  {
+   "path": "texts/wiki_ru__Бернская_конвенция_об_охране_литературных_и_художественных_произведений.txt",
+   "size_bytes": 16009,
+   "sha256": "AB5B8DB0E94FFF857E81F7955EF711B7E65636E79B31AE84BDC08F8C3B49A507"
+  },
+  {
+   "path": "texts/wiki_ru__Всемирная_конвенция_об_авторском_праве.txt",
+   "size_bytes": 7989,
+   "sha256": "AEA0F815E92A2D7CBD84C510ACA8C36A97F88B1D30FA514A74076893EA3DC521"
+  },
+  {
+   "path": "texts/wiki_ru__Всемирная_организация_интеллектуальной_собственности.txt",
+   "size_bytes": 43736,
+   "sha256": "606BBBC059422D3A441773A242A7DE7873D22118FBA09B7FE204D43022070A05"
+  },
+  {
+   "path": "texts/wiki_ru__Гаагское_соглашение_о_международном_депонировании_промышленных_образцов.txt",
+   "size_bytes": 10173,
+   "sha256": "C45B303D645A6B5495124FF4104CC3A9CB0A76043DE023A19E31835FBD7956D6"
+  },
+  {
+   "path": "texts/wiki_ru__Географическое_указание.txt",
+   "size_bytes": 4967,
+   "sha256": "6897C1EE685A591744A172CEFB8910B9B93846B8A6716D38191C4F65FABB96D7"
+  },
+  {
+   "path": "texts/wiki_ru__Гражданский_кодекс_РФ_Глава_72.txt",
+   "size_bytes": 243475,
+   "sha256": "3FD516D05DA816953B0CDA0873342F18BE1688AF7513B67FB8387F4F976EAB9D"
+  },
+  {
+   "path": "texts/wiki_ru__Договор_о_Евразийском_экономическом_союзе_Раздел_XXIII.txt",
+   "size_bytes": 9979,
+   "sha256": "20F57C30D2541D68D3FF5E104911F50CFB141F8EB6E25E9F3C908F5468B727D7"
+  },
+  {
+   "path": "texts/wiki_ru__Договор_о_Евразийском_экономическом_союзе_Часть_третья.txt",
+   "size_bytes": 5668,
+   "sha256": "11ADFEC2670B2512A20A57ECC41BB54A7F0263B1FFFB552FFF81F39A63CFAD7B"
+  },
+  {
+   "path": "texts/wiki_ru__Договор_о_патентной_кооперации.txt",
+   "size_bytes": 6489,
+   "sha256": "77BF774F8318412AEB1512187B519331D1FD70864D6A98DEBD0DAAFE05065271"
+  },
+  {
+   "path": "texts/wiki_ru__Евразийская_патентная_конвенция.txt",
+   "size_bytes": 5098,
+   "sha256": "76B463F6277126918A51E1C93E239B7E3D6E8DE2CBD678B4C18F50E7318B7132"
+  },
+  {
+   "path": "texts/wiki_ru__Евразийская_патентная_организация.txt",
+   "size_bytes": 7268,
+   "sha256": "D0C21A3B3791CD33522F09F683249A746713B60BEA574EE483C798B274E97C32"
+  },
+  {
+   "path": "texts/wiki_ru__Европейская_патентная_конвенция.txt",
+   "size_bytes": 8209,
+   "sha256": "E220E7F13966EFE41F3174CEDE0D2C01AE3BC8594938E0B4548F4A0C09BB76EE"
+  },
+  {
+   "path": "texts/wiki_ru__Закон_Украины_Об_авторском_праве_и_смежных_правах.txt",
+   "size_bytes": 3888,
+   "sha256": "3AF9B1C97C6D5B306EBA7934CF48A76897050776A66616E1540F3D41C714C6EF"
+  },
+  {
+   "path": "texts/wiki_ru__Закон_Украины_Об_авторском_праве_и_смежных_правах_Раздел_II.txt",
+   "size_bytes": 73003,
+   "sha256": "B61B2EB807A10C1ECCD5EB603EEE3FE3E2C208703E959A4342D4D558246D1910"
+  },
+  {
+   "path": "texts/wiki_ru__Закон_Украины_Об_авторском_праве_и_смежных_правах_Редакция_23121993.txt",
+   "size_bytes": 92679,
+   "sha256": "21821FAD692522ACE841885D080CFD439827668F3B988C607A8F64A9D114D077"
+  },
+  {
+   "path": "texts/wiki_ru__Изобретение.txt",
+   "size_bytes": 91010,
+   "sha256": "487880AFD279E90F62108521F32E31410B7961BAFB44D5898CA36ACFCB321394"
+  },
+  {
+   "path": "texts/wiki_ru__Интеллектуальная_собственность.txt",
+   "size_bytes": 44468,
+   "sha256": "0D33A295FD1C7A9D9E0FD4514568A1CE2B1298890702ACE6744685C22B47DDCD"
+  },
+  {
+   "path": "texts/wiki_ru__Интеллектуальные_права.txt",
+   "size_bytes": 49462,
+   "sha256": "81C8B7735F7765EAB071BB732756F9D89CCFAC6ACAFE81044E489A08B2761657"
+  },
+  {
+   "path": "texts/wiki_ru__Исполнитель.txt",
+   "size_bytes": 15191,
+   "sha256": "6E12B8D4AEA8D52F5D176D1CC52E7A952EC6FFB2DF43F7EC8E76F91E387DB85D"
+  },
+  {
+   "path": "texts/wiki_ru__Коммерческая_тайна.txt",
+   "size_bytes": 12608,
+   "sha256": "B7A71D7C84FA33850C2B7880753FB93A9BFC8607CBE8AD87287E0D0542AED64C"
+  },
+  {
+   "path": "texts/wiki_ru__Конвенция_учреждающая_Всемирную_организацию_интеллектуальной_собственн.txt",
+   "size_bytes": 62885,
+   "sha256": "AD24E8FC2B548DB47860CABB316C4E2982914164CFFBFA3B5461A3B0F55D7565"
+  },
+  {
+   "path": "texts/wiki_ru__Копилефт.txt",
+   "size_bytes": 9700,
+   "sha256": "F4C2C21DFBEC1074D61EE6E35E272127A45EEAE8606A603CE543214945E059BB"
+  },
+  {
+   "path": "texts/wiki_ru__Лицензионный_договор.txt",
+   "size_bytes": 7720,
+   "sha256": "21CD12D685350D92A7A3E38037B9EEBE096E257F2E7B24DC798FC14DF4D82D44"
+  },
+  {
+   "path": "texts/wiki_ru__Мадридское_соглашение_о_международной_регистрации_знаков.txt",
+   "size_bytes": 5433,
+   "sha256": "63A2126921FECA8EF09AB6FA1CCAD37F49A4EF616F97A4B7937D9177AF1BCA2C"
+  },
+  {
+   "path": "texts/wiki_ru__Международная_патентная_классификация.txt",
+   "size_bytes": 13493,
+   "sha256": "B4179AC5D029C3B77CE6C0E4A1A0AADB8220F9A9662AB7560F2606CFAB07E019"
+  },
+  {
+   "path": "texts/wiki_ru__Ноу-хау.txt",
+   "size_bytes": 8683,
+   "sha256": "0C45B44E5A98673DAD557CC5CF74D68056192FFE0BC19F3A0084C05E524FA3E4"
+  },
+  {
+   "path": "texts/wiki_ru__Общественное_достояние.txt",
+   "size_bytes": 26895,
+   "sha256": "D24200835561575F244DF95FA58C340E982734FFA1748D4118FEF8E86457B896"
+  },
+  {
+   "path": "texts/wiki_ru__Открытый_доступ.txt",
+   "size_bytes": 118097,
+   "sha256": "4FC04310D63D23C89956E36381A70DD297414C0E13B0F8757E252538B92D00E2"
+  },
+  {
+   "path": "texts/wiki_ru__Патент.txt",
+   "size_bytes": 29100,
+   "sha256": "13AC778AA889984B2FA65364D47E85BEFE0BB13D3E65DBA125A5CAD09A50D32B"
+  },
+  {
+   "path": "texts/wiki_ru__Патентное_право.txt",
+   "size_bytes": 19477,
+   "sha256": "DFFED819D20A86D2FE838A70DC31E822BC960B68AAD7C397F79D5DA276617875"
+  },
+  {
+   "path": "texts/wiki_ru__Патентный_поверенный.txt",
+   "size_bytes": 12274,
+   "sha256": "DA64E782523C77BE166D0D279BD4CAC5944ABAEA472005829CD1E3D7774FB86B"
+  },
+  {
+   "path": "texts/wiki_ru__Патентный_тролль.txt",
+   "size_bytes": 13457,
+   "sha256": "176BFF53C86905A877825F74F1B3BAE4F8557E1080938F6B849A64D7C7F0008E"
+  },
+  {
+   "path": "texts/wiki_ru__Плагиат.txt",
+   "size_bytes": 42198,
+   "sha256": "B4B2242861E9EF66B33142BB1E7B6642A228348B330D113BADE37F1C54E859D6"
+  },
+  {
+   "path": "texts/wiki_ru__Полезная_модель.txt",
+   "size_bytes": 10770,
+   "sha256": "BAA0518D1CB5DAC50149553B25BE5EF01E8CC543BD82148FDB5521AB44873CD0"
+  },
+  {
+   "path": "texts/wiki_ru__Постановление_ЦИК_и_СНК_СССР_от_16051928_основы_авторского_права.txt",
+   "size_bytes": 24851,
+   "sha256": "AA3204FDA90147767042551259E9075CE89D6D1CA818DED7B879BA5E34502035"
+  },
+  {
+   "path": "texts/wiki_ru__Промышленный_образец.txt",
+   "size_bytes": 13153,
+   "sha256": "5462DD0DFF5A2E9DFC0BF5FBE23CCA3B717EB50D5F03D6B405DA559716BFD298"
+  },
+  {
+   "path": "texts/wiki_ru__Роспатент.txt",
+   "size_bytes": 13648,
+   "sha256": "CA95B42811FAA5B229D3B959FAE4576C00D8F255A1EF40F15394B2CACC0B104A"
+  },
+  {
+   "path": "texts/wiki_ru__Свободное_программное_обеспечение.txt",
+   "size_bytes": 83763,
+   "sha256": "5F894F9E772648B3EB594F0BBBA3D7CBC4FC431B578B47B31D8A13E14D95CF8E"
+  },
+  {
+   "path": "texts/wiki_ru__Смежные_права.txt",
+   "size_bytes": 27104,
+   "sha256": "9E59B4316A64E1E57834E088DC52883D2F28B9AC3FCA50DE8EBFA704B09F15A8"
+  },
+  {
+   "path": "texts/wiki_ru__Соглашение_по_торговым_аспектам_прав_интеллектуальной_собственности.txt",
+   "size_bytes": 162205,
+   "sha256": "FE748AF22249A04BA3F4080368E938F77C042DD3CAF25BC49F6EE11A4E3C189E"
+  },
+  {
+   "path": "texts/wiki_ru__Страсбургское_соглашение_о_международной_патентной_классификации.txt",
+   "size_bytes": 2539,
+   "sha256": "30C975DA40950E4CE17D42F0C39C575F4538C7F93074F3C199AD5070B91F3C92"
+  },
+  {
+   "path": "texts/wiki_ru__Товарный_знак.txt",
+   "size_bytes": 48933,
+   "sha256": "1F727FB67FFCD0C20396FB7D9ACA9F16F734D94FCF683BDB941D8E669A5FAB31"
+  },
+  {
+   "path": "texts/wiki_ru__Федеральный_закон_от_28012020_2_ФЗ.txt",
+   "size_bytes": 93256,
+   "sha256": "FCDE81A05EFF6BED7F402747242112134FBB353BED0644110AD7BF2541ED117B"
+  },
+  {
+   "path": "texts/wiki_ru__Федеральный_институт_промышленной_собственности.txt",
+   "size_bytes": 9095,
+   "sha256": "F7425824488E1814B80B360365C16B63FAC3CCFD0BA87CE9A2805F0CB5BBC70C"
+  },
+  {
+   "path": "texts/wiki_ru__Фонограмма.txt",
+   "size_bytes": 5496,
+   "sha256": "94FA3BCD01CDFFE026BCBDDAF084C29F3C5839375849B21299C6733B61E06543"
+  },
+  {
+   "path": "texts/wiki_ru__Формула_изобретения.txt",
+   "size_bytes": 44363,
+   "sha256": "BBB3EA2FEC8A1874AC6310CA0D2C99C74C32EA9583FBE6DB2EDAAD96F76BBDC2"
+  },
+  {
+   "path": "texts/wiki_ru__ЭСГ_Патентное_право.txt",
+   "size_bytes": 32833,
+   "sha256": "F104CF7E80C9D1FE4A2A352FF3D8DD26BC966E33E028E9EC1431DF9B16B1C2A1"
+  },
+  {
+   "path": "texts/wiki_ru__Электронная_библиотека.txt",
+   "size_bytes": 19866,
+   "sha256": "2FD7D00BA6347F5B67E1CFE5FE87296C89B6F4D1BEAA00BBB283AE8E5DDFD6C3"
+  },
+  {
+   "path": "texts/wikipedia__Copyright_law_of_Russia.txt",
+   "size_bytes": 54179,
+   "sha256": "B0C14DD8A11418579EA9515E8870D57BC44B11F27FBDA3F8618CF7DEC50AE451"
+  },
+  {
+   "path": "texts/wikipedia__Copyright_renewal.txt",
+   "size_bytes": 4361,
+   "sha256": "239A92F612DC8FE0ACFA6518409865FC499BF895DBF0BF92A2797C0B239AFC56"
+  },
+  {
+   "path": "texts/wikipedia__Exclusive_right.txt",
+   "size_bytes": 3391,
+   "sha256": "0F145677797C62A437BAAD1F2D50A4A2DD7633C369C994852CEE9E8E726E885B"
+  },
+  {
+   "path": "texts/wikipedia__Free_content.txt",
+   "size_bytes": 18638,
+   "sha256": "C66725698F00D59A9333F6A2825E86D5E8ED2650A98F345A707D9F21AB0DBC57"
+  },
+  {
+   "path": "texts/wikipedia__Geographical_indication.txt",
+   "size_bytes": 28938,
+   "sha256": "688EA6984F959EDF7804A8A76DCFB3FCB4569BBB188161CD91A106C9792A3C81"
+  },
+  {
+   "path": "texts/wikipedia__Idea-expression_divide.txt",
+   "size_bytes": 15609,
+   "sha256": "70F041A7ADCE48C0311D766B8445EA2A5AB7E3A5006F184E297CE782458D3133"
+  },
+  {
+   "path": "texts/wikipedia__Industrial_design_right.txt",
+   "size_bytes": 12315,
+   "sha256": "8F0C1D8FC9EF59461285FD0C663419C7186B4AA68790021218D9C57165376D11"
+  },
+  {
+   "path": "texts/wikipedia__Intangible_property.txt",
+   "size_bytes": 2626,
+   "sha256": "5A63BC2118E98CF71296A7C8C08E62E9614E5A11886DD4315A3BE794CB4B20AA"
+  },
+  {
+   "path": "texts/wikipedia__Intellectual_property_organization.txt",
+   "size_bytes": 4470,
+   "sha256": "408F21E43D2B346AE637062379F60FC4B5C07A57FA9FEFCFEEC1494C25C1850B"
+  },
+  {
+   "path": "texts/wikipedia__Labor_theory_of_property.txt",
+   "size_bytes": 10642,
+   "sha256": "4D3F630CFC72129FB75AE2CFFA29921E0C1DA51E2FF27982244837DCB5B17349"
+  },
+  {
+   "path": "texts/wikipedia__Legal_fiction.txt",
+   "size_bytes": 14266,
+   "sha256": "CBB4420303274CB2647F55099430C39B48BFA1E322E46D7033FF24B922C11A49"
+  },
+  {
+   "path": "texts/wikipedia__Monopoly.txt",
+   "size_bytes": 65958,
+   "sha256": "DF22D5101769391590A6B194FE6FCF184FA906FA32095E33F2466B2DB5F59331"
+  },
+  {
+   "path": "texts/wikipedia__Natural_rights_and_legal_rights.txt",
+   "size_bytes": 39128,
+   "sha256": "C6A0876A5BE482FE79B69496E5671201D8EEDA791CE0E6F0E9B1C03A6D25BFA2"
+  },
+  {
+   "path": "texts/wikipedia__Originality.txt",
+   "size_bytes": 13469,
+   "sha256": "8916AD0CACA9A00AF36AF82A26C6C9BDF29A3BEF2447828B19940F7253C143B5"
+  },
+  {
+   "path": "texts/wikipedia__Orphan_work.txt",
+   "size_bytes": 11169,
+   "sha256": "FA26121DFC970D53E0CE260DC0D30EB3B2308D75313C34BEEFA868F5C141588C"
+  },
+  {
+   "path": "texts/wikipedia__Outline_of_intellectual_property.txt",
+   "size_bytes": 4240,
+   "sha256": "DC8E954BEB784E6E331B1FE9A06BEDEE4C5F3A5E71BD7F4B81A551D2773B5283"
+  },
+  {
+   "path": "texts/wikipedia__Personality_rights.txt",
+   "size_bytes": 34950,
+   "sha256": "3C3ED8F78A39721EB407702D1593A47C047F834BA97C217CAED80F671B8A57D9"
+  },
+  {
+   "path": "texts/wikipedia__Plant_breeders__rights.txt",
+   "size_bytes": 15945,
+   "sha256": "CB1D03D7D64C6214BBE6958BF529765231F210DC023EE8D9B1EA4ADC1C1399D4"
+  },
+  {
+   "path": "texts/wikipedia__Property.txt",
+   "size_bytes": 42853,
+   "sha256": "F2563CF5B5848E020681D206CEA151D6FAB7E50EFD6D127D25D07A99B34F0556"
+  },
+  {
+   "path": "texts/wikipedia__Public_domain.txt",
+   "size_bytes": 25921,
+   "sha256": "7EC1BC1228891DC1BADB7B5E3A1A78BF478434891D9EAA25E2D9E2663BFB64D3"
+  },
+  {
+   "path": "texts/wikipedia__Public_domain_day.txt",
+   "size_bytes": 6731,
+   "sha256": "C481BFD2E73B49E03F041DCC6369EED1A0DB930F99E05D679DD405B93668EA93"
+  },
+  {
+   "path": "texts/wikipedia__Threshold_of_originality.txt",
+   "size_bytes": 24981,
+   "sha256": "599855FC3B8B320F8FB248A4C80D4453676B5271ACA3E60DF8A1786CE492AE2A"
+  },
+  {
+   "path": "texts/wikipedia__Utilitarianism.txt",
+   "size_bytes": 83257,
+   "sha256": "EFDC112DEDAD2AC570DA1329E4D685D5FE7C7D55C59E7614C9A53AF2B3176787"
+  }
+ ]
+}
