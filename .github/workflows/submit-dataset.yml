@@ -12,9 +12,13 @@ on:
       - 'assignments/00-first-contribution/submissions/**'
       - 'assignments/00-first-contribution/dataset-schema/**'
       - '.github/workflows/submit-dataset.yml'
+      - 'tests/test_dataset_publish.py'
   pull_request:
     paths:
       - 'assignments/00-first-contribution/submissions/**'
+      - 'assignments/00-first-contribution/dataset-schema/**'
+      - '.github/workflows/submit-dataset.yml'
+      - 'tests/test_dataset_publish.py'
   workflow_dispatch:
 
 jobs:
@@ -30,6 +34,9 @@ jobs:
 
       - name: Валидатор умеет падать (selftest)
         run: python3 assignments/00-first-contribution/dataset-schema/validate.py --selftest
+
+      - name: Проверка сборки и отклонения дублей
+        run: python3 -m unittest discover -s tests -p test_dataset_publish.py -v
 
       - name: Проверка и сборка датасета (dry-run)
         run: |
